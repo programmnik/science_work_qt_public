@@ -1,0 +1,11 @@
+build-*/
+*-build/
+*.autosave
+CMakeLists.txt.user*
+*.o
+*.so
+*.exe
+moc_*.cpp
+ui_*.h
+*.swp
+.qmake.stash
