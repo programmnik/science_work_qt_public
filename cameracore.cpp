@@ -17,6 +17,7 @@ void CameraCore::updateRotationMatrix(){
 
 void CameraCore::setPoint(Point* newPoint){
     point = newPoint;
+    updateRotationMatrix();
 }
 
 void CameraCore::move(float forward, float right, float up){
@@ -35,8 +36,8 @@ void CameraCore::rotate(float dx, float dy, float dz){
 void CameraCore::applyToOpenGL(){
     if(!point) return;
 
-    glRotatef(point->getRotX() * 180.0f / M_PI, 1.0f, 0.0f, 0.0f);
-    glRotatef(point->getRotY() * 180.0f / M_PI, 0.0f, 1.0f, 0.0f);
-    glRotatef(point->getRotZ() * 180.0f / M_PI, 0.0f, 0.0f, 1.0f);
+    glRotatef(point->getRotX(), 1.0f, 0.0f, 0.0f);
+    glRotatef(point->getRotY(), 0.0f, 1.0f, 0.0f);
+    glRotatef(point->getRotZ(), 0.0f, 0.0f, 1.0f);
     glTranslatef(-point->getX(), -point->getY(), -point->getZ());
 }

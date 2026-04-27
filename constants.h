@@ -11,15 +11,18 @@ namespace ScreenConfig {
 }
 
 namespace CameraConfig {
-    const float MOVE_SPEED = 1.0f;
+    const float MOVE_SPEED = 0.3f;
     const float ROTATION_SPEED = 0.02f;
     const float DEFAULT_X= 0.0f;
-    const float DEFAULT_Y= 0.0f;
-    const float DEFAULT_Z= 5.0f;
+    const float DEFAULT_Y= -1.5f;
+    const float DEFAULT_Z= 1.2f;
+    const float DEFAULT_ROT_X= -60.0f;
+    const float DEFAULT_ROT_Y= 0.0f;
+    const float DEFAULT_ROT_Z= 0.0f;
 }
 
 namespace MouseConfig {
-    const float SENSITIVITY = 0.01f;
+    const float SENSITIVITY = 0.4f;
     const float ZOOM_SENSITIVITY = 0.001f;
     const float MIN_ZOOM = 0.3f;
     const float MAX_ZOOM = 3.0f;

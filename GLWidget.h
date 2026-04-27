@@ -6,6 +6,7 @@
 #include "cameracore.h"
 #include "plane.h"
 #include "point.h"
+#include "sphere.h"
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {
@@ -29,6 +30,7 @@ private:
     Point* cameraPoint;
     CameraCore* camera;
     Plane* plane;
+    Sphere* sphere;
 
     QPoint lastMousePos;
     float zoom;

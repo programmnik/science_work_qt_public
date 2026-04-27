@@ -12,10 +12,15 @@ GLWidget::GLWidget(QWidget *parent)
     cameraPoint = new Point(CameraConfig::DEFAULT_X,
                             CameraConfig::DEFAULT_Y,
                             CameraConfig::DEFAULT_Z,
-                            0, 0, 0);
+                            CameraConfig::DEFAULT_ROT_X,
+                            CameraConfig::DEFAULT_ROT_Y,
+                            CameraConfig::DEFAULT_ROT_Z);
     camera = new CameraCore();
     camera->setPoint(cameraPoint);
     plane = new Plane();
+    sphere = new Sphere();
+    sphere->setPosition(0, 0, 0.5f);
+    sphere->setRadius(0.5f);
 
     setFocusPolicy(Qt::StrongFocus);
     setMouseTracking(true);
@@ -26,6 +31,7 @@ GLWidget::~GLWidget()
     delete plane;
     delete camera;
     delete cameraPoint;
+    delete sphere;
 }
 
 void GLWidget::initializeGL()
@@ -45,21 +51,18 @@ void GLWidget::paintGL()
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
 
-    // Расчет frustum на основе fov, aspect ratio и zoom
     float aspect = width() / (float)height();
     float fov = 60.0f / zoom;
     if (fov < 10.0f) fov = 10.0f;
     if (fov > 120.0f) fov = 120.0f;
 
-    // Конвертация fov в размеры frustum
     float nearPlane = 0.1f;
     float farPlane = 1000.0f;
-    float top = nearPlane * tan(fov * M_PI / 360.0f);  // fov/2 в радианах
+    float top = nearPlane * tan(fov * M_PI / 360.0f);
     float bottom = -top;
     float right = top * aspect;
     float left = -right;
 
-    // Установка frustum (используем glFrustum)
     glFrustum(left, right, bottom, top, nearPlane, farPlane);
 
     glMatrixMode(GL_MODELVIEW);
@@ -67,6 +70,7 @@ void GLWidget::paintGL()
 
     camera->applyToOpenGL();
     plane->draw(*cameraPoint);
+    sphere->draw(*cameraPoint);
 }
 
 void GLWidget::resizeGL(int w, int h)
@@ -85,7 +89,8 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event)
 {
     if (event->buttons() & Qt::MiddleButton) {
         QPoint delta = event->pos() - lastMousePos;
-        camera->rotate(delta.y() * 0.01f, delta.x() * 0.01f, 0);
+        camera->rotate(delta.y() * MouseConfig::SENSITIVITY,
+                       delta.x() * MouseConfig::SENSITIVITY, 0);
         lastMousePos = event->pos();
         update();
     }
