@@ -6,12 +6,12 @@
 
 Sphere::Sphere()
     : centerPoint(0, 0, 0, 90, 0, 0)
-    , radius(0.5f)
-    , rings(30)
-    , sectors(30)
-    , colorR(0.3f)
-    , colorG(0.6f)
-    , colorB(0.9f)
+    , radius(SphereConfig::RADIUS)
+    , rings(SphereConfig::RINGS_COUNT)
+    , sectors(SphereConfig::SECTORS_COUNT)
+    , colorR(Colors::SPHERE_R)
+    , colorG(Colors::SPHERE_G)
+    , colorB(Colors::SPHERE_B)
 {
 }
 

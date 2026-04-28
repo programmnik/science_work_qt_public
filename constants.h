@@ -28,6 +28,12 @@ namespace MouseConfig {
     const float MAX_ZOOM = 3.0f;
 }
 
+namespace SphereConfig {
+    const float RADIUS = 0.5f;
+    const int RINGS_COUNT = 20;
+    const int SECTORS_COUNT = 20;
+}
+
 
 namespace Colors {
     const float BACKGROUND_R = 0.1f;
@@ -45,6 +51,10 @@ namespace Colors {
     const float AXIS_Y_R = 0.0f;
     const float AXIS_Y_G = 1.0f;
     const float AXIS_Y_B = 0.0f;
+
+    const float SPHERE_R = 0.3f;
+    const float SPHERE_G = 0.6f;
+    const float SPHERE_B = 0.9f;
 }
 
 #endif // CONSTANTS_H

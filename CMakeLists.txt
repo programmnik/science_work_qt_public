@@ -22,6 +22,7 @@ set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp
     GLWidget.cpp
+    # app_icon.rc
 )
 
 set(PROJECT_HEADERS
@@ -32,6 +33,13 @@ set(PROJECT_HEADERS
 set(PROJECT_FORMS
     mainwindow.ui
 )
+
+install(FILES "images/icon.png"
+        DESTINATION "share/icons/hicolor/256x256/apps"
+        RENAME "${PROJECT_NAME}.png")
+
+
+set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/app_icon.rc")
 
 # Создание исполняемого файла
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -45,7 +53,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         plane.h plane.cpp
         constants.h
         sphere.h sphere.cpp
-
+        resources.qrc
+        science_work.desktop
     )
 else()
     add_executable(science_work
@@ -101,3 +110,13 @@ install(TARGETS science_work
 if(${QT_VERSION_MAJOR} EQUAL 6)
     qt_finalize_executable(science_work)
 endif()
+
+# Установка иконки (она у вас уже есть, проверьте путь)
+install(FILES "images/icon.png"
+        DESTINATION "share/icons/hicolor/256x256/apps"
+        RENAME "${PROJECT_NAME}.png")
+
+# Установка .desktop файла
+install(FILES "science_work.desktop"
+        DESTINATION "share/applications")
+

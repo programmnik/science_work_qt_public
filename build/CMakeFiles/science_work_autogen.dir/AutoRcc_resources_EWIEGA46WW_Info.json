@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "/home/user/science_work/build/science_work_autogen",
+	"CMAKE_BINARY_DIR" : "/home/user/science_work/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/user/science_work/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/user/science_work",
+	"CMAKE_SOURCE_DIR" : "/home/user/science_work",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/user/science_work/build/science_work_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/user/science_work/Riemann.ico",
+		"/home/user/science_work/images/icon.ico",
+		"/home/user/science_work/images/noroot.png",
+		"/home/user/science_work/images/Riemann.ico",
+		"/home/user/science_work/images/Riemann.png",
+		"/home/user/science_work/images/icon.png"
+	],
+	"LOCK_FILE" : "/home/user/science_work/build/CMakeFiles/science_work_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/user/science_work/build/CMakeFiles/science_work_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/user/science_work/resources.qrc",
+	"VERBOSITY" : 0
+}

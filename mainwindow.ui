@@ -20,17 +20,184 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>34</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    QMenuBar {
+        background-color: rgb(71, 69, 153);
+        color: rgb(218, 216, 227);
+        border: none;
+        border-bottom: 1px solid rgba(222, 221, 218, 0.3);
+        padding: 2px 6px;
+        spacing: 0px;
+        font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    QMenuBar::item {
+        background-color: transparent;
+        color: rgb(218, 216, 227);
+        padding: 3px 6px;
+        border-radius: 8px;
+        margin: 2px;
+    }
+    
+    QMenuBar::item:selected {
+        background-color: rgba(222, 221, 218, 0.15);
+        color: white;
+        border-radius: 8px;
+    }
+    
+    QMenuBar::item:pressed {
+        background-color: rgba(222, 221, 218, 0.25);
+        border-radius: 8px;
+    }
+
+    QMenu {
+        background-color: rgb(55, 53, 133);
+        color: rgb(218, 216, 227);
+        border: 2px solid rgba(222, 221, 218, 0.3);
+        border-radius: 12px;
+        padding: 4px 0px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+		 font-weight: 500;
+    }
+    
+    QMenu::item {
+        background-color: transparent;
+        color: rgb(218, 216, 227);
+        padding: 4px 8px 4px 8px;
+        margin: 2px 8px;
+        border-radius: 6px;
+    }
+    
+    QMenu::item:selected {
+        background-color: rgba(222, 221, 218, 0.15);
+        color: white;
+    }
+    
+    QMenu::item:pressed {
+        background-color: rgba(222, 221, 218, 0.25);
+    }
+    
+    QMenu::separator {
+        height: 2px;
+        background-color: rgba(222, 221, 218, 0.2);
+        margin: 3px 6px;
+    }
+    
+    /* Иконки в меню */
+    QMenu::icon {
+        margin-right: 12px;
+    }
+    
+    /* Стрелка для подменю */
+    QMenu::right-arrow {
+        image: url(:/icons/arrow-right.png);
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+    }</string>
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>Файл</string>
+     <string>&amp;Файл</string>
     </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="separator"/>
+    <addaction name="action_6"/>
+    <addaction name="action_7"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>&amp;Помощь</string>
+    </property>
+    <addaction name="action_3"/>
+    <addaction name="action_4"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>&amp;Вид</string>
+    </property>
+    <addaction name="action_8"/>
+    <addaction name="action_9"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>&amp;Правка</string>
+    </property>
+    <addaction name="action_10"/>
    </widget>
    <addaction name="menu"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_2"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>Создать новый файл</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Открыть файл</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>О &amp;программе</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>&amp;Знакомство</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>Сохранить &amp;файл</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>Сохранить файл &amp;как</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>&amp;Ввод формул</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>&amp;Математические функции</string>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="text">
+    <string>&amp;Отмена</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

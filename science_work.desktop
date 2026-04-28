@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Science Work
+Comment=My Qt Application
+Exec=science_work
+Icon=science_work
+Terminal=false
+Categories=Education;Science;

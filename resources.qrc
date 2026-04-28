@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/noroot.png</file>
+        <file>images/icon.png</file>
+        <file>images/Riemann.png</file>
+        <file>images/Riemann.ico</file>
+        <file>Riemann.ico</file>
+        <file>images/icon.ico</file>
+        <file>images/menu.png</file>
+    </qresource>
+</RCC>
