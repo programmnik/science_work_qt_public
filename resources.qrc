@@ -7,5 +7,10 @@
         <file>Riemann.ico</file>
         <file>images/icon.ico</file>
         <file>images/menu.png</file>
+        <file>images/open.png</file>
+        <file>images/view.png</file>
+        <file>images/create_new.png</file>
+        <file>images/settings.png</file>
+        <file>images/project.png</file>
     </qresource>
 </RCC>

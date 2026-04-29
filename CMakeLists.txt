@@ -34,10 +34,6 @@ set(PROJECT_FORMS
     mainwindow.ui
 )
 
-install(FILES "images/icon.png"
-        DESTINATION "share/icons/hicolor/256x256/apps"
-        RENAME "${PROJECT_NAME}.png")
-
 
 set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/app_icon.rc")
 
@@ -53,6 +49,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         plane.h plane.cpp
         constants.h
         sphere.h sphere.cpp
+        projectpanel.h projectpanel.cpp
         resources.qrc
         science_work.desktop
     )
@@ -112,7 +109,7 @@ if(${QT_VERSION_MAJOR} EQUAL 6)
 endif()
 
 # Установка иконки (она у вас уже есть, проверьте путь)
-install(FILES "images/icon.png"
+install(FILES "images/Riemann.png"
         DESTINATION "share/icons/hicolor/256x256/apps"
         RENAME "${PROJECT_NAME}.png")
 

@@ -127,6 +127,10 @@
     <addaction name="separator"/>
     <addaction name="action_6"/>
     <addaction name="action_7"/>
+    <addaction name="separator"/>
+    <addaction name="action_20"/>
+    <addaction name="separator"/>
+    <addaction name="action_21"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -141,24 +145,47 @@
     </property>
     <addaction name="action_8"/>
     <addaction name="action_9"/>
+    <addaction name="action_12"/>
    </widget>
    <widget class="QMenu" name="menu_4">
     <property name="title">
      <string>&amp;Правка</string>
     </property>
     <addaction name="action_10"/>
+    <addaction name="action_22"/>
+    <addaction name="separator"/>
+    <addaction name="action_24"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>&amp;Окно</string>
+    </property>
+    <addaction name="action_13"/>
+    <addaction name="separator"/>
+    <addaction name="action_14"/>
+    <addaction name="action_15"/>
+    <addaction name="action_16"/>
+    <addaction name="separator"/>
+    <addaction name="action_19"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_4"/>
    <addaction name="menu_3"/>
+   <addaction name="menu_5"/>
    <addaction name="menu_2"/>
   </widget>
   <action name="action">
+   <property name="icon">
+    <iconset theme="document-new"/>
+   </property>
    <property name="text">
     <string>Создать новый файл</string>
    </property>
   </action>
   <action name="action_2">
+   <property name="icon">
+    <iconset theme="document-open"/>
+   </property>
    <property name="text">
     <string>Открыть файл</string>
    </property>
@@ -174,11 +201,17 @@
    </property>
   </action>
   <action name="action_6">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
    <property name="text">
     <string>Сохранить &amp;файл</string>
    </property>
   </action>
   <action name="action_7">
+   <property name="icon">
+    <iconset theme="document-save-as"/>
+   </property>
    <property name="text">
     <string>Сохранить файл &amp;как</string>
    </property>
@@ -189,13 +222,90 @@
    </property>
   </action>
   <action name="action_9">
+   <property name="icon">
+    <iconset theme="accessories-calculator"/>
+   </property>
    <property name="text">
     <string>&amp;Математические функции</string>
    </property>
   </action>
   <action name="action_10">
+   <property name="icon">
+    <iconset theme="edit-undo"/>
+   </property>
    <property name="text">
     <string>&amp;Отмена</string>
+   </property>
+  </action>
+  <action name="action_12">
+   <property name="text">
+    <string>Базовые &amp;фигуры</string>
+   </property>
+  </action>
+  <action name="action_13">
+   <property name="icon">
+    <iconset theme="view-fullscreen"/>
+   </property>
+   <property name="text">
+    <string>&amp;Полный экран</string>
+   </property>
+   <property name="shortcut">
+    <string>F11</string>
+   </property>
+  </action>
+  <action name="action_14">
+   <property name="text">
+    <string>&amp;Показать/скрыть меню и панель</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="action_15">
+   <property name="text">
+    <string>Показать/скрыть &amp;меню</string>
+   </property>
+  </action>
+  <action name="action_16">
+   <property name="text">
+    <string>Показать/скрыть &amp;панель</string>
+   </property>
+  </action>
+  <action name="action_19">
+   <property name="text">
+    <string>Открыть в новом окне</string>
+   </property>
+  </action>
+  <action name="action_20">
+   <property name="icon">
+    <iconset theme="printer"/>
+   </property>
+   <property name="text">
+    <string>&amp;Печать...</string>
+   </property>
+  </action>
+  <action name="action_21">
+   <property name="icon">
+    <iconset theme="application-exit"/>
+   </property>
+   <property name="text">
+    <string>&amp;Выход</string>
+   </property>
+  </action>
+  <action name="action_22">
+   <property name="icon">
+    <iconset theme="edit-redo"/>
+   </property>
+   <property name="text">
+    <string>&amp;Повторить</string>
+   </property>
+  </action>
+  <action name="action_24">
+   <property name="icon">
+    <iconset theme="preferences-system"/>
+   </property>
+   <property name="text">
+    <string>&amp;Настройки</string>
    </property>
   </action>
  </widget>
