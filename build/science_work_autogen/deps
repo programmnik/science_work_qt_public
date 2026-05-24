@@ -15,6 +15,10 @@ science_work_autogen/timestamp: \
 	/home/user/science_work/plane.h \
 	/home/user/science_work/point.cpp \
 	/home/user/science_work/point.h \
+	/home/user/science_work/previewpanel.cpp \
+	/home/user/science_work/previewpanel.h \
+	/home/user/science_work/projectpanel.cpp \
+	/home/user/science_work/projectpanel.h \
 	/home/user/science_work/resources.qrc \
 	/home/user/science_work/sphere.cpp \
 	/home/user/science_work/sphere.h \
@@ -305,6 +309,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/gnu/stubs.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QPair \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
@@ -351,6 +356,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmargins.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmath.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmetacontainer.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
@@ -424,6 +430,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglfunctions.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpalette.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h \
@@ -434,6 +441,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
@@ -443,15 +451,43 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvector4d.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/QMediaPlayer \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qaudio.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qmediaenumdebug.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qmediaplayer.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qtmultimedia-config.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qtmultimediaexports.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qtmultimediaglobal.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/QVideoWidget \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qtmultimediawidgetsglobal.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qvideowidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/QOpenGLWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qopenglwidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QDockWidget \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStackedWidget \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolButton \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdockwidget.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstackedwidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbutton.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -538,6 +574,35 @@ science_work_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsTargets-none.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaAdditionalTargetInfo.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaConfig.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaConfigVersion.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaConfigVersionImpl.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaDependencies.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaPlugins.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaTargets-none.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaTargets.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6MultimediaVersionlessTargets.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6QGstreamerMediaPluginAdditionalTargetInfo.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6QGstreamerMediaPluginConfig.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6QGstreamerMediaPluginTargets-none.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Multimedia/Qt6QGstreamerMediaPluginTargets.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsAdditionalTargetInfo.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsConfig.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsConfigVersion.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsConfigVersionImpl.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsDependencies.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsTargets-none.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsTargets.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsVersionlessTargets.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkTargets-none.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake \

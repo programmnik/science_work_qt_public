@@ -235,3 +235,13 @@ void ProjectPanel::setupMathFunctions(){
     m_mathDock->setWidget(mathWidget);
     // addDockWidget(Qt::BottomDockWidgetArea, m_mathDock);
 }
+
+void ProjectPanel::showDocks(){
+    if (m_formulaDock) m_formulaDock->show();
+    if (m_mathDock) m_mathDock->show();
+}
+
+void ProjectPanel::hideDocks(){
+    if (m_formulaDock) m_formulaDock->hide();
+    if (m_mathDock) m_mathDock->hide();
+}

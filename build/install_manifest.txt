@@ -1,4 +1,0 @@
-/usr/local/share/icons/hicolor/256x256/apps/science_work.png
-/usr/local/bin/science_work
-/usr/local/share/icons/hicolor/256x256/apps/science_work.png
-/usr/local/share/applications/science_work.desktop

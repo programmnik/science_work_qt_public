@@ -9,10 +9,22 @@
 	"INPUTS" : 
 	[
 		"/home/user/science_work/Riemann.ico",
+		"/home/user/science_work/images/project-colored.png",
 		"/home/user/science_work/images/icon.ico",
 		"/home/user/science_work/images/noroot.png",
+		"/home/user/science_work/images/create_new.png",
 		"/home/user/science_work/images/Riemann.ico",
+		"/home/user/science_work/images/project.png",
+		"/home/user/science_work/images/open.png",
+		"/home/user/science_work/images/preview1.png",
+		"/home/user/science_work/images/settings.png",
 		"/home/user/science_work/images/Riemann.png",
+		"/home/user/science_work/images/menu.png",
+		"/home/user/science_work/images/preview-colored.png",
+		"/home/user/science_work/images/preview.png",
+		"/home/user/science_work/images/preview2.png",
+		"/home/user/science_work/images/menu-colored.png",
+		"/home/user/science_work/images/settings-colored.png",
 		"/home/user/science_work/images/icon.png"
 	],
 	"LOCK_FILE" : "/home/user/science_work/build/CMakeFiles/science_work_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",

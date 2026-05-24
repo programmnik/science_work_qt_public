@@ -79,10 +79,22 @@ science_work_autogen/timestamp: CMakeFiles/science_work.dir/compiler_depend.ts
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/resources.qrc
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/science_work_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/Riemann.ico
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/project-colored.png
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/icon.ico
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/noroot.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/create_new.png
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/Riemann.ico
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/project.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/open.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/preview1.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/settings.png
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/Riemann.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/menu.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/preview-colored.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/preview.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/preview2.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/menu-colored.png
+science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/settings-colored.png
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /home/user/science_work/images/icon.png
 science_work_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/science_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"
@@ -200,10 +212,38 @@ CMakeFiles/science_work.dir/sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/sphere.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/sphere.cpp -o CMakeFiles/science_work.dir/sphere.cpp.s
 
+CMakeFiles/science_work.dir/projectpanel.cpp.o: CMakeFiles/science_work.dir/flags.make
+CMakeFiles/science_work.dir/projectpanel.cpp.o: /home/user/science_work/projectpanel.cpp
+CMakeFiles/science_work.dir/projectpanel.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/science_work.dir/projectpanel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/projectpanel.cpp.o -MF CMakeFiles/science_work.dir/projectpanel.cpp.o.d -o CMakeFiles/science_work.dir/projectpanel.cpp.o -c /home/user/science_work/projectpanel.cpp
+
+CMakeFiles/science_work.dir/projectpanel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/projectpanel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/projectpanel.cpp > CMakeFiles/science_work.dir/projectpanel.cpp.i
+
+CMakeFiles/science_work.dir/projectpanel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/projectpanel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/projectpanel.cpp -o CMakeFiles/science_work.dir/projectpanel.cpp.s
+
+CMakeFiles/science_work.dir/previewpanel.cpp.o: CMakeFiles/science_work.dir/flags.make
+CMakeFiles/science_work.dir/previewpanel.cpp.o: /home/user/science_work/previewpanel.cpp
+CMakeFiles/science_work.dir/previewpanel.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/science_work.dir/previewpanel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/previewpanel.cpp.o -MF CMakeFiles/science_work.dir/previewpanel.cpp.o.d -o CMakeFiles/science_work.dir/previewpanel.cpp.o -c /home/user/science_work/previewpanel.cpp
+
+CMakeFiles/science_work.dir/previewpanel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/previewpanel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/previewpanel.cpp > CMakeFiles/science_work.dir/previewpanel.cpp.i
+
+CMakeFiles/science_work.dir/previewpanel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/previewpanel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/previewpanel.cpp -o CMakeFiles/science_work.dir/previewpanel.cpp.s
+
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: science_work_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/user/science_work/build/science_work_autogen/EWIEGA46WW/qrc_resources.cpp
 
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
@@ -224,6 +264,8 @@ science_work_OBJECTS = \
 "CMakeFiles/science_work.dir/cameracore.cpp.o" \
 "CMakeFiles/science_work.dir/plane.cpp.o" \
 "CMakeFiles/science_work.dir/sphere.cpp.o" \
+"CMakeFiles/science_work.dir/projectpanel.cpp.o" \
+"CMakeFiles/science_work.dir/previewpanel.cpp.o" \
 "CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 
 # External object files for target science_work
@@ -237,17 +279,22 @@ science_work: CMakeFiles/science_work.dir/point.cpp.o
 science_work: CMakeFiles/science_work.dir/cameracore.cpp.o
 science_work: CMakeFiles/science_work.dir/plane.cpp.o
 science_work: CMakeFiles/science_work.dir/sphere.cpp.o
+science_work: CMakeFiles/science_work.dir/projectpanel.cpp.o
+science_work: CMakeFiles/science_work.dir/previewpanel.cpp.o
 science_work: CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o
 science_work: CMakeFiles/science_work.dir/build.make
 science_work: /usr/lib/x86_64-linux-gnu/libQt6OpenGLWidgets.so.6.4.2
-science_work: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
+science_work: /usr/lib/x86_64-linux-gnu/libQt6MultimediaWidgets.so.6.4.2
 science_work: /usr/lib/x86_64-linux-gnu/libQt6OpenGL.so.6.4.2
+science_work: /usr/lib/x86_64-linux-gnu/libQt6Multimedia.so.6.4.2
+science_work: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
+science_work: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 science_work: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
 science_work: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 science_work: /usr/lib/x86_64-linux-gnu/libGLX.so
 science_work: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 science_work: CMakeFiles/science_work.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/science_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable science_work"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/science_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable science_work"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/science_work.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

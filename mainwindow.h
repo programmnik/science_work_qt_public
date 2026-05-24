@@ -4,8 +4,12 @@
 #include <QMainWindow>
 #include <QKeyEvent>
 #include <QStackedWidget>
+#include <QToolButton>
+#include <QList>
+#include <QPair>
 
 #include "projectpanel.h"
+#include "previewpanel.h"
 #include "GLWidget.h"
 
 QT_BEGIN_NAMESPACE
@@ -25,17 +29,34 @@ private slots:
 
     void on_action_14_triggered();
 
+    void on_action_15_triggered();
+
+    void on_action_16_triggered();
+
+    void on_action_21_triggered();
+
 private:
     Ui::MainWindow *ui;
     void keyPressEvent(QKeyEvent *event) override;
 
     void setupLeftTool();
+    void setActiveButton(QToolButton *activeBtn);
+    void onMenuClicked();
+    void onProjectClicked();
+    void onSettingsClicked();
+    void onPreviewClicked();
+    void onCreateClicked();
+    void onOpenClicked();
 
     QStackedWidget *m_centralStack;
-    ProjectPanel *m_projectPaneel;
-    GLWidget *m_glWidget;
+    ProjectPanel *m_projectPanel;
+    QWidget *m_settingsPanel;
+    PreviewPanel *m_previewPanel;
+    QWidget *m_menuPanel;
+    QList<QPair<QToolButton*, QString>> m_toolButtons;
 
-    bool m_hiddenPanels = false;
+    bool m_hiddenMenuBar = false;
+    bool m_hiddenLeftTool = false;
 };
 
 #endif // MAINWINDOW_H

@@ -8,9 +8,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Поиск Qt с компонентами для OpenGL
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Widgets OpenGL)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets OpenGL)
+# Поиск Qt с компонентами для OpenGL и Multimedia
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets)
 
 # Для Qt6 нужен дополнительный модуль OpenGLWidgets
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -22,20 +22,29 @@ set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp
     GLWidget.cpp
-    # app_icon.rc
+    point.cpp
+    cameracore.cpp
+    plane.cpp
+    sphere.cpp
+    projectpanel.cpp
+    previewpanel.cpp
 )
 
 set(PROJECT_HEADERS
     mainwindow.h
     GLWidget.h
+    point.h
+    cameracore.h
+    plane.h
+    constants.h
+    sphere.h
+    projectpanel.h
+    previewpanel.h
 )
 
 set(PROJECT_FORMS
     mainwindow.ui
 )
-
-
-set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/app_icon.rc")
 
 # Создание исполняемого файла
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -44,14 +53,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         ${PROJECT_HEADERS}
         ${PROJECT_FORMS}
-        point.h point.cpp
-        cameracore.h cameracore.cpp
-        plane.h plane.cpp
-        constants.h
-        sphere.h sphere.cpp
-        projectpanel.h projectpanel.cpp
         resources.qrc
-        science_work.desktop
     )
 else()
     add_executable(science_work
@@ -68,12 +70,16 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Qt${QT_VERSION_MAJOR}::Widgets
         Qt${QT_VERSION_MAJOR}::OpenGL
         Qt${QT_VERSION_MAJOR}::OpenGLWidgets
+        Qt${QT_VERSION_MAJOR}::Multimedia
+        Qt${QT_VERSION_MAJOR}::MultimediaWidgets
     )
 else()
     target_link_libraries(science_work PRIVATE
         Qt${QT_VERSION_MAJOR}::Core
         Qt${QT_VERSION_MAJOR}::Widgets
         Qt${QT_VERSION_MAJOR}::OpenGL
+        Qt${QT_VERSION_MAJOR}::Multimedia
+        Qt${QT_VERSION_MAJOR}::MultimediaWidgets
     )
 endif()
 
@@ -108,7 +114,7 @@ if(${QT_VERSION_MAJOR} EQUAL 6)
     qt_finalize_executable(science_work)
 endif()
 
-# Установка иконки (она у вас уже есть, проверьте путь)
+# Установка иконки
 install(FILES "images/Riemann.png"
         DESTINATION "share/icons/hicolor/256x256/apps"
         RENAME "${PROJECT_NAME}.png")
@@ -116,4 +122,3 @@ install(FILES "images/Riemann.png"
 # Установка .desktop файла
 install(FILES "science_work.desktop"
         DESTINATION "share/applications")
-

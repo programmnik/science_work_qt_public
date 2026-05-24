@@ -344,6 +344,54 @@ point.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/point.cpp.s
 .PHONY : point.cpp.s
 
+previewpanel.o: previewpanel.cpp.o
+.PHONY : previewpanel.o
+
+# target to build an object file
+previewpanel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/previewpanel.cpp.o
+.PHONY : previewpanel.cpp.o
+
+previewpanel.i: previewpanel.cpp.i
+.PHONY : previewpanel.i
+
+# target to preprocess a source file
+previewpanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/previewpanel.cpp.i
+.PHONY : previewpanel.cpp.i
+
+previewpanel.s: previewpanel.cpp.s
+.PHONY : previewpanel.s
+
+# target to generate assembly for a file
+previewpanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/previewpanel.cpp.s
+.PHONY : previewpanel.cpp.s
+
+projectpanel.o: projectpanel.cpp.o
+.PHONY : projectpanel.o
+
+# target to build an object file
+projectpanel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/projectpanel.cpp.o
+.PHONY : projectpanel.cpp.o
+
+projectpanel.i: projectpanel.cpp.i
+.PHONY : projectpanel.i
+
+# target to preprocess a source file
+projectpanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/projectpanel.cpp.i
+.PHONY : projectpanel.cpp.i
+
+projectpanel.s: projectpanel.cpp.s
+.PHONY : projectpanel.s
+
+# target to generate assembly for a file
+projectpanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/projectpanel.cpp.s
+.PHONY : projectpanel.cpp.s
+
 science_work_autogen/EWIEGA46WW/qrc_resources.o: science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o
 .PHONY : science_work_autogen/EWIEGA46WW/qrc_resources.o
 
@@ -449,6 +497,12 @@ help:
 	@echo "... point.o"
 	@echo "... point.i"
 	@echo "... point.s"
+	@echo "... previewpanel.o"
+	@echo "... previewpanel.i"
+	@echo "... previewpanel.s"
+	@echo "... projectpanel.o"
+	@echo "... projectpanel.i"
+	@echo "... projectpanel.s"
 	@echo "... science_work_autogen/EWIEGA46WW/qrc_resources.o"
 	@echo "... science_work_autogen/EWIEGA46WW/qrc_resources.i"
 	@echo "... science_work_autogen/EWIEGA46WW/qrc_resources.s"

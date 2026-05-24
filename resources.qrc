@@ -8,9 +8,17 @@
         <file>images/icon.ico</file>
         <file>images/menu.png</file>
         <file>images/open.png</file>
-        <file>images/view.png</file>
+        <file>images/preview.png</file>
         <file>images/create_new.png</file>
         <file>images/settings.png</file>
         <file>images/project.png</file>
+        <file>images/preview1.png</file>
+        <file>images/preview2.png</file>
+        <file>images/menu-colored.png</file>
+        <file>images/project-colored.png</file>
+        <file>images/settings-colored.png</file>
+        <file>images/preview-colored.png</file>
+        
+       
     </qresource>
 </RCC>

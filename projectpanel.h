@@ -12,6 +12,8 @@ class ProjectPanel : public QWidget
 public:
     explicit ProjectPanel(QMainWindow *mainWindow,QWidget *parent = nullptr);
     ~ProjectPanel();
+    void showDocks();
+    void hideDocks();
 
 private:
     void setupDocks();

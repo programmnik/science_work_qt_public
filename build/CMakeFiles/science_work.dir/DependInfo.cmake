@@ -15,6 +15,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/user/science_work/mainwindow.cpp" "CMakeFiles/science_work.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/science_work.dir/mainwindow.cpp.o.d"
   "/home/user/science_work/plane.cpp" "CMakeFiles/science_work.dir/plane.cpp.o" "gcc" "CMakeFiles/science_work.dir/plane.cpp.o.d"
   "/home/user/science_work/point.cpp" "CMakeFiles/science_work.dir/point.cpp.o" "gcc" "CMakeFiles/science_work.dir/point.cpp.o.d"
+  "/home/user/science_work/previewpanel.cpp" "CMakeFiles/science_work.dir/previewpanel.cpp.o" "gcc" "CMakeFiles/science_work.dir/previewpanel.cpp.o.d"
+  "/home/user/science_work/projectpanel.cpp" "CMakeFiles/science_work.dir/projectpanel.cpp.o" "gcc" "CMakeFiles/science_work.dir/projectpanel.cpp.o.d"
   "/home/user/science_work/build/science_work_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "/home/user/science_work/build/science_work_autogen/mocs_compilation.cpp" "CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o.d"
   "/home/user/science_work/sphere.cpp" "CMakeFiles/science_work.dir/sphere.cpp.o" "gcc" "CMakeFiles/science_work.dir/sphere.cpp.o.d"

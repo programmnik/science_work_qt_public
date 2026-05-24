@@ -2,8 +2,9 @@
 #include "ui_mainwindow.h"
 #include "constants.h"
 #include <QToolBar>
-#include <QToolButton>
 #include <QFile>
+#include <QLabel>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,10 +14,29 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_centralStack = new QStackedWidget(this);
 
-    m_projectPaneel = new ProjectPanel(this, m_centralStack);
-    m_centralStack->addWidget(m_projectPaneel);
+    m_projectPanel = new ProjectPanel(this, m_centralStack);
+    m_centralStack->addWidget(m_projectPanel);
+
+    m_previewPanel = new PreviewPanel(m_centralStack);
+    m_centralStack->addWidget(m_previewPanel);
 
     setCentralWidget(m_centralStack);
+
+    // Страница настроек (временно пустая)
+    m_settingsPanel = new QWidget();
+    m_settingsPanel->setStyleSheet("background-color: #1e2a2a;");
+    QLabel *settingsLabel = new QLabel("Настройки", m_settingsPanel);
+    settingsLabel->setAlignment(Qt::AlignCenter);
+    settingsLabel->setStyleSheet("color: white; font-size: 20px;");
+    m_centralStack->addWidget(m_settingsPanel);
+
+    // Страница меню (временно пустая)
+    m_menuPanel = new QWidget();
+    m_menuPanel->setStyleSheet("background-color: #2a2a1e;");
+    QLabel *menuLabel = new QLabel("Меню", m_menuPanel);
+    menuLabel->setAlignment(Qt::AlignCenter);
+    menuLabel->setStyleSheet("color: white; font-size: 20px;");
+    m_centralStack->addWidget(m_menuPanel);
 
     setupLeftTool();
 
@@ -48,12 +68,15 @@ void MainWindow::setupLeftTool(){
         }
     )");
 
-    auto createToolButton = [](const QString &iconName, const QString &label) -> QToolButton* {
+    auto createToolButton = [](const QString &iconName, const QString &label, bool checkable)
+        -> QToolButton*
+    {
         QToolButton *btn = new QToolButton;
         btn->setText(label);
         btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         btn->setMinimumHeight(40);
         btn->setMaximumWidth(90);
+        btn->setCheckable(checkable);
 
         if(!iconName.isEmpty() && QFile::exists(QString(":/images/%1.png").arg(iconName))){
             btn->setIcon(QIcon(QString(":/images/%1.png").arg(iconName)));
@@ -84,17 +107,34 @@ void MainWindow::setupLeftTool(){
             QToolButton::icon {
                 margin-top: 8px;
             }
+
+            QToolButton:checked {
+                background-color: #0d7377;
+                border-left: 3px solid #00ffcc;
+            }
         )");
 
         return btn;
     };
 
-    QToolButton *menuBtn = createToolButton("menu", "Меню");
-    QToolButton *projectBtn = createToolButton("project", "Проект");
-    QToolButton *settingsBtn = createToolButton("settings", "Настройки");
-    QToolButton *previewBtn = createToolButton("view", "Превью");
-    QToolButton *createBtn = createToolButton("create_new", "Создать");
-    QToolButton *openBtn = createToolButton("open", "Открыть");
+    QToolButton *menuBtn = createToolButton("menu", "Меню", true);
+    QToolButton *projectBtn = createToolButton("project", "Проект", true);
+    QToolButton *settingsBtn = createToolButton("settings", "Настройки", true);
+    QToolButton *previewBtn = createToolButton("preview", "Превью", true);
+    QToolButton *createBtn = createToolButton("create_new", "Создать", false);
+    QToolButton *openBtn = createToolButton("open", "Открыть", false);
+
+    m_toolButtons.append({menuBtn, "menu"});
+    m_toolButtons.append({projectBtn, "project"});
+    m_toolButtons.append({settingsBtn, "settings"});
+    m_toolButtons.append({previewBtn, "preview"});
+
+    connect(menuBtn, &QToolButton::clicked, this, &MainWindow::onMenuClicked);
+    connect(projectBtn, &QToolButton::clicked, this, &MainWindow::onProjectClicked);
+    connect(settingsBtn, &QToolButton::clicked, this, &MainWindow::onSettingsClicked);
+    connect(previewBtn, &QToolButton::clicked, this, &MainWindow::onPreviewClicked);
+    connect(createBtn, &QToolButton::clicked, this, &MainWindow::onCreateClicked);
+    connect(openBtn, &QToolButton::clicked, this, &MainWindow::onOpenClicked);
 
     leftToolBar->addWidget(menuBtn);
     leftToolBar->addWidget(projectBtn);
@@ -109,6 +149,59 @@ void MainWindow::setupLeftTool(){
     leftToolBar->addWidget(openBtn);
 
     addToolBar(Qt::LeftToolBarArea, leftToolBar);
+
+    setActiveButton(projectBtn);
+}
+
+void MainWindow::setActiveButton(QToolButton *activeBtn){
+    for (const QPair<QToolButton*, QString> &pair : m_toolButtons){
+        QToolButton* btn = pair.first;
+        QString iconImage = pair.second;
+        btn->setChecked(btn == activeBtn);
+        if(btn == activeBtn){
+            if (!iconImage.isEmpty() && QFile::exists(QString(":/images/%1-colored.png").arg(iconImage))){
+                btn->setIcon(QIcon(QString(":/images/%1-colored.png").arg(iconImage)));
+                btn->setIconSize(QSize(40, 40));
+            }
+        } else {
+            if (!iconImage.isEmpty() && QFile::exists(QString(":/images/%1.png").arg(iconImage))){
+                btn->setIcon(QIcon(QString(":/images/%1.png").arg(iconImage)));
+                btn->setIconSize(QSize(40, 40));
+            }
+        }
+    }
+}
+
+void MainWindow::onMenuClicked(){
+    setActiveButton(qobject_cast<QToolButton*>(sender()));
+    m_projectPanel->hideDocks();
+    m_centralStack->setCurrentWidget(m_menuPanel);
+}
+
+void MainWindow::onProjectClicked(){
+    setActiveButton(qobject_cast<QToolButton*>(sender()));
+    m_centralStack->setCurrentWidget(m_projectPanel);
+    m_projectPanel->showDocks();
+}
+
+void MainWindow::onSettingsClicked(){
+    setActiveButton(qobject_cast<QToolButton*>(sender()));
+    m_projectPanel->hideDocks();
+    m_centralStack->setCurrentWidget(m_settingsPanel);
+}
+
+void MainWindow::onPreviewClicked(){
+    setActiveButton(qobject_cast<QToolButton*>(sender()));
+    m_projectPanel->hideDocks();
+    m_centralStack->setCurrentWidget(m_previewPanel);
+}
+
+void MainWindow::onCreateClicked(){
+
+}
+
+void MainWindow::onOpenClicked(){
+
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
@@ -123,16 +216,23 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     }
 
     if (event->key() == Qt::Key_F3) {
-        m_hiddenPanels = !m_hiddenPanels;
+        if(m_hiddenMenuBar != m_hiddenLeftTool){
+            m_hiddenMenuBar = false;
+            m_hiddenLeftTool = false;
+        }
+        else{
+            m_hiddenMenuBar = !m_hiddenMenuBar;
+            m_hiddenLeftTool = !m_hiddenLeftTool;
+        }
 
         if (menuBar()) {
-            menuBar()->setVisible(!m_hiddenPanels);
+            menuBar()->setVisible(!m_hiddenMenuBar);
         }
 
         QList<QToolBar*> toolBars = findChildren<QToolBar*>();
         for (QToolBar *toolBar : toolBars) {
             if (toolBar->allowedAreas() == Qt::LeftToolBarArea) {
-                toolBar->setVisible(!m_hiddenPanels);
+                toolBar->setVisible(!m_hiddenLeftTool);
             }
         }
     }
@@ -158,17 +258,58 @@ void MainWindow::on_action_13_triggered()
 
 void MainWindow::on_action_14_triggered()
 {
-    m_hiddenPanels = !m_hiddenPanels;
+    if(m_hiddenMenuBar != m_hiddenLeftTool){
+        m_hiddenMenuBar = false;
+        m_hiddenLeftTool = false;
+    }
+    else{
+        m_hiddenMenuBar = !m_hiddenMenuBar;
+        m_hiddenLeftTool = !m_hiddenLeftTool;
+    }
 
     if (menuBar()) {
-        menuBar()->setVisible(!m_hiddenPanels);
+        menuBar()->setVisible(!m_hiddenMenuBar);
     }
 
     QList<QToolBar*> toolBars = findChildren<QToolBar*>();
     for (QToolBar *toolBar : toolBars) {
         if (toolBar->allowedAreas() == Qt::LeftToolBarArea) {
-            toolBar->setVisible(!m_hiddenPanels);
+            toolBar->setVisible(!m_hiddenLeftTool);
         }
+    }
+}
+
+
+void MainWindow::on_action_15_triggered()
+{
+    m_hiddenMenuBar = !m_hiddenMenuBar;
+
+    if (menuBar()) {
+        menuBar()->setVisible(!m_hiddenMenuBar);
+    }
+}
+
+
+void MainWindow::on_action_16_triggered()
+{
+    m_hiddenLeftTool = !m_hiddenLeftTool;
+
+    QList<QToolBar*> toolBars = findChildren<QToolBar*>();
+    for (QToolBar *toolBar : toolBars) {
+        if (toolBar->allowedAreas() == Qt::LeftToolBarArea) {
+            toolBar->setVisible(!m_hiddenLeftTool);
+        }
+    }
+}
+
+
+void MainWindow::on_action_21_triggered()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Выход", "Вы действительно хотите выйти?"
+                                  , QMessageBox::Yes | QMessageBox::No);
+    if(reply == QMessageBox::Yes){
+        QCoreApplication::quit();
     }
 }
 

@@ -7,7 +7,7 @@ namespace ScreenConfig {
     const int DEFAULT_WIDTH = 1200;
     const int DEFAULT_HEIGHT = 800;
     const int FPS = 60;
-    const QString WINDOW_TITLE = "комплексная плоскость → сфера Римана";
+    const QString WINDOW_TITLE = "СТЕРЕОМЕТРИКС";
 }
 
 namespace CameraConfig {
