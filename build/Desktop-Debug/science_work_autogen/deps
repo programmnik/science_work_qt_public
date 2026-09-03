@@ -1,28 +1,29 @@
 science_work_autogen/timestamp: \
 	/home/user/science_work/CMakeLists.txt \
-	/home/user/science_work/GLWidget.cpp \
 	/home/user/science_work/GLWidget.h \
 	/home/user/science_work/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/user/science_work/build/Desktop-Debug/CMakeFiles/3.28.3/CMakeCXXCompiler.cmake \
 	/home/user/science_work/build/Desktop-Debug/CMakeFiles/3.28.3/CMakeSystem.cmake \
 	/home/user/science_work/build/Desktop-Debug/science_work_autogen/moc_predefs.h \
-	/home/user/science_work/cameracore.cpp \
-	/home/user/science_work/cameracore.h \
-	/home/user/science_work/constants.h \
 	/home/user/science_work/main.cpp \
 	/home/user/science_work/mainwindow.cpp \
 	/home/user/science_work/mainwindow.h \
-	/home/user/science_work/plane.cpp \
-	/home/user/science_work/plane.h \
-	/home/user/science_work/point.cpp \
-	/home/user/science_work/point.h \
 	/home/user/science_work/previewpanel.cpp \
 	/home/user/science_work/previewpanel.h \
 	/home/user/science_work/projectpanel.cpp \
 	/home/user/science_work/projectpanel.h \
 	/home/user/science_work/resources.qrc \
-	/home/user/science_work/sphere.cpp \
-	/home/user/science_work/sphere.h \
+	/home/user/science_work/src/core/cameracore.cpp \
+	/home/user/science_work/src/core/cameracore.h \
+	/home/user/science_work/src/core/constants.h \
+	/home/user/science_work/src/core/plane.cpp \
+	/home/user/science_work/src/core/plane.h \
+	/home/user/science_work/src/core/point.cpp \
+	/home/user/science_work/src/core/point.h \
+	/home/user/science_work/src/core/sphere.cpp \
+	/home/user/science_work/src/core/sphere.h \
+	/home/user/science_work/src/opengl/GLWidget.cpp \
+	/home/user/science_work/src/opengl/GLWidget.h \
 	/usr/include/GL/gl.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/errno-base.h \
@@ -49,6 +50,8 @@ science_work_autogen/timestamp: \
 	/usr/include/c++/13/bits/c++0x_warning.h \
 	/usr/include/c++/13/bits/char_traits.h \
 	/usr/include/c++/13/bits/charconv.h \
+	/usr/include/c++/13/bits/chrono.h \
+	/usr/include/c++/13/bits/codecvt.h \
 	/usr/include/c++/13/bits/concept_check.h \
 	/usr/include/c++/13/bits/cpp_type_traits.h \
 	/usr/include/c++/13/bits/cxxabi_forced.h \
@@ -58,6 +61,10 @@ science_work_autogen/timestamp: \
 	/usr/include/c++/13/bits/exception.h \
 	/usr/include/c++/13/bits/exception_defines.h \
 	/usr/include/c++/13/bits/exception_ptr.h \
+	/usr/include/c++/13/bits/fs_dir.h \
+	/usr/include/c++/13/bits/fs_fwd.h \
+	/usr/include/c++/13/bits/fs_ops.h \
+	/usr/include/c++/13/bits/fs_path.h \
 	/usr/include/c++/13/bits/functexcept.h \
 	/usr/include/c++/13/bits/functional_hash.h \
 	/usr/include/c++/13/bits/hash_bytes.h \
@@ -67,8 +74,11 @@ science_work_autogen/timestamp: \
 	/usr/include/c++/13/bits/list.tcc \
 	/usr/include/c++/13/bits/locale_classes.h \
 	/usr/include/c++/13/bits/locale_classes.tcc \
+	/usr/include/c++/13/bits/locale_conv.h \
 	/usr/include/c++/13/bits/locale_facets.h \
 	/usr/include/c++/13/bits/locale_facets.tcc \
+	/usr/include/c++/13/bits/locale_facets_nonio.h \
+	/usr/include/c++/13/bits/locale_facets_nonio.tcc \
 	/usr/include/c++/13/bits/localefwd.h \
 	/usr/include/c++/13/bits/max_size_type.h \
 	/usr/include/c++/13/bits/memory_resource.h \
@@ -85,6 +95,7 @@ science_work_autogen/timestamp: \
 	/usr/include/c++/13/bits/postypes.h \
 	/usr/include/c++/13/bits/predefined_ops.h \
 	/usr/include/c++/13/bits/ptr_traits.h \
+	/usr/include/c++/13/bits/quoted_string.h \
 	/usr/include/c++/13/bits/range_access.h \
 	/usr/include/c++/13/bits/ranges_algo.h \
 	/usr/include/c++/13/bits/ranges_algobase.h \
@@ -138,12 +149,14 @@ science_work_autogen/timestamp: \
 	/usr/include/c++/13/climits \
 	/usr/include/c++/13/clocale \
 	/usr/include/c++/13/cmath \
+	/usr/include/c++/13/codecvt \
 	/usr/include/c++/13/compare \
 	/usr/include/c++/13/concepts \
 	/usr/include/c++/13/cstddef \
 	/usr/include/c++/13/cstdint \
 	/usr/include/c++/13/cstdlib \
 	/usr/include/c++/13/cstring \
+	/usr/include/c++/13/ctime \
 	/usr/include/c++/13/cwchar \
 	/usr/include/c++/13/cwctype \
 	/usr/include/c++/13/debug/assertions.h \
@@ -156,13 +169,16 @@ science_work_autogen/timestamp: \
 	/usr/include/c++/13/ext/numeric_traits.h \
 	/usr/include/c++/13/ext/string_conversions.h \
 	/usr/include/c++/13/ext/type_traits.h \
+	/usr/include/c++/13/filesystem \
 	/usr/include/c++/13/functional \
 	/usr/include/c++/13/initializer_list \
+	/usr/include/c++/13/iomanip \
 	/usr/include/c++/13/ios \
 	/usr/include/c++/13/iosfwd \
 	/usr/include/c++/13/iterator \
 	/usr/include/c++/13/limits \
 	/usr/include/c++/13/list \
+	/usr/include/c++/13/locale \
 	/usr/include/c++/13/map \
 	/usr/include/c++/13/memory \
 	/usr/include/c++/13/new \
@@ -174,10 +190,12 @@ science_work_autogen/timestamp: \
 	/usr/include/c++/13/pstl/glue_algorithm_defs.h \
 	/usr/include/c++/13/pstl/glue_memory_defs.h \
 	/usr/include/c++/13/pstl/glue_numeric_defs.h \
+	/usr/include/c++/13/ratio \
 	/usr/include/c++/13/stdexcept \
 	/usr/include/c++/13/streambuf \
 	/usr/include/c++/13/string \
 	/usr/include/c++/13/string_view \
+	/usr/include/c++/13/system_error \
 	/usr/include/c++/13/tr1/bessel_function.tcc \
 	/usr/include/c++/13/tr1/beta_function.tcc \
 	/usr/include/c++/13/tr1/ell_integral.tcc \
@@ -203,6 +221,7 @@ science_work_autogen/timestamp: \
 	/usr/include/features-time64.h \
 	/usr/include/features.h \
 	/usr/include/inttypes.h \
+	/usr/include/libintl.h \
 	/usr/include/limits.h \
 	/usr/include/linux/errno.h \
 	/usr/include/linux/limits.h \
@@ -305,15 +324,25 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+	/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+	/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QDir \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QEasingCurve \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QFileInfo \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QPair \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QPropertyAnimation \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractanimation.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
@@ -321,11 +350,13 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qbasicatomic.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qbindingstorage.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearraylist.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayview.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcompare.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcompare_impl.h \
@@ -336,8 +367,15 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qeasingcurve.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
@@ -350,6 +388,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qlogging.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmargins.h \
@@ -368,6 +407,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qpoint.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qprocessordetection.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qpropertyanimation.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qrect.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qrefcount.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qscopedpointer.h \
@@ -394,18 +434,25 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qtcore-config.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qtypeinfo.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qutf8stringview.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvariantanimation.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QEnterEvent \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/QKeyEvent \
-	/usr/include/x86_64-linux-gnu/qt6/QtGui/QMatrix4x4 \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/QOpenGLFunctions \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QPainterPath \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QQuaternion \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/QSurfaceFormat \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QVector3D \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
@@ -421,13 +468,13 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qimage.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qkeysequence.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtGui/qmatrix4x4.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qopengl.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglext.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglfunctions.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpalette.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h \
@@ -450,8 +497,10 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvector4d.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/QAudioOutput \
 	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/QMediaPlayer \
 	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qaudio.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qaudiooutput.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qmediaenumdebug.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qmediaplayer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qtmultimedia-config.h \
@@ -466,14 +515,19 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QDockWidget \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QScrollArea \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSlider \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStackedWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolButton \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdockwidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
@@ -483,7 +537,9 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollarea.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qslider.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstackedwidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbutton.h \
@@ -641,23 +697,80 @@ science_work_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-none.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in \
+	/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp \
 	/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeSystem.cmake.in \
 	/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake \
+	/usr/share/cmake-3.28/Modules/CMakeUnixFindMake.cmake \
 	/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake \
 	/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake \
 	/usr/share/cmake-3.28/Modules/CheckIncludeFileCXX.cmake \
 	/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	/usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
 	/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Clang-FindBinUtils.cmake \
 	/usr/share/cmake-3.28/Modules/Compiler/Clang.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	/usr/share/cmake-3.28/Modules/FeatureSummary.cmake \
 	/usr/share/cmake-3.28/Modules/FindOpenGL.cmake \
 	/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake \
@@ -669,8 +782,10 @@ science_work_autogen/timestamp: \
 	/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake \
 	/usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake \
 	/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake \
+	/usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake \
 	/usr/share/cmake-3.28/Modules/MacroAddFileDependencies.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-Clang-CXX.cmake \
+	/usr/share/cmake-3.28/Modules/Platform/Linux-Determine-CXX.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake \

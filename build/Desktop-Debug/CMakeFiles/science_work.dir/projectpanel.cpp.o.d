@@ -404,15 +404,17 @@ CMakeFiles/science_work.dir/projectpanel.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \
-  /home/user/science_work/cameracore.h /home/user/science_work/point.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMatrix4x4 \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qmatrix4x4.h \
+  /home/user/science_work/src/core/cameracore.h \
+  /home/user/science_work/src/core/point.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QQuaternion \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qquaternion.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qgenericmatrix.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector3d.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector4d.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qquaternion.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qgenericmatrix.h \
-  /home/user/science_work/plane.h /home/user/science_work/sphere.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QVector3D \
+  /home/user/science_work/src/core/plane.h \
+  /home/user/science_work/src/core/sphere.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \

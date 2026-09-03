@@ -433,20 +433,23 @@ CMakeFiles/science_work.dir/mainwindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglfunctions.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \
-  /home/user/science_work/cameracore.h /home/user/science_work/point.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMatrix4x4 \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qmatrix4x4.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector3d.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector4d.h \
+  /home/user/science_work/src/core/cameracore.h \
+  /home/user/science_work/src/core/point.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QQuaternion \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qquaternion.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qgenericmatrix.h \
-  /home/user/science_work/plane.h /home/user/science_work/sphere.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector3d.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector4d.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QVector3D \
+  /home/user/science_work/src/core/plane.h \
+  /home/user/science_work/src/core/sphere.h \
   /home/user/science_work/previewpanel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
@@ -461,31 +464,36 @@ CMakeFiles/science_work.dir/mainwindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qmediaenumdebug.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qaudio.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/QAudioOutput \
+  /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qaudiooutput.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/QVideoWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qvideowidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qtmultimediawidgetsglobal.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/include/ui_mainwindow.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QAction \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputmethod.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenu \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenu.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenuBar \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenubar.h \
-  /home/user/science_work/constants.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolBar \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbar.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QPropertyAnimation \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qpropertyanimation.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariantanimation.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractanimation.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qeasingcurve.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QEasingCurve \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QScrollArea \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QEnterEvent \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPainterPath \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSlider \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qslider.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFileInfo \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/filesystem \
@@ -520,6 +528,33 @@ CMakeFiles/science_work.dir/mainwindow.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/codecvt \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/fs_dir.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/fs_ops.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QDir \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
+  /home/user/science_work/src/opengl/GLWidget.h \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/include/ui_mainwindow.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QAction \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputmethod.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenu \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenu.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenuBar \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenubar.h \
+  /home/user/science_work/src/core/constants.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolBar \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbar.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMessageBox \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmessagebox.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialog.h

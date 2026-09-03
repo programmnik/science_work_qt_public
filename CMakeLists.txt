@@ -8,6 +8,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Поиск OpenGL
+find_package(OpenGL REQUIRED)
+
 # Поиск Qt с компонентами для OpenGL и Multimedia
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets)
@@ -21,23 +24,12 @@ endif()
 set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp
-    GLWidget.cpp
-    point.cpp
-    cameracore.cpp
-    plane.cpp
-    sphere.cpp
     projectpanel.cpp
     previewpanel.cpp
 )
 
 set(PROJECT_HEADERS
     mainwindow.h
-    GLWidget.h
-    point.h
-    cameracore.h
-    plane.h
-    constants.h
-    sphere.h
     projectpanel.h
     previewpanel.h
 )
@@ -54,6 +46,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_HEADERS}
         ${PROJECT_FORMS}
         resources.qrc
+        src/core/point.h src/core/point.cpp
+        src/core/plane.h src/core/plane.cpp
+        src/core/sphere.h src/core/sphere.cpp
+        src/core/cameracore.h src/core/cameracore.cpp
+        src/core/constants.h
+        src/opengl/GLWidget.h src/opengl/GLWidget.cpp
     )
 else()
     add_executable(science_work
@@ -72,6 +70,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Qt${QT_VERSION_MAJOR}::OpenGLWidgets
         Qt${QT_VERSION_MAJOR}::Multimedia
         Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+        ${OPENGL_LIBRARIES}           # OpenGL библиотеки
+        ${OPENGL_glu_LIBRARY}         # GLU библиотека (если нужна)
     )
 else()
     target_link_libraries(science_work PRIVATE
@@ -80,12 +80,32 @@ else()
         Qt${QT_VERSION_MAJOR}::OpenGL
         Qt${QT_VERSION_MAJOR}::Multimedia
         Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+        ${OPENGL_LIBRARIES}           # OpenGL библиотеки
+        ${OPENGL_glu_LIBRARY}         # GLU библиотека (если нужна)
     )
 endif()
 
 # Для Windows добавляем OpenGL
-if(WIN32 AND ${QT_VERSION_MAJOR} LESS 6)
+if(WIN32)
     target_link_libraries(science_work PRIVATE opengl32)
+    if(${QT_VERSION_MAJOR} LESS 6)
+        target_link_libraries(science_work PRIVATE glu32)  # Для Windows GLU
+    endif()
+endif()
+
+# Для Linux добавляем GLU
+if(UNIX AND NOT APPLE)
+    target_link_libraries(science_work PRIVATE GLU)  # или libGLU.so
+endif()
+
+# Для macOS
+if(APPLE)
+    find_library(OPENGL_LIBRARY OpenGL)
+    find_library(GLUT_LIBRARY GLUT)
+    target_link_libraries(science_work PRIVATE
+        ${OPENGL_LIBRARY}
+        ${GLUT_LIBRARY}
+    )
 endif()
 
 # Настройки для macOS и iOS

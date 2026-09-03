@@ -3,10 +3,10 @@
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
-#include "cameracore.h"
-#include "plane.h"
-#include "point.h"
-#include "sphere.h"
+#include "src/core/cameracore.h"
+#include "src/core/plane.h"
+#include "src/core/point.h"
+#include "src/core/sphere.h"
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {

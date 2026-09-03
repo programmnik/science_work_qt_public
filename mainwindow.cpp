@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "constants.h"
+#include "src/core/constants.h"
 #include <QToolBar>
 #include <QFile>
 #include <QLabel>
@@ -206,15 +206,17 @@ void MainWindow::onOpenClicked(){
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
+    // Обработка F11 для полноэкранного режима (без панели задач)
     if (event->key() == Qt::Key_F11) {
         if (isFullScreen()) {
-            showNormal();
+            showMaximized();  // Возвращаемся в развернутое окно
         } else {
-            centralWidget()->setFocus();
-            showFullScreen();
+            showFullScreen(); // Переходим в полноэкранный режим
         }
+        return;  // Важно: не вызывать QMainWindow::keyPressEvent дальше
     }
 
+    // Обработка F3 для скрытия панелей
     if (event->key() == Qt::Key_F3) {
         if(m_hiddenMenuBar != m_hiddenLeftTool){
             m_hiddenMenuBar = false;
@@ -235,8 +237,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
                 toolBar->setVisible(!m_hiddenLeftTool);
             }
         }
+        return;
     }
 
+    // Передаем остальные события дальше
     QMainWindow::keyPressEvent(event);
 }
 

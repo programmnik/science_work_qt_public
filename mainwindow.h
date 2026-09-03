@@ -10,7 +10,7 @@
 
 #include "projectpanel.h"
 #include "previewpanel.h"
-#include "GLWidget.h"
+#include "src/opengl/GLWidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

@@ -1,10 +1,10 @@
 /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/moc_projectpanel.cpp: /home/user/science_work/projectpanel.h \
   /home/user/science_work/build/Desktop-Debug/science_work_autogen/moc_predefs.h \
   /home/user/science_work/GLWidget.h \
-  /home/user/science_work/cameracore.h \
-  /home/user/science_work/plane.h \
-  /home/user/science_work/point.h \
-  /home/user/science_work/sphere.h \
+  /home/user/science_work/src/core/cameracore.h \
+  /home/user/science_work/src/core/plane.h \
+  /home/user/science_work/src/core/point.h \
+  /home/user/science_work/src/core/sphere.h \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -372,9 +372,10 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMatrix4x4 \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QOpenGLFunctions \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QQuaternion \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QSurfaceFormat \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QVector3D \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
@@ -387,7 +388,6 @@
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qicon.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qimage.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qkeysequence.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qmatrix4x4.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopengl.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \

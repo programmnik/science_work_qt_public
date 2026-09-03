@@ -6,5 +6,5 @@ CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIME
 
 CXX_INCLUDES = -I/home/user/science_work/build/Desktop-Debug/science_work_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtOpenGL -isystem /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimedia -isystem /usr/include/x86_64-linux-gnu/qt6/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets
 
-CXX_FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fcolor-diagnostics -fPIC
+CXX_FLAGS = -g -std=gnu++17 -fcolor-diagnostics -fPIC
 

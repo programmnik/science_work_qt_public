@@ -1,6 +1,6 @@
 CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /home/user/science_work/build/Desktop-Debug/science_work_autogen/mocs_compilation.cpp \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/moc_GLWidget.cpp \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/moc_mainwindow.cpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/memoryfwd.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -135,10 +135,11 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward/auto_ptr.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/pstl/glue_memory_defs.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/pstl/execution_defs.h \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../GLWidget.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/QOpenGLWidget \
-  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qopenglwidget.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../mainwindow.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/cstddef \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/utility \
@@ -208,15 +209,11 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/tr1/riemann_zeta.tcc \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
@@ -391,32 +388,6 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QSurfaceFormat \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglext.h \
-  /usr/lib/llvm-18/lib/clang/18/include/inttypes.h \
-  /usr/include/inttypes.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QOpenGLFunctions \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglfunctions.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../cameracore.h \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../point.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMatrix4x4 \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qmatrix4x4.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector3d.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector4d.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qquaternion.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qgenericmatrix.h \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../plane.h \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../sphere.h \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/moc_mainwindow.cpp \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../mainwindow.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QKeyEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
@@ -426,6 +397,7 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qeventpoint.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector2d.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
@@ -435,6 +407,7 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStackedWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstackedwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
@@ -443,14 +416,41 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QPair \
   /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../projectpanel.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QDockWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdockwidget.h \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../GLWidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/QOpenGLWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qopenglwidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QSurfaceFormat \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopengl.h /usr/include/GL/gl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglext.h \
+  /usr/lib/llvm-18/lib/clang/18/include/inttypes.h \
+  /usr/include/inttypes.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QOpenGLFunctions \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglfunctions.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../src/core/cameracore.h \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../src/core/point.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QQuaternion \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qquaternion.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qgenericmatrix.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector3d.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector4d.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QVector3D \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../src/core/plane.h \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../src/core/sphere.h \
   /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../previewpanel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
@@ -465,10 +465,77 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qmediaenumdebug.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qaudio.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/QAudioOutput \
+  /usr/include/x86_64-linux-gnu/qt6/QtMultimedia/qaudiooutput.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/QVideoWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qvideowidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qtmultimediawidgetsglobal.h \
   /usr/include/x86_64-linux-gnu/qt6/QtMultimediaWidgets/qtmultimediawidgetsexports.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QPropertyAnimation \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qpropertyanimation.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariantanimation.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractanimation.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qeasingcurve.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QEasingCurve \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QScrollArea \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QEnterEvent \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPainterPath \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSlider \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qslider.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFileInfo \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/filesystem \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/fs_fwd.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/fs_path.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/locale \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_facets.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_facets.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_facets_nonio.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/codecvt.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_conv.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/iomanip \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/quoted_string.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/sstream \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/istream \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ios \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_ios.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_ios.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ostream \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/ostream.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/istream.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/sstream.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/codecvt \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/fs_dir.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/fs_ops.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QDir \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/../../../../src/opengl/GLWidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \

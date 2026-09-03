@@ -200,54 +200,6 @@ science_work_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work_autogen.dir/build.make CMakeFiles/science_work_autogen.dir/build
 .PHONY : science_work_autogen/fast
 
-GLWidget.o: GLWidget.cpp.o
-.PHONY : GLWidget.o
-
-# target to build an object file
-GLWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/GLWidget.cpp.o
-.PHONY : GLWidget.cpp.o
-
-GLWidget.i: GLWidget.cpp.i
-.PHONY : GLWidget.i
-
-# target to preprocess a source file
-GLWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/GLWidget.cpp.i
-.PHONY : GLWidget.cpp.i
-
-GLWidget.s: GLWidget.cpp.s
-.PHONY : GLWidget.s
-
-# target to generate assembly for a file
-GLWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/GLWidget.cpp.s
-.PHONY : GLWidget.cpp.s
-
-cameracore.o: cameracore.cpp.o
-.PHONY : cameracore.o
-
-# target to build an object file
-cameracore.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/cameracore.cpp.o
-.PHONY : cameracore.cpp.o
-
-cameracore.i: cameracore.cpp.i
-.PHONY : cameracore.i
-
-# target to preprocess a source file
-cameracore.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/cameracore.cpp.i
-.PHONY : cameracore.cpp.i
-
-cameracore.s: cameracore.cpp.s
-.PHONY : cameracore.s
-
-# target to generate assembly for a file
-cameracore.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/cameracore.cpp.s
-.PHONY : cameracore.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -295,54 +247,6 @@ mainwindow.s: mainwindow.cpp.s
 mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
-
-plane.o: plane.cpp.o
-.PHONY : plane.o
-
-# target to build an object file
-plane.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/plane.cpp.o
-.PHONY : plane.cpp.o
-
-plane.i: plane.cpp.i
-.PHONY : plane.i
-
-# target to preprocess a source file
-plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/plane.cpp.i
-.PHONY : plane.cpp.i
-
-plane.s: plane.cpp.s
-.PHONY : plane.s
-
-# target to generate assembly for a file
-plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/plane.cpp.s
-.PHONY : plane.cpp.s
-
-point.o: point.cpp.o
-.PHONY : point.o
-
-# target to build an object file
-point.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/point.cpp.o
-.PHONY : point.cpp.o
-
-point.i: point.cpp.i
-.PHONY : point.i
-
-# target to preprocess a source file
-point.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/point.cpp.i
-.PHONY : point.cpp.i
-
-point.s: point.cpp.s
-.PHONY : point.s
-
-# target to generate assembly for a file
-point.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/point.cpp.s
-.PHONY : point.cpp.s
 
 previewpanel.o: previewpanel.cpp.o
 .PHONY : previewpanel.o
@@ -440,29 +344,125 @@ science_work_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.s
 .PHONY : science_work_autogen/mocs_compilation.cpp.s
 
-sphere.o: sphere.cpp.o
-.PHONY : sphere.o
+src/core/cameracore.o: src/core/cameracore.cpp.o
+.PHONY : src/core/cameracore.o
 
 # target to build an object file
-sphere.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/sphere.cpp.o
-.PHONY : sphere.cpp.o
+src/core/cameracore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/cameracore.cpp.o
+.PHONY : src/core/cameracore.cpp.o
 
-sphere.i: sphere.cpp.i
-.PHONY : sphere.i
+src/core/cameracore.i: src/core/cameracore.cpp.i
+.PHONY : src/core/cameracore.i
 
 # target to preprocess a source file
-sphere.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/sphere.cpp.i
-.PHONY : sphere.cpp.i
+src/core/cameracore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/cameracore.cpp.i
+.PHONY : src/core/cameracore.cpp.i
 
-sphere.s: sphere.cpp.s
-.PHONY : sphere.s
+src/core/cameracore.s: src/core/cameracore.cpp.s
+.PHONY : src/core/cameracore.s
 
 # target to generate assembly for a file
-sphere.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/sphere.cpp.s
-.PHONY : sphere.cpp.s
+src/core/cameracore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/cameracore.cpp.s
+.PHONY : src/core/cameracore.cpp.s
+
+src/core/plane.o: src/core/plane.cpp.o
+.PHONY : src/core/plane.o
+
+# target to build an object file
+src/core/plane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/plane.cpp.o
+.PHONY : src/core/plane.cpp.o
+
+src/core/plane.i: src/core/plane.cpp.i
+.PHONY : src/core/plane.i
+
+# target to preprocess a source file
+src/core/plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/plane.cpp.i
+.PHONY : src/core/plane.cpp.i
+
+src/core/plane.s: src/core/plane.cpp.s
+.PHONY : src/core/plane.s
+
+# target to generate assembly for a file
+src/core/plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/plane.cpp.s
+.PHONY : src/core/plane.cpp.s
+
+src/core/point.o: src/core/point.cpp.o
+.PHONY : src/core/point.o
+
+# target to build an object file
+src/core/point.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/point.cpp.o
+.PHONY : src/core/point.cpp.o
+
+src/core/point.i: src/core/point.cpp.i
+.PHONY : src/core/point.i
+
+# target to preprocess a source file
+src/core/point.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/point.cpp.i
+.PHONY : src/core/point.cpp.i
+
+src/core/point.s: src/core/point.cpp.s
+.PHONY : src/core/point.s
+
+# target to generate assembly for a file
+src/core/point.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/point.cpp.s
+.PHONY : src/core/point.cpp.s
+
+src/core/sphere.o: src/core/sphere.cpp.o
+.PHONY : src/core/sphere.o
+
+# target to build an object file
+src/core/sphere.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/sphere.cpp.o
+.PHONY : src/core/sphere.cpp.o
+
+src/core/sphere.i: src/core/sphere.cpp.i
+.PHONY : src/core/sphere.i
+
+# target to preprocess a source file
+src/core/sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/sphere.cpp.i
+.PHONY : src/core/sphere.cpp.i
+
+src/core/sphere.s: src/core/sphere.cpp.s
+.PHONY : src/core/sphere.s
+
+# target to generate assembly for a file
+src/core/sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/sphere.cpp.s
+.PHONY : src/core/sphere.cpp.s
+
+src/opengl/GLWidget.o: src/opengl/GLWidget.cpp.o
+.PHONY : src/opengl/GLWidget.o
+
+# target to build an object file
+src/opengl/GLWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o
+.PHONY : src/opengl/GLWidget.cpp.o
+
+src/opengl/GLWidget.i: src/opengl/GLWidget.cpp.i
+.PHONY : src/opengl/GLWidget.i
+
+# target to preprocess a source file
+src/opengl/GLWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.i
+.PHONY : src/opengl/GLWidget.cpp.i
+
+src/opengl/GLWidget.s: src/opengl/GLWidget.cpp.s
+.PHONY : src/opengl/GLWidget.s
+
+# target to generate assembly for a file
+src/opengl/GLWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.s
+.PHONY : src/opengl/GLWidget.cpp.s
 
 # Help Target
 help:
@@ -479,24 +479,12 @@ help:
 	@echo "... science_work_autogen"
 	@echo "... science_work_autogen_timestamp_deps"
 	@echo "... science_work"
-	@echo "... GLWidget.o"
-	@echo "... GLWidget.i"
-	@echo "... GLWidget.s"
-	@echo "... cameracore.o"
-	@echo "... cameracore.i"
-	@echo "... cameracore.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
-	@echo "... plane.o"
-	@echo "... plane.i"
-	@echo "... plane.s"
-	@echo "... point.o"
-	@echo "... point.i"
-	@echo "... point.s"
 	@echo "... previewpanel.o"
 	@echo "... previewpanel.i"
 	@echo "... previewpanel.s"
@@ -509,9 +497,21 @@ help:
 	@echo "... science_work_autogen/mocs_compilation.o"
 	@echo "... science_work_autogen/mocs_compilation.i"
 	@echo "... science_work_autogen/mocs_compilation.s"
-	@echo "... sphere.o"
-	@echo "... sphere.i"
-	@echo "... sphere.s"
+	@echo "... src/core/cameracore.o"
+	@echo "... src/core/cameracore.i"
+	@echo "... src/core/cameracore.s"
+	@echo "... src/core/plane.o"
+	@echo "... src/core/plane.i"
+	@echo "... src/core/plane.s"
+	@echo "... src/core/point.o"
+	@echo "... src/core/point.i"
+	@echo "... src/core/point.s"
+	@echo "... src/core/sphere.o"
+	@echo "... src/core/sphere.i"
+	@echo "... src/core/sphere.s"
+	@echo "... src/opengl/GLWidget.o"
+	@echo "... src/opengl/GLWidget.i"
+	@echo "... src/opengl/GLWidget.s"
 .PHONY : help
 
 

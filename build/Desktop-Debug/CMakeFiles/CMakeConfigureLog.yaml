@@ -7,7 +7,7 @@ events:
       - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Linux - 6.17.0-22-generic - x86_64
+      The system is: Linux - 7.0.0-28-generic - x86_64
   -
     kind: "message-v1"
     backtrace:
@@ -18,7 +18,7 @@ events:
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: /usr/bin/clang++-18 
-      Build flags: -DQT_QML_DEBUG
+      Build flags: 
       Id flags:  
       
       The output was:
@@ -39,24 +39,24 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn"
-      binary: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn"
+      source: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K"
+      binary: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
-      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn'
+        Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_aca24/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_aca24.dir/build.make CMakeFiles/cmTC_aca24.dir/build
-        gmake[1]: Entering directory '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn'
-        Building CXX object CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/clang++-18   -DQT_QML_DEBUG  -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8cbf2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8cbf2.dir/build.make CMakeFiles/cmTC_8cbf2.dir/build
+        gmake[1]: Entering directory '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K'
+        Building CXX object CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++-18   -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Ubuntu clang version 18.1.3 (1ubuntu1)
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -66,7 +66,7 @@ events:
         Candidate multilib: .;@m64
         Selected multilib: .;@m64
          (in-process)
-         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn -v -fcoverage-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D QT_QML_DEBUG -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fcolor-diagnostics -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+         "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K -v -fcoverage-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fcolor-diagnostics -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu
         ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
         ignoring nonexistent directory "/include"
@@ -80,9 +80,9 @@ events:
          /usr/include/x86_64-linux-gnu
          /usr/include
         End of search list.
-        Linking CXX executable cmTC_aca24
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aca24.dir/link.txt --verbose=1
-        /usr/bin/clang++-18 -DQT_QML_DEBUG   -v CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_aca24 
+        Linking CXX executable cmTC_8cbf2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cbf2.dir/link.txt --verbose=1
+        /usr/bin/clang++-18  -v CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8cbf2 
         Ubuntu clang version 18.1.3 (1ubuntu1)
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -91,8 +91,8 @@ events:
         Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/13
         Candidate multilib: .;@m64
         Selected multilib: .;@m64
-         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_aca24 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o
-        gmake[1]: Leaving directory '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn'
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8cbf2 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        gmake[1]: Leaving directory '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K'
         
       exitCode: 0
   -
@@ -132,13 +132,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn']
+        ignore line: [Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_aca24/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_aca24.dir/build.make CMakeFiles/cmTC_aca24.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn']
-        ignore line: [Building CXX object CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/clang++-18   -DQT_QML_DEBUG  -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8cbf2/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_8cbf2.dir/build.make CMakeFiles/cmTC_8cbf2.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K']
+        ignore line: [Building CXX object CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++-18   -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -150,7 +150,7 @@ events:
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
         ignore line: [ (in-process)]
-        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn -v -fcoverage-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-SLcMVn -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D QT_QML_DEBUG -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fcolor-diagnostics -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/usr/lib/llvm-18/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K -v -fcoverage-compilation-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-nmj77K -resource-dir /usr/lib/llvm-18/lib/clang/18 -dependency-file CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward -internal-isystem /usr/lib/llvm-18/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fcolor-diagnostics -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 18.1.3 based upon LLVM 18.1.3 default target x86_64-pc-linux-gnu]
         ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
         ignore line: [ignoring nonexistent directory "/include"]
@@ -164,9 +164,9 @@ events:
         ignore line: [ /usr/include/x86_64-linux-gnu]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_aca24]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aca24.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/clang++-18 -DQT_QML_DEBUG   -v CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_aca24 ]
+        ignore line: [Linking CXX executable cmTC_8cbf2]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cbf2.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/clang++-18  -v CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8cbf2 ]
         ignore line: [Ubuntu clang version 18.1.3 (1ubuntu1)]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -177,7 +177,7 @@ events:
         ignore line: [@m64]
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
-        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_aca24 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8cbf2 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
           arg [/usr/bin/ld] ==> ignore
           arg [-zrelro] ==> ignore
           arg [--hash-style=gnu] ==> ignore
@@ -189,7 +189,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_aca24] ==> ignore
+          arg [cmTC_8cbf2] ==> ignore
           arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
           arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
           arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -201,7 +201,7 @@ events:
           arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
-          arg [CMakeFiles/cmTC_aca24.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_8cbf2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -238,15 +238,15 @@ events:
       - "/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicDependencyHelpers.cmake:33 (find_dependency)"
       - "/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Dependencies.cmake:24 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake:122 (include)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:15 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-G6Jrza"
-      binary: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-G6Jrza"
+      source: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-lJZi7A"
+      binary: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-lJZi7A"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
-      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/Qt6;/usr/lib/x86_64-linux-gnu/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/x86_64-linux-gnu/cmake/Qt6/3rdparty/kwin"
@@ -254,17 +254,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-G6Jrza'
+        Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-lJZi7A'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f0c37/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f0c37.dir/build.make CMakeFiles/cmTC_f0c37.dir/build
-        gmake[1]: вход в каталог «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-G6Jrza»
-        Building CXX object CMakeFiles/cmTC_f0c37.dir/src.cxx.o
-        /usr/bin/clang++-18 -DCMAKE_HAVE_LIBC_PTHREAD  -DQT_QML_DEBUG  -std=gnu++17 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_f0c37.dir/src.cxx.o -MF CMakeFiles/cmTC_f0c37.dir/src.cxx.o.d -o CMakeFiles/cmTC_f0c37.dir/src.cxx.o -c /home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-G6Jrza/src.cxx
-        Linking CXX executable cmTC_f0c37
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0c37.dir/link.txt --verbose=1
-        /usr/bin/clang++-18 -DQT_QML_DEBUG  CMakeFiles/cmTC_f0c37.dir/src.cxx.o -o cmTC_f0c37 
-        gmake[1]: выход из каталога «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-G6Jrza»
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b48a8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b48a8.dir/build.make CMakeFiles/cmTC_b48a8.dir/build
+        gmake[1]: вход в каталог «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-lJZi7A»
+        Building CXX object CMakeFiles/cmTC_b48a8.dir/src.cxx.o
+        /usr/bin/clang++-18 -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_b48a8.dir/src.cxx.o -MF CMakeFiles/cmTC_b48a8.dir/src.cxx.o.d -o CMakeFiles/cmTC_b48a8.dir/src.cxx.o -c /home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-lJZi7A/src.cxx
+        Linking CXX executable cmTC_b48a8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b48a8.dir/link.txt --verbose=1
+        /usr/bin/clang++-18 CMakeFiles/cmTC_b48a8.dir/src.cxx.o -o cmTC_b48a8 
+        gmake[1]: выход из каталога «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-lJZi7A»
         
       exitCode: 0
   -
@@ -278,15 +278,15 @@ events:
       - "/usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreDependencies.cmake:30 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreConfig.cmake:50 (include)"
       - "/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake:167 (find_package)"
-      - "CMakeLists.txt:13 (find_package)"
+      - "CMakeLists.txt:16 (find_package)"
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-aSuEBr"
-      binary: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-aSuEBr"
+      source: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-rMEG0S"
+      binary: "/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-rMEG0S"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-18"
-      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/Qt6;/usr/lib/x86_64-linux-gnu/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/x86_64-linux-gnu/cmake/Qt6/3rdparty/kwin;/usr/lib/x86_64-linux-gnu/cmake/Qt6;/usr/lib/x86_64-linux-gnu/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/x86_64-linux-gnu/cmake/Qt6/3rdparty/kwin"
@@ -294,17 +294,17 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-aSuEBr'
+        Change Dir: '/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-rMEG0S'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_56df1/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_56df1.dir/build.make CMakeFiles/cmTC_56df1.dir/build
-        gmake[1]: вход в каталог «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-aSuEBr»
-        Building CXX object CMakeFiles/cmTC_56df1.dir/src.cxx.o
-        /usr/bin/clang++-18 -DHAVE_STDATOMIC  -DQT_QML_DEBUG  -std=gnu++17 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_56df1.dir/src.cxx.o -MF CMakeFiles/cmTC_56df1.dir/src.cxx.o.d -o CMakeFiles/cmTC_56df1.dir/src.cxx.o -c /home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-aSuEBr/src.cxx
-        Linking CXX executable cmTC_56df1
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_56df1.dir/link.txt --verbose=1
-        /usr/bin/clang++-18 -DQT_QML_DEBUG  CMakeFiles/cmTC_56df1.dir/src.cxx.o -o cmTC_56df1 
-        gmake[1]: выход из каталога «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-aSuEBr»
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9df65/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9df65.dir/build.make CMakeFiles/cmTC_9df65.dir/build
+        gmake[1]: вход в каталог «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-rMEG0S»
+        Building CXX object CMakeFiles/cmTC_9df65.dir/src.cxx.o
+        /usr/bin/clang++-18 -DHAVE_STDATOMIC  -std=gnu++17 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_9df65.dir/src.cxx.o -MF CMakeFiles/cmTC_9df65.dir/src.cxx.o.d -o CMakeFiles/cmTC_9df65.dir/src.cxx.o -c /home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-rMEG0S/src.cxx
+        Linking CXX executable cmTC_9df65
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9df65.dir/link.txt --verbose=1
+        /usr/bin/clang++-18 CMakeFiles/cmTC_9df65.dir/src.cxx.o -o cmTC_9df65 
+        gmake[1]: выход из каталога «/home/user/science_work/build/Desktop-Debug/CMakeFiles/CMakeScratch/TryCompile-rMEG0S»
         
       exitCode: 0
 ...
