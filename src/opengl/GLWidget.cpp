@@ -8,16 +8,7 @@
 GLWidget::GLWidget(QWidget *parent)
     : QOpenGLWidget(parent)
     , zoom(1.0f)
-    , m_frameCount(0)
-    , m_currentFPS(0.0f)
-    , m_speedMultiplier(1.0f)
-    , m_skippedFrames(0)
-    , m_accumulatedRotX(0.0f)
-    , m_accumulatedRotY(0.0f)
-    , m_accumulatedMoveForward(0.0f)
-    , m_accumulatedMoveRight(0.0f)
-    , m_accumulatedMoveUp(0.0f)
-    , m_hasAccumulatedInput(false)
+    , m_fpsController(nullptr)
 {
     cameraPoint = new Point(CameraConfig::DEFAULT_X,
                             CameraConfig::DEFAULT_Y,
@@ -35,23 +26,30 @@ GLWidget::GLWidget(QWidget *parent)
     setFocusPolicy(Qt::StrongFocus);
     setMouseTracking(true);
 
-    // Настройка таймера обновления с лямбдой
-    m_updateTimer = new QTimer(this);
-    connect(m_updateTimer, &QTimer::timeout, this, [this]() {
-        updateLoop();
+    // Создаем FPS контроллер на куче
+    m_fpsController = new FPSController(this);
+    m_fpsController->setUpdateCallback([this]() {
+        onUpdate();
     });
-    m_updateTimer->start(1000 / FPSConfig::TARGET_FPS);
-
-    m_frameTimer.start();
+    m_fpsController->setMoveSpeed(CameraConfig::MOVE_SPEED);
+    m_fpsController->setRotationSpeed(CameraConfig::ROTATION_SPEED);
+    m_fpsController->setMaxSpeedMultiplier(5.0f);
+    m_fpsController->setSpeedMultiplierStep(0.1f);
+    m_fpsController->start();
 }
 
 GLWidget::~GLWidget()
 {
-    delete plane;
-    delete camera;
+    if (m_fpsController) {
+        m_fpsController->stop();
+        delete m_fpsController;
+        m_fpsController = nullptr;
+    }
+
     delete cameraPoint;
+    delete camera;
+    delete plane;
     delete sphere;
-    delete m_updateTimer;
 }
 
 void GLWidget::initializeGL()
@@ -64,97 +62,35 @@ void GLWidget::initializeGL()
     glEnable(GL_DEPTH_TEST);
 }
 
-void GLWidget::updateLoop()
+void GLWidget::onUpdate()
 {
-    updateFPS();
+    if (!m_fpsController) return;
 
-    // Проверяем, нужно ли пропустить кадр
-    static int frameSkipCounter = 0;
-    float targetFrameTime = FPSConfig::UPDATE_INTERVAL_MS;
-    float elapsed = m_frameTimer.elapsed();
+    // Получаем накопленный ввод от контроллера
+    float rotX = m_fpsController->getAccumulatedRotX();
+    float rotY = m_fpsController->getAccumulatedRotY();
+    float moveForward = m_fpsController->getAccumulatedMoveForward();
+    float moveRight = m_fpsController->getAccumulatedMoveRight();
+    float moveUp = m_fpsController->getAccumulatedMoveUp();
+    float speedMult = m_fpsController->getSpeedMultiplier();
 
-    // Если прошло слишком мало времени, пропускаем кадр
-    if (elapsed < targetFrameTime / 2.0f && m_frameCount > 0) {
-        frameSkipCounter++;
-        if (frameSkipCounter < FPSConfig::MAX_FRAME_SKIP) {
-            // Пропускаем отрисовку, но накапливаем ввод
-            if (m_hasAccumulatedInput) {
-                // Увеличиваем множитель скорости
-                m_speedMultiplier = std::min(
-                    m_speedMultiplier + FPSConfig::SPEED_MULTIPLIER_STEP,
-                    FPSConfig::MAX_SPEED_MULTIPLIER
-                    );
-            }
-            m_skippedFrames++;
-            return;
-        }
-    }
-    frameSkipCounter = 0;
-
-    // Если есть накопленный ввод, обрабатываем его с множителем
-    if (m_hasAccumulatedInput) {
-        processAccumulatedInput();
-        m_hasAccumulatedInput = false;
-        // Сбрасываем множитель скорости
-        m_speedMultiplier = 1.0f;
+    // Применяем ввод с ускорением
+    if (rotX != 0.0f || rotY != 0.0f) {
+        camera->rotate(rotX * speedMult, rotY * speedMult, 0);
     }
 
-    // Отрисовка
-    update();
-
-    // Сброс счетчика пропущенных кадров
-    m_skippedFrames = 0;
-    m_frameTimer.restart();
-}
-
-void GLWidget::processAccumulatedInput()
-{
-    // Применяем накопленные движения с учетом множителя скорости
-    float speedMult = m_speedMultiplier;
-
-    // Вращение
-    if (m_accumulatedRotX != 0.0f || m_accumulatedRotY != 0.0f) {
-        camera->rotate(m_accumulatedRotX * speedMult,
-                       m_accumulatedRotY * speedMult,
-                       0);
+    if (moveForward != 0.0f || moveRight != 0.0f || moveUp != 0.0f) {
+        camera->move(moveForward * speedMult,
+                     moveRight * speedMult,
+                     moveUp * speedMult);
     }
 
-    // Движение
-    if (m_accumulatedMoveForward != 0.0f ||
-        m_accumulatedMoveRight != 0.0f ||
-        m_accumulatedMoveUp != 0.0f) {
-        camera->move(m_accumulatedMoveForward * speedMult,
-                     m_accumulatedMoveRight * speedMult,
-                     m_accumulatedMoveUp * speedMult);
-    }
+    // Очищаем накопленный ввод
+    m_fpsController->clearAllInput();
 
-    // Сбрасываем накопления
-    m_accumulatedRotX = 0.0f;
-    m_accumulatedRotY = 0.0f;
-    m_accumulatedMoveForward = 0.0f;
-    m_accumulatedMoveRight = 0.0f;
-    m_accumulatedMoveUp = 0.0f;
-}
-
-void GLWidget::updateFPS()
-{
-    m_frameCount++;
-
-    static QElapsedTimer fpsTimer;
-    static int fpsFrameCount = 0;
-
-    if (fpsFrameCount == 0) {
-        fpsTimer.start();
-    }
-
-    fpsFrameCount++;
-
-    if (fpsTimer.elapsed() >= 1000) {
-        m_currentFPS = fpsFrameCount * 1000.0f / fpsTimer.elapsed();
-        fpsFrameCount = 0;
-
-        // Отладочный вывод (можно убрать)
-        // qDebug() << "FPS:" << m_currentFPS << "Skipped:" << m_skippedFrames << "Speed:" << m_speedMultiplier;
+    // Если нужно рисовать - обновляем
+    if (m_fpsController->shouldRender()) {
+        update();
     }
 }
 
@@ -206,11 +142,9 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event)
         float rotX = delta.y() * MouseConfig::SENSITIVITY;
         float rotY = delta.x() * MouseConfig::SENSITIVITY;
 
-        // Накопливаем вращение
-        m_accumulatedRotX += rotX;
-        m_accumulatedRotY += rotY;
-        m_hasAccumulatedInput = true;
-
+        if (m_fpsController) {
+            m_fpsController->addRotation(rotX, rotY, 0);
+        }
         lastMousePos = event->pos();
     }
 }
@@ -225,58 +159,36 @@ void GLWidget::wheelEvent(QWheelEvent *event)
 
 void GLWidget::keyPressEvent(QKeyEvent *event)
 {
-    float move_speed = CameraConfig::MOVE_SPEED;
-    float rotation_speed = CameraConfig::ROTATION_SPEED;
+    if (!m_fpsController) return;
 
-    bool hasInput = false;
+    // Передаем состояние клавиш в контроллер для удержания
+    m_fpsController->setKeyState(event->key(), true);
+
+    // Для мгновенного отклика добавляем одно нажатие
+    float rotSpeed = CameraConfig::ROTATION_SPEED;
+    float moveSpeed = CameraConfig::MOVE_SPEED;
 
     switch (event->key()) {
-    case Qt::Key_W:
-        m_accumulatedMoveForward -= move_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_S:
-        m_accumulatedMoveForward += move_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_A:
-        m_accumulatedMoveRight -= move_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_D:
-        m_accumulatedMoveRight += move_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_Q:
-        m_accumulatedMoveUp += move_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_Z:
-        m_accumulatedMoveUp -= move_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_Left:
-        m_accumulatedRotY -= rotation_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_Right:
-        m_accumulatedRotY += rotation_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_Up:
-        m_accumulatedRotX -= rotation_speed;
-        hasInput = true;
-        break;
-    case Qt::Key_Down:
-        m_accumulatedRotX += rotation_speed;
-        hasInput = true;
-        break;
+    case Qt::Key_Left:  m_fpsController->addRotation(0, -rotSpeed, 0); break;
+    case Qt::Key_Right: m_fpsController->addRotation(0, rotSpeed, 0); break;
+    case Qt::Key_Up:    m_fpsController->addRotation(-rotSpeed, 0, 0); break;
+    case Qt::Key_Down:  m_fpsController->addRotation(rotSpeed, 0, 0); break;
+    case Qt::Key_W:     m_fpsController->addMovement(-moveSpeed, 0, 0); break;
+    case Qt::Key_S:     m_fpsController->addMovement(moveSpeed, 0, 0); break;
+    case Qt::Key_A:     m_fpsController->addMovement(0, -moveSpeed, 0); break;
+    case Qt::Key_D:     m_fpsController->addMovement(0, moveSpeed, 0); break;
+    case Qt::Key_Q:     m_fpsController->addMovement(0, 0, moveSpeed); break;
+    case Qt::Key_Z:     m_fpsController->addMovement(0, 0, -moveSpeed); break;
     default:
         QOpenGLWidget::keyPressEvent(event);
         return;
     }
+}
 
-    if (hasInput) {
-        m_hasAccumulatedInput = true;
+void GLWidget::keyReleaseEvent(QKeyEvent *event)
+{
+    if (m_fpsController) {
+        m_fpsController->setKeyState(event->key(), false);
     }
+    QOpenGLWidget::keyReleaseEvent(event);
 }

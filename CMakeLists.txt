@@ -52,6 +52,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/core/cameracore.h src/core/cameracore.cpp
         src/core/constants.h
         src/opengl/GLWidget.h src/opengl/GLWidget.cpp
+        src/core/fpscontroller.h src/core/fpscontroller.cpp
+        src/core/spherepoint.h src/core/spherepoint.cpp
+
     )
 else()
     add_executable(science_work

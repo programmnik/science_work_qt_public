@@ -541,4 +541,8 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
   /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/moc_previewpanel.cpp \
-  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/moc_projectpanel.cpp
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/moc_projectpanel.cpp \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/PRMOGMWJPH/moc_fpscontroller.cpp \
+  /home/user/science_work/build/Desktop-Debug/science_work_autogen/PRMOGMWJPH/../../../../src/core/fpscontroller.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h

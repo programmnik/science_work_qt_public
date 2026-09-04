@@ -2,3 +2,4 @@
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_previewpanel.cpp"
 #include "EWIEGA46WW/moc_projectpanel.cpp"
+#include "PRMOGMWJPH/moc_fpscontroller.cpp"

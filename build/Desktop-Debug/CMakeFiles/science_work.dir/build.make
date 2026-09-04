@@ -104,155 +104,183 @@ CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: CMakeFi
 CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: science_work_autogen/mocs_compilation.cpp
 CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o -MF CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o -c /home/user/science_work/build/Desktop-Debug/science_work_autogen/mocs_compilation.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o -MF CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.o -c /home/user/science_work/build/Desktop-Debug/science_work_autogen/mocs_compilation.cpp
 
 CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/build/Desktop-Debug/science_work_autogen/mocs_compilation.cpp > CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/build/Desktop-Debug/science_work_autogen/mocs_compilation.cpp > CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/build/Desktop-Debug/science_work_autogen/mocs_compilation.cpp -o CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/build/Desktop-Debug/science_work_autogen/mocs_compilation.cpp -o CMakeFiles/science_work.dir/science_work_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/science_work.dir/main.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/main.cpp.o: /home/user/science_work/main.cpp
 CMakeFiles/science_work.dir/main.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/science_work.dir/main.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/main.cpp.o -MF CMakeFiles/science_work.dir/main.cpp.o.d -o CMakeFiles/science_work.dir/main.cpp.o -c /home/user/science_work/main.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/main.cpp.o -MF CMakeFiles/science_work.dir/main.cpp.o.d -o CMakeFiles/science_work.dir/main.cpp.o -c /home/user/science_work/main.cpp
 
 CMakeFiles/science_work.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/main.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/main.cpp > CMakeFiles/science_work.dir/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/main.cpp > CMakeFiles/science_work.dir/main.cpp.i
 
 CMakeFiles/science_work.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/main.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/main.cpp -o CMakeFiles/science_work.dir/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/main.cpp -o CMakeFiles/science_work.dir/main.cpp.s
 
 CMakeFiles/science_work.dir/mainwindow.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/mainwindow.cpp.o: /home/user/science_work/mainwindow.cpp
 CMakeFiles/science_work.dir/mainwindow.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/science_work.dir/mainwindow.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/mainwindow.cpp.o -MF CMakeFiles/science_work.dir/mainwindow.cpp.o.d -o CMakeFiles/science_work.dir/mainwindow.cpp.o -c /home/user/science_work/mainwindow.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/mainwindow.cpp.o -MF CMakeFiles/science_work.dir/mainwindow.cpp.o.d -o CMakeFiles/science_work.dir/mainwindow.cpp.o -c /home/user/science_work/mainwindow.cpp
 
 CMakeFiles/science_work.dir/mainwindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/mainwindow.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/mainwindow.cpp > CMakeFiles/science_work.dir/mainwindow.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/mainwindow.cpp > CMakeFiles/science_work.dir/mainwindow.cpp.i
 
 CMakeFiles/science_work.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/mainwindow.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/mainwindow.cpp -o CMakeFiles/science_work.dir/mainwindow.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/mainwindow.cpp -o CMakeFiles/science_work.dir/mainwindow.cpp.s
 
 CMakeFiles/science_work.dir/projectpanel.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/projectpanel.cpp.o: /home/user/science_work/projectpanel.cpp
 CMakeFiles/science_work.dir/projectpanel.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/science_work.dir/projectpanel.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/projectpanel.cpp.o -MF CMakeFiles/science_work.dir/projectpanel.cpp.o.d -o CMakeFiles/science_work.dir/projectpanel.cpp.o -c /home/user/science_work/projectpanel.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/projectpanel.cpp.o -MF CMakeFiles/science_work.dir/projectpanel.cpp.o.d -o CMakeFiles/science_work.dir/projectpanel.cpp.o -c /home/user/science_work/projectpanel.cpp
 
 CMakeFiles/science_work.dir/projectpanel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/projectpanel.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/projectpanel.cpp > CMakeFiles/science_work.dir/projectpanel.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/projectpanel.cpp > CMakeFiles/science_work.dir/projectpanel.cpp.i
 
 CMakeFiles/science_work.dir/projectpanel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/projectpanel.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/projectpanel.cpp -o CMakeFiles/science_work.dir/projectpanel.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/projectpanel.cpp -o CMakeFiles/science_work.dir/projectpanel.cpp.s
 
 CMakeFiles/science_work.dir/previewpanel.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/previewpanel.cpp.o: /home/user/science_work/previewpanel.cpp
 CMakeFiles/science_work.dir/previewpanel.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/science_work.dir/previewpanel.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/previewpanel.cpp.o -MF CMakeFiles/science_work.dir/previewpanel.cpp.o.d -o CMakeFiles/science_work.dir/previewpanel.cpp.o -c /home/user/science_work/previewpanel.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/previewpanel.cpp.o -MF CMakeFiles/science_work.dir/previewpanel.cpp.o.d -o CMakeFiles/science_work.dir/previewpanel.cpp.o -c /home/user/science_work/previewpanel.cpp
 
 CMakeFiles/science_work.dir/previewpanel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/previewpanel.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/previewpanel.cpp > CMakeFiles/science_work.dir/previewpanel.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/previewpanel.cpp > CMakeFiles/science_work.dir/previewpanel.cpp.i
 
 CMakeFiles/science_work.dir/previewpanel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/previewpanel.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/previewpanel.cpp -o CMakeFiles/science_work.dir/previewpanel.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/previewpanel.cpp -o CMakeFiles/science_work.dir/previewpanel.cpp.s
 
 CMakeFiles/science_work.dir/src/core/point.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/src/core/point.cpp.o: /home/user/science_work/src/core/point.cpp
 CMakeFiles/science_work.dir/src/core/point.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/science_work.dir/src/core/point.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/point.cpp.o -MF CMakeFiles/science_work.dir/src/core/point.cpp.o.d -o CMakeFiles/science_work.dir/src/core/point.cpp.o -c /home/user/science_work/src/core/point.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/point.cpp.o -MF CMakeFiles/science_work.dir/src/core/point.cpp.o.d -o CMakeFiles/science_work.dir/src/core/point.cpp.o -c /home/user/science_work/src/core/point.cpp
 
 CMakeFiles/science_work.dir/src/core/point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/core/point.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/point.cpp > CMakeFiles/science_work.dir/src/core/point.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/point.cpp > CMakeFiles/science_work.dir/src/core/point.cpp.i
 
 CMakeFiles/science_work.dir/src/core/point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/point.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/point.cpp -o CMakeFiles/science_work.dir/src/core/point.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/point.cpp -o CMakeFiles/science_work.dir/src/core/point.cpp.s
 
 CMakeFiles/science_work.dir/src/core/plane.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/src/core/plane.cpp.o: /home/user/science_work/src/core/plane.cpp
 CMakeFiles/science_work.dir/src/core/plane.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/science_work.dir/src/core/plane.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/plane.cpp.o -MF CMakeFiles/science_work.dir/src/core/plane.cpp.o.d -o CMakeFiles/science_work.dir/src/core/plane.cpp.o -c /home/user/science_work/src/core/plane.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/plane.cpp.o -MF CMakeFiles/science_work.dir/src/core/plane.cpp.o.d -o CMakeFiles/science_work.dir/src/core/plane.cpp.o -c /home/user/science_work/src/core/plane.cpp
 
 CMakeFiles/science_work.dir/src/core/plane.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/core/plane.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/plane.cpp > CMakeFiles/science_work.dir/src/core/plane.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/plane.cpp > CMakeFiles/science_work.dir/src/core/plane.cpp.i
 
 CMakeFiles/science_work.dir/src/core/plane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/plane.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/plane.cpp -o CMakeFiles/science_work.dir/src/core/plane.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/plane.cpp -o CMakeFiles/science_work.dir/src/core/plane.cpp.s
 
 CMakeFiles/science_work.dir/src/core/sphere.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/src/core/sphere.cpp.o: /home/user/science_work/src/core/sphere.cpp
 CMakeFiles/science_work.dir/src/core/sphere.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/science_work.dir/src/core/sphere.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/sphere.cpp.o -MF CMakeFiles/science_work.dir/src/core/sphere.cpp.o.d -o CMakeFiles/science_work.dir/src/core/sphere.cpp.o -c /home/user/science_work/src/core/sphere.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/sphere.cpp.o -MF CMakeFiles/science_work.dir/src/core/sphere.cpp.o.d -o CMakeFiles/science_work.dir/src/core/sphere.cpp.o -c /home/user/science_work/src/core/sphere.cpp
 
 CMakeFiles/science_work.dir/src/core/sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/core/sphere.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/sphere.cpp > CMakeFiles/science_work.dir/src/core/sphere.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/sphere.cpp > CMakeFiles/science_work.dir/src/core/sphere.cpp.i
 
 CMakeFiles/science_work.dir/src/core/sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/sphere.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/sphere.cpp -o CMakeFiles/science_work.dir/src/core/sphere.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/sphere.cpp -o CMakeFiles/science_work.dir/src/core/sphere.cpp.s
 
 CMakeFiles/science_work.dir/src/core/cameracore.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/src/core/cameracore.cpp.o: /home/user/science_work/src/core/cameracore.cpp
 CMakeFiles/science_work.dir/src/core/cameracore.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/science_work.dir/src/core/cameracore.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/cameracore.cpp.o -MF CMakeFiles/science_work.dir/src/core/cameracore.cpp.o.d -o CMakeFiles/science_work.dir/src/core/cameracore.cpp.o -c /home/user/science_work/src/core/cameracore.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/cameracore.cpp.o -MF CMakeFiles/science_work.dir/src/core/cameracore.cpp.o.d -o CMakeFiles/science_work.dir/src/core/cameracore.cpp.o -c /home/user/science_work/src/core/cameracore.cpp
 
 CMakeFiles/science_work.dir/src/core/cameracore.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/core/cameracore.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/cameracore.cpp > CMakeFiles/science_work.dir/src/core/cameracore.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/cameracore.cpp > CMakeFiles/science_work.dir/src/core/cameracore.cpp.i
 
 CMakeFiles/science_work.dir/src/core/cameracore.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/cameracore.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/cameracore.cpp -o CMakeFiles/science_work.dir/src/core/cameracore.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/cameracore.cpp -o CMakeFiles/science_work.dir/src/core/cameracore.cpp.s
 
 CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o: /home/user/science_work/src/opengl/GLWidget.cpp
 CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o -MF CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o.d -o CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o -c /home/user/science_work/src/opengl/GLWidget.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o -MF CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o.d -o CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o -c /home/user/science_work/src/opengl/GLWidget.cpp
 
 CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/opengl/GLWidget.cpp > CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/opengl/GLWidget.cpp > CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.i
 
 CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/opengl/GLWidget.cpp -o CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/opengl/GLWidget.cpp -o CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.s
+
+CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o: CMakeFiles/science_work.dir/flags.make
+CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o: /home/user/science_work/src/core/fpscontroller.cpp
+CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o -MF CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o.d -o CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o -c /home/user/science_work/src/core/fpscontroller.cpp
+
+CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/fpscontroller.cpp > CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.i
+
+CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/fpscontroller.cpp -o CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.s
+
+CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o: CMakeFiles/science_work.dir/flags.make
+CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o: /home/user/science_work/src/core/spherepoint.cpp
+CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o -MF CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o.d -o CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o -c /home/user/science_work/src/core/spherepoint.cpp
+
+CMakeFiles/science_work.dir/src/core/spherepoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/core/spherepoint.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/spherepoint.cpp > CMakeFiles/science_work.dir/src/core/spherepoint.cpp.i
+
+CMakeFiles/science_work.dir/src/core/spherepoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/spherepoint.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/spherepoint.cpp -o CMakeFiles/science_work.dir/src/core/spherepoint.cpp.s
 
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: science_work_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/qrc_resources.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/qrc_resources.cpp
 
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.i"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/qrc_resources.cpp > CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/qrc_resources.cpp > CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.i
 
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.s"
-	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/qrc_resources.cpp -o CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/qrc_resources.cpp -o CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.s
 
 # Object files for target science_work
 science_work_OBJECTS = \
@@ -266,6 +294,8 @@ science_work_OBJECTS = \
 "CMakeFiles/science_work.dir/src/core/sphere.cpp.o" \
 "CMakeFiles/science_work.dir/src/core/cameracore.cpp.o" \
 "CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o" \
+"CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o" \
+"CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o" \
 "CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 
 # External object files for target science_work
@@ -281,6 +311,8 @@ science_work: CMakeFiles/science_work.dir/src/core/plane.cpp.o
 science_work: CMakeFiles/science_work.dir/src/core/sphere.cpp.o
 science_work: CMakeFiles/science_work.dir/src/core/cameracore.cpp.o
 science_work: CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o
+science_work: CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o
+science_work: CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o
 science_work: CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o
 science_work: CMakeFiles/science_work.dir/build.make
 science_work: /usr/lib/x86_64-linux-gnu/libQt6OpenGLWidgets.so.6.4.2
@@ -298,7 +330,7 @@ science_work: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 science_work: /usr/lib/x86_64-linux-gnu/libGLX.so
 science_work: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 science_work: CMakeFiles/science_work.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable science_work"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable science_work"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/science_work.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

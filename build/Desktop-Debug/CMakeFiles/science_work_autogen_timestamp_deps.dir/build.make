@@ -67,9 +67,9 @@ include CMakeFiles/science_work_autogen_timestamp_deps.dir/compiler_depend.make
 include CMakeFiles/science_work_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6OpenGLWidgets.so.6.4.2
-CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
-CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
+CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
+CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
 CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6OpenGL.so.6.4.2
 CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6MultimediaWidgets.so.6.4.2
 CMakeFiles/science_work_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Multimedia.so.6.4.2

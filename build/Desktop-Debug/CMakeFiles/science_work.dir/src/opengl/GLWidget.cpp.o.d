@@ -401,11 +401,6 @@ CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qopenglcontext_platform.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /home/user/science_work/src/opengl/../core/cameracore.h \
   /home/user/science_work/src/opengl/../core/point.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QQuaternion \
@@ -417,6 +412,13 @@ CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QVector3D \
   /home/user/science_work/src/opengl/../core/plane.h \
   /home/user/science_work/src/opengl/../core/sphere.h \
+  /home/user/science_work/src/opengl/../core/fpscontroller.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
@@ -429,7 +431,6 @@ CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \

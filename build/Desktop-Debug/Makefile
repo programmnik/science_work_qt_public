@@ -368,6 +368,30 @@ src/core/cameracore.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/cameracore.cpp.s
 .PHONY : src/core/cameracore.cpp.s
 
+src/core/fpscontroller.o: src/core/fpscontroller.cpp.o
+.PHONY : src/core/fpscontroller.o
+
+# target to build an object file
+src/core/fpscontroller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o
+.PHONY : src/core/fpscontroller.cpp.o
+
+src/core/fpscontroller.i: src/core/fpscontroller.cpp.i
+.PHONY : src/core/fpscontroller.i
+
+# target to preprocess a source file
+src/core/fpscontroller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.i
+.PHONY : src/core/fpscontroller.cpp.i
+
+src/core/fpscontroller.s: src/core/fpscontroller.cpp.s
+.PHONY : src/core/fpscontroller.s
+
+# target to generate assembly for a file
+src/core/fpscontroller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.s
+.PHONY : src/core/fpscontroller.cpp.s
+
 src/core/plane.o: src/core/plane.cpp.o
 .PHONY : src/core/plane.o
 
@@ -440,6 +464,30 @@ src/core/sphere.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/sphere.cpp.s
 .PHONY : src/core/sphere.cpp.s
 
+src/core/spherepoint.o: src/core/spherepoint.cpp.o
+.PHONY : src/core/spherepoint.o
+
+# target to build an object file
+src/core/spherepoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o
+.PHONY : src/core/spherepoint.cpp.o
+
+src/core/spherepoint.i: src/core/spherepoint.cpp.i
+.PHONY : src/core/spherepoint.i
+
+# target to preprocess a source file
+src/core/spherepoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/spherepoint.cpp.i
+.PHONY : src/core/spherepoint.cpp.i
+
+src/core/spherepoint.s: src/core/spherepoint.cpp.s
+.PHONY : src/core/spherepoint.s
+
+# target to generate assembly for a file
+src/core/spherepoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/spherepoint.cpp.s
+.PHONY : src/core/spherepoint.cpp.s
+
 src/opengl/GLWidget.o: src/opengl/GLWidget.cpp.o
 .PHONY : src/opengl/GLWidget.o
 
@@ -500,6 +548,9 @@ help:
 	@echo "... src/core/cameracore.o"
 	@echo "... src/core/cameracore.i"
 	@echo "... src/core/cameracore.s"
+	@echo "... src/core/fpscontroller.o"
+	@echo "... src/core/fpscontroller.i"
+	@echo "... src/core/fpscontroller.s"
 	@echo "... src/core/plane.o"
 	@echo "... src/core/plane.i"
 	@echo "... src/core/plane.s"
@@ -509,6 +560,9 @@ help:
 	@echo "... src/core/sphere.o"
 	@echo "... src/core/sphere.i"
 	@echo "... src/core/sphere.s"
+	@echo "... src/core/spherepoint.o"
+	@echo "... src/core/spherepoint.i"
+	@echo "... src/core/spherepoint.s"
 	@echo "... src/opengl/GLWidget.o"
 	@echo "... src/opengl/GLWidget.i"
 	@echo "... src/opengl/GLWidget.s"

@@ -16,12 +16,16 @@ science_work_autogen/timestamp: \
 	/home/user/science_work/src/core/cameracore.cpp \
 	/home/user/science_work/src/core/cameracore.h \
 	/home/user/science_work/src/core/constants.h \
+	/home/user/science_work/src/core/fpscontroller.cpp \
+	/home/user/science_work/src/core/fpscontroller.h \
 	/home/user/science_work/src/core/plane.cpp \
 	/home/user/science_work/src/core/plane.h \
 	/home/user/science_work/src/core/point.cpp \
 	/home/user/science_work/src/core/point.h \
 	/home/user/science_work/src/core/sphere.cpp \
 	/home/user/science_work/src/core/sphere.h \
+	/home/user/science_work/src/core/spherepoint.cpp \
+	/home/user/science_work/src/core/spherepoint.h \
 	/home/user/science_work/src/opengl/GLWidget.cpp \
 	/home/user/science_work/src/opengl/GLWidget.h \
 	/usr/include/GL/gl.h \
@@ -332,6 +336,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QDir \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QEasingCurve \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QFileInfo \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
@@ -373,6 +378,7 @@ science_work_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qeasingcurve.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
