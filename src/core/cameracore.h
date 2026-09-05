@@ -16,6 +16,17 @@ public:
     void rotate(float dx, float dy, float dz);  // dx - вверх/вниз, dy - влево/вправо
     void applyToOpenGL();
 
+    // Геттеры для векторов камеры (добавлены)
+    QVector3D getCameraPos() const { return camera_pos; }
+    QVector3D getCameraFront() const { return camera_front; }
+    QVector3D getCameraUp() const { return camera_up; }
+    QVector3D getCameraRight() const { return camera_right; }
+
+    // Геттер для позиции точки (если нужно)
+    QVector3D getPointPosition() const {
+        return point ? QVector3D(point->getX(), point->getY(), point->getZ()) : QVector3D();
+    }
+
 private:
     Point *point;
 

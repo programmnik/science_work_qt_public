@@ -121,6 +121,7 @@ void GLWidget::paintGL()
     camera->applyToOpenGL();
     plane->draw(*cameraPoint);
     sphere->draw(*cameraPoint);
+    sphere->drawPoints(camera, width(), height(), zoom);
 }
 
 void GLWidget::resizeGL(int w, int h)
@@ -128,8 +129,52 @@ void GLWidget::resizeGL(int w, int h)
     glViewport(0, 0, w, h);
 }
 
+Raycaster::FrustumParams GLWidget::getFrustumParams() const
+{
+    Raycaster::FrustumParams params;
+    params.aspect = width() / (float)height();
+    params.fov = 60.0f / zoom;
+    if (params.fov < 10.0f) params.fov = 10.0f;
+    if (params.fov > 120.0f) params.fov = 120.0f;
+
+    params.nearPlane = 0.1f;
+    params.farPlane = 1000.0f;
+    params.top = params.nearPlane * tan(params.fov * M_PI / 360.0f);
+    params.bottom = -params.top;
+    params.right = params.top * params.aspect;
+    params.left = -params.right;
+
+    return params;
+}
+
 void GLWidget::mousePressEvent(QMouseEvent *event)
 {
+    if (event->button() == Qt::RightButton) {
+        // 1. Получаем параметры frustum
+        Raycaster::FrustumParams frustum = getFrustumParams();
+
+        // 2. Создаем луч (начало на near plane)
+        Raycaster::Ray ray = Raycaster::screenToRay(
+            camera->getCameraPos(),
+            camera->getCameraFront(),
+            camera->getCameraRight(),
+            camera->getCameraUp(),
+            event->pos().x(), event->pos().y(),
+            width(), height(),
+            frustum
+            );
+
+        // 3. Проверяем пересечение со сферой
+        QVector3D hitPoint;
+        if (sphere->intersectsRay(ray.origin, ray.direction, hitPoint)) {
+            // Сфера сама добавляет точку
+            sphere->addPoint(hitPoint);
+            update();
+            qDebug() << "Точка добавлена в мировых координатах:" << hitPoint;
+        }
+
+        return;
+    }
     if (event->button() == Qt::MiddleButton) {
         lastMousePos = event->pos();
     }
@@ -173,8 +218,8 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Right: m_fpsController->addRotation(0, rotSpeed, 0); break;
     case Qt::Key_Up:    m_fpsController->addRotation(-rotSpeed, 0, 0); break;
     case Qt::Key_Down:  m_fpsController->addRotation(rotSpeed, 0, 0); break;
-    case Qt::Key_W:     m_fpsController->addMovement(-moveSpeed, 0, 0); break;
-    case Qt::Key_S:     m_fpsController->addMovement(moveSpeed, 0, 0); break;
+    case Qt::Key_W:     m_fpsController->addMovement(moveSpeed, 0, 0); break;
+    case Qt::Key_S:     m_fpsController->addMovement(-moveSpeed, 0, 0); break;
     case Qt::Key_A:     m_fpsController->addMovement(0, -moveSpeed, 0); break;
     case Qt::Key_D:     m_fpsController->addMovement(0, moveSpeed, 0); break;
     case Qt::Key_Q:     m_fpsController->addMovement(0, 0, moveSpeed); break;

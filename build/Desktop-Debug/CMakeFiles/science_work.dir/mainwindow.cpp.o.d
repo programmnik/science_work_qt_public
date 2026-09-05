@@ -443,6 +443,12 @@ CMakeFiles/science_work.dir/mainwindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QVector3D \
   /home/user/science_work/src/core/plane.h \
   /home/user/science_work/src/core/sphere.h \
+  /home/user/science_work/src/core/spherepoint.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QVector2D \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
   /home/user/science_work/previewpanel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
@@ -551,7 +557,6 @@ CMakeFiles/science_work.dir/mainwindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenuBar \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenubar.h \
   /home/user/science_work/src/core/constants.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolBar \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbar.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \

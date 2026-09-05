@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-bbdc7100ccd05f9552e7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "science_work",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "science_work::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-science_work-Debug-01516316e6dde6ee7822.json",
+					"name" : "science_work",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "science_work_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-science_work_autogen-Debug-d799e4b56e6e355db95e.json",
+					"name" : "science_work_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "science_work_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-science_work_autogen_timestamp_deps-Debug-f6fd8eb1d70c2e2e8cdc.json",
+					"name" : "science_work_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/user/science_work/build/Desktop-Debug",
+		"source" : "/home/user/science_work"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

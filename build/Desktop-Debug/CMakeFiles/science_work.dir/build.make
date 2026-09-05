@@ -268,10 +268,24 @@ CMakeFiles/science_work.dir/src/core/spherepoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/spherepoint.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/spherepoint.cpp -o CMakeFiles/science_work.dir/src/core/spherepoint.cpp.s
 
+CMakeFiles/science_work.dir/src/core/raycaster.cpp.o: CMakeFiles/science_work.dir/flags.make
+CMakeFiles/science_work.dir/src/core/raycaster.cpp.o: /home/user/science_work/src/core/raycaster.cpp
+CMakeFiles/science_work.dir/src/core/raycaster.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/science_work.dir/src/core/raycaster.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/src/core/raycaster.cpp.o -MF CMakeFiles/science_work.dir/src/core/raycaster.cpp.o.d -o CMakeFiles/science_work.dir/src/core/raycaster.cpp.o -c /home/user/science_work/src/core/raycaster.cpp
+
+CMakeFiles/science_work.dir/src/core/raycaster.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/science_work.dir/src/core/raycaster.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/science_work/src/core/raycaster.cpp > CMakeFiles/science_work.dir/src/core/raycaster.cpp.i
+
+CMakeFiles/science_work.dir/src/core/raycaster.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/science_work.dir/src/core/raycaster.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/science_work/src/core/raycaster.cpp -o CMakeFiles/science_work.dir/src/core/raycaster.cpp.s
+
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/science_work.dir/flags.make
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: science_work_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/science_work.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/user/science_work/build/Desktop-Debug/science_work_autogen/EWIEGA46WW/qrc_resources.cpp
 
 CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
@@ -296,6 +310,7 @@ science_work_OBJECTS = \
 "CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o" \
 "CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o" \
 "CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o" \
+"CMakeFiles/science_work.dir/src/core/raycaster.cpp.o" \
 "CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 
 # External object files for target science_work
@@ -313,6 +328,7 @@ science_work: CMakeFiles/science_work.dir/src/core/cameracore.cpp.o
 science_work: CMakeFiles/science_work.dir/src/opengl/GLWidget.cpp.o
 science_work: CMakeFiles/science_work.dir/src/core/fpscontroller.cpp.o
 science_work: CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o
+science_work: CMakeFiles/science_work.dir/src/core/raycaster.cpp.o
 science_work: CMakeFiles/science_work.dir/science_work_autogen/EWIEGA46WW/qrc_resources.cpp.o
 science_work: CMakeFiles/science_work.dir/build.make
 science_work: /usr/lib/x86_64-linux-gnu/libQt6OpenGLWidgets.so.6.4.2
@@ -330,7 +346,7 @@ science_work: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 science_work: /usr/lib/x86_64-linux-gnu/libGLX.so
 science_work: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 science_work: CMakeFiles/science_work.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable science_work"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/science_work/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable science_work"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/science_work.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

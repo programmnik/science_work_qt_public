@@ -55,6 +55,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/core/fpscontroller.h src/core/fpscontroller.cpp
         src/core/spherepoint.h src/core/spherepoint.cpp
 
+
+        src/core/raycaster.h src/core/raycaster.cpp
     )
 else()
     add_executable(science_work

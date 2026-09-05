@@ -33,6 +33,8 @@ void CameraCore::setPoint(Point* newPoint)
 
     // ВАЖНО: Обновляем ориентацию из углов точки!
     if (point) {
+        camera_pos = QVector3D(point->getX(), point->getY(), point->getZ());
+
         // Получаем углы из Point (в градусах)
         float rotX = point->getRotX();
         float rotY = point->getRotY();

@@ -22,6 +22,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/science_work.dir/src/core/plane.cpp.o.d"
   "CMakeFiles/science_work.dir/src/core/point.cpp.o"
   "CMakeFiles/science_work.dir/src/core/point.cpp.o.d"
+  "CMakeFiles/science_work.dir/src/core/raycaster.cpp.o"
+  "CMakeFiles/science_work.dir/src/core/raycaster.cpp.o.d"
   "CMakeFiles/science_work.dir/src/core/sphere.cpp.o"
   "CMakeFiles/science_work.dir/src/core/sphere.cpp.o.d"
   "CMakeFiles/science_work.dir/src/core/spherepoint.cpp.o"

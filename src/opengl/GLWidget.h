@@ -8,6 +8,7 @@
 #include "../core/point.h"
 #include "../core/sphere.h"
 #include "../core/fpscontroller.h"
+#include "../core/raycaster.h"
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {
@@ -37,8 +38,9 @@ private:
     QPoint lastMousePos;
     float zoom;
 
-    // FPS контроллер - ТЕПЕРЬ УКАЗАТЕЛЬ!
     FPSController* m_fpsController;
+
+    Raycaster::FrustumParams getFrustumParams() const;
 };
 
 #endif // GLWIDGET_H

@@ -440,6 +440,30 @@ src/core/point.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/point.cpp.s
 .PHONY : src/core/point.cpp.s
 
+src/core/raycaster.o: src/core/raycaster.cpp.o
+.PHONY : src/core/raycaster.o
+
+# target to build an object file
+src/core/raycaster.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/raycaster.cpp.o
+.PHONY : src/core/raycaster.cpp.o
+
+src/core/raycaster.i: src/core/raycaster.cpp.i
+.PHONY : src/core/raycaster.i
+
+# target to preprocess a source file
+src/core/raycaster.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/raycaster.cpp.i
+.PHONY : src/core/raycaster.cpp.i
+
+src/core/raycaster.s: src/core/raycaster.cpp.s
+.PHONY : src/core/raycaster.s
+
+# target to generate assembly for a file
+src/core/raycaster.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/science_work.dir/build.make CMakeFiles/science_work.dir/src/core/raycaster.cpp.s
+.PHONY : src/core/raycaster.cpp.s
+
 src/core/sphere.o: src/core/sphere.cpp.o
 .PHONY : src/core/sphere.o
 
@@ -557,6 +581,9 @@ help:
 	@echo "... src/core/point.o"
 	@echo "... src/core/point.i"
 	@echo "... src/core/point.s"
+	@echo "... src/core/raycaster.o"
+	@echo "... src/core/raycaster.i"
+	@echo "... src/core/raycaster.s"
 	@echo "... src/core/sphere.o"
 	@echo "... src/core/sphere.i"
 	@echo "... src/core/sphere.s"
