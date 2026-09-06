@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     setupLeftTool();
 
     setWindowTitle(ScreenConfig::WINDOW_TITLE);
-    // resize(ScreenConfig::DEFAULT_WIDTH, ScreenConfig::DEFAULT_HEIGHT);
+    resize(ScreenConfig::DEFAULT_WIDTH, ScreenConfig::DEFAULT_HEIGHT);
 
     centralWidget()->setFocus();
 }
