@@ -61,23 +61,55 @@ void CameraCore::move(float forward, float right, float up)
     point->move(moveVector.x(), moveVector.y(), moveVector.z());
 }
 
+// ============ РЕЖИМЫ ВРАЩЕНИЯ ============
+
+void CameraCore::rotateLocal(float dx, float dy, float dz)
+{
+    if (!point) return;
+
+    // Создаем кватернионы для поворота вокруг локальных осей
+    QQuaternion qPitch = QQuaternion::fromAxisAndAngle(1.0f, 0.0f, 0.0f, dx);  // вокруг X (вверх/вниз)
+    QQuaternion qYaw = QQuaternion::fromAxisAndAngle(0.0f, 1.0f, 0.0f, dy);    // вокруг Y (влево/вправо)
+    // QQuaternion qRoll = QQuaternion::fromAxisAndAngle(0.0f, 0.0f, 1.0f, dz);   // вокруг Z (наклон) — ПОКА НЕ ИСПОЛЬЗУЕМ
+
+    // Умножаем СПРАВА для локального вращения
+    // orientation = orientation * qYaw * qPitch * qRoll;
+    orientation = orientation * qYaw * qPitch;
+    orientation.normalize();
+
+    // Обновляем векторы камеры
+    updateCameraVectors();
+
+    // Сохраняем углы в Point (dz пока не используем)
+    // point->rotate(dx, dy, dz);
+    point->rotate(dx, dy, 0.0f);
+}
+
+void CameraCore::rotateFixedYaw(float dx, float dy, float dz)
+{
+    if (!point) return;
+
+    QQuaternion qPitch = QQuaternion::fromAxisAndAngle(1.0f, 0.0f, 0.0f, dx);
+    QQuaternion qYaw = QQuaternion::fromAxisAndAngle(0.0f, 0.0f, 1.0f, dy);
+    QQuaternion qRoll = QQuaternion::fromAxisAndAngle(0.0f, 1.0f, 0.0f, dz);
+
+    // Умножаем СЛЕВА для глобального вращения
+    orientation = qYaw * qRoll * orientation * qPitch;
+    orientation.normalize();
+
+    updateCameraVectors();
+    point->rotate(dx, dy, dz);
+}
+
 void CameraCore::rotate(float dx, float dy, float dz)
 {
     if (!point) return;
 
-    // ЛОКАЛЬНОЕ вращение: умножаем СПРАВА!
-    QQuaternion qPitch = QQuaternion::fromAxisAndAngle(1.0f, 0.0f, 0.0f, dx);
-    QQuaternion qYaw = QQuaternion::fromAxisAndAngle(0.0f, 1.0f, 0.0f, dy);
-    QQuaternion qRoll = QQuaternion::fromAxisAndAngle(0.0f, 0.0f, 1.0f, dz);
-
-    // Умножаем СПРАВА для локального вращения
-    orientation = orientation * qYaw * qPitch * qRoll;
-    orientation.normalize();
-
-    updateCameraVectors();
-
-    // Обновляем углы в Point
-    point->rotate(dx, dy, dz);
+    if (m_rotationMode == ModeLocal) {
+        rotateLocal(dx, dy, dz);
+    } else if (m_rotationMode == ModeFixedYaw) {
+        rotateFixedYaw(dx, dy, dz);
+    }
 }
 
 void CameraCore::applyToOpenGL()

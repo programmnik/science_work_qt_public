@@ -206,24 +206,26 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 {
     if (!m_fpsController) return;
 
+    uint scanCode = event->nativeScanCode();
+
     // Передаем состояние клавиш в контроллер для удержания
-    m_fpsController->setKeyState(event->key(), true);
+    m_fpsController->setKeyState(scanCode, true);
 
     // Для мгновенного отклика добавляем одно нажатие
     float rotSpeed = CameraConfig::ROTATION_SPEED;
     float moveSpeed = CameraConfig::MOVE_SPEED;
 
-    switch (event->key()) {
-    case Qt::Key_Left:  m_fpsController->addRotation(0, -rotSpeed, 0); break;
-    case Qt::Key_Right: m_fpsController->addRotation(0, rotSpeed, 0); break;
-    case Qt::Key_Up:    m_fpsController->addRotation(-rotSpeed, 0, 0); break;
-    case Qt::Key_Down:  m_fpsController->addRotation(rotSpeed, 0, 0); break;
-    case Qt::Key_W:     m_fpsController->addMovement(moveSpeed, 0, 0); break;
-    case Qt::Key_S:     m_fpsController->addMovement(-moveSpeed, 0, 0); break;
-    case Qt::Key_A:     m_fpsController->addMovement(0, -moveSpeed, 0); break;
-    case Qt::Key_D:     m_fpsController->addMovement(0, moveSpeed, 0); break;
-    case Qt::Key_Q:     m_fpsController->addMovement(0, 0, moveSpeed); break;
-    case Qt::Key_Z:     m_fpsController->addMovement(0, 0, -moveSpeed); break;
+    switch (scanCode) {
+    case 113:   m_fpsController->addRotation(0, -rotSpeed, 0); break; // Left
+    case 114:   m_fpsController->addRotation(0, rotSpeed, 0); break;  // Right
+    case 111:   m_fpsController->addRotation(-rotSpeed, 0, 0); break; // Up
+    case 116:   m_fpsController->addRotation(rotSpeed, 0, 0); break;  // Down
+    case 25:    m_fpsController->addMovement(moveSpeed, 0, 0); break; // W
+    case 39:    m_fpsController->addMovement(-moveSpeed, 0, 0); break;// S
+    case 38:    m_fpsController->addMovement(0, -moveSpeed, 0); break;// A
+    case 40:    m_fpsController->addMovement(0, moveSpeed, 0); break; // D
+    case 24:    m_fpsController->addMovement(0, 0, moveSpeed); break; // Q
+    case 52:    m_fpsController->addMovement(0, 0, -moveSpeed); break;// Z
     default:
         QOpenGLWidget::keyPressEvent(event);
         return;
@@ -233,7 +235,8 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 void GLWidget::keyReleaseEvent(QKeyEvent *event)
 {
     if (m_fpsController) {
-        m_fpsController->setKeyState(event->key(), false);
+        uint scanCode = event->nativeScanCode();
+        m_fpsController->setKeyState(scanCode, false);
     }
     QOpenGLWidget::keyReleaseEvent(event);
 }

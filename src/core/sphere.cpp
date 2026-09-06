@@ -235,7 +235,6 @@ void Sphere::drawPoints(CameraCore* camera, int screenWidth, int screenHeight, f
 
         glBegin(GL_LINES);
         for (const SpherePoint& point : m_points) {
-            QVector3D worldPos = point.getSpherePosition();
             QVector3D worldProj = point.getPlaneProjection(northPole);
 
             // Отрезок: северный полюс → проекция на плоскость

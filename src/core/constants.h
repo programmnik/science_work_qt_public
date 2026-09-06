@@ -11,7 +11,7 @@ const QString WINDOW_TITLE = "СТЕРЕОМЕТРИКС";
 }
 
 namespace CameraConfig {
-    const float MOVE_SPEED = 0.3f;
+    const float MOVE_SPEED = 0.1f;
     const float ROTATION_SPEED = 0.02f;
     const float DEFAULT_X = 0.0f;
     const float DEFAULT_Y = -1.5f;

@@ -73,7 +73,7 @@ void FPSController::addRotation(float dx, float dy, float dz)
 {
     m_accumulatedRotX += dx;
     m_accumulatedRotY += dy;
-    m_accumulatedRotZ += dz;
+    // m_accumulatedRotZ += dz;
     m_hasInput = true;
 }
 
@@ -85,19 +85,19 @@ void FPSController::addMovement(float forward, float right, float up)
     m_hasInput = true;
 }
 
-void FPSController::setKeyState(int key, bool pressed)
+void FPSController::setKeyState(uint scanCode, bool pressed)
 {
-    switch (key) {
-    case Qt::Key_W: m_keys.w = pressed; break;
-    case Qt::Key_S: m_keys.s = pressed; break;
-    case Qt::Key_A: m_keys.a = pressed; break;
-    case Qt::Key_D: m_keys.d = pressed; break;
-    case Qt::Key_Q: m_keys.q = pressed; break;
-    case Qt::Key_Z: m_keys.z = pressed; break;
-    case Qt::Key_Left: m_keys.left = pressed; break;
-    case Qt::Key_Right: m_keys.right = pressed; break;
-    case Qt::Key_Up: m_keys.up = pressed; break;
-    case Qt::Key_Down: m_keys.down = pressed; break;
+    switch (scanCode) {
+    case 25:  m_keys.w = pressed; break;   // W
+    case 39:  m_keys.s = pressed; break;   // S
+    case 38:  m_keys.a = pressed; break;   // A
+    case 40:  m_keys.d = pressed; break;   // D
+    case 24:  m_keys.q = pressed; break;   // Q
+    case 52:  m_keys.z = pressed; break;   // Z
+    case 113: m_keys.left = pressed; break;   // Left
+    case 114: m_keys.right = pressed; break;  // Right
+    case 111: m_keys.up = pressed; break;     // Up
+    case 116: m_keys.down = pressed; break;   // Down
     default: break;
     }
 }

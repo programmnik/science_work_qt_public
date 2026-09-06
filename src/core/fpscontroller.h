@@ -33,7 +33,7 @@ public:
     void addMovement(float forward, float right, float up);
 
     // Для клавиш (удержание)
-    void setKeyState(int key, bool pressed);
+    void setKeyState(uint scanCode, bool pressed);
     void clearAllInput();
 
     // Получение накопленных данных
