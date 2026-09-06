@@ -22,6 +22,7 @@ CameraCore::~CameraCore() {}
 void CameraCore::updateCameraVectors()
 {
     // Вращаем начальные векторы кватернионом
+    camera_pos = QVector3D(point->getX(), point->getY(), point->getZ());
     camera_front = orientation.rotatedVector(QVector3D(0.0f, 0.0f, -1.0f));
     camera_up = orientation.rotatedVector(QVector3D(0.0f, 1.0f, 0.0f));
     camera_right = orientation.rotatedVector(QVector3D(1.0f, 0.0f, 0.0f));
@@ -33,8 +34,6 @@ void CameraCore::setPoint(Point* newPoint)
 
     // ВАЖНО: Обновляем ориентацию из углов точки!
     if (point) {
-        camera_pos = QVector3D(point->getX(), point->getY(), point->getZ());
-
         // Получаем углы из Point (в градусах)
         float rotX = point->getRotX();
         float rotY = point->getRotY();
