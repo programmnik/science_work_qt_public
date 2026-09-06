@@ -119,7 +119,16 @@ void GLWidget::paintGL()
     glLoadIdentity();
 
     camera->applyToOpenGL();
-    plane->draw(*cameraPoint);
+
+    // Создаем QPainter для подписей
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    // Рисуем плоскость с подписями
+    plane->draw(*cameraPoint, camera->getCameraFront(), &painter, width(), height());
+
+    painter.end();
+
     sphere->draw(*cameraPoint);
     sphere->drawPoints(camera, width(), height(), zoom);
 }
