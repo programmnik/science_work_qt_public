@@ -77,8 +77,19 @@ void ProjectPanel::setupDocks(){
     m_mathDock->setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetClosable);
     m_mathDock->setStyleSheet(baseDockWidgetStyle);
 
+    m_objectsDock = new QDockWidget("Объекты сцены", this);
+    m_objectsDock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+    m_objectsDock->setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetClosable);
+    m_objectsDock->setStyleSheet(baseDockWidgetStyle);
+
+    m_objectsPanel = new ObjectsPanelWidget(m_objectsDock);
+    m_objectsDock->setWidget(m_objectsPanel);
+
     m_mainWindow->addDockWidget(Qt::LeftDockWidgetArea, m_formulaDock);
     m_mainWindow->addDockWidget(Qt::BottomDockWidgetArea, m_mathDock);
+    m_mainWindow->addDockWidget(Qt::LeftDockWidgetArea, m_objectsDock);
+
+    m_mainWindow->tabifyDockWidget(m_formulaDock, m_objectsDock);
 }
 
 void ProjectPanel::setupFormulas(){
@@ -239,9 +250,11 @@ void ProjectPanel::setupMathFunctions(){
 void ProjectPanel::showDocks(){
     if (m_formulaDock) m_formulaDock->show();
     if (m_mathDock) m_mathDock->show();
+    if (m_objectsDock) m_objectsDock->show();
 }
 
 void ProjectPanel::hideDocks(){
     if (m_formulaDock) m_formulaDock->hide();
     if (m_mathDock) m_mathDock->hide();
+    if (m_objectsDock) m_objectsDock->hide();
 }

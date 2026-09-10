@@ -3,8 +3,9 @@
 
 #include <QWidget>
 #include <QDockWidget>
-#include "GLWidget.h"
+#include "src/opengl/GLWidget.h"
 #include "QMainWindow"
+#include "src/ui/objectspanelwidget.h"
 
 class ProjectPanel : public QWidget
 {
@@ -14,6 +15,7 @@ public:
     ~ProjectPanel();
     void showDocks();
     void hideDocks();
+    GLWidget* getGLWidget() const { return m_glWidget; }
 
 private:
     void setupDocks();
@@ -24,6 +26,8 @@ private:
     GLWidget *m_glWidget;
     QDockWidget *m_formulaDock;
     QDockWidget *m_mathDock;
+    QDockWidget *m_objectsDock;
+    ObjectsPanelWidget *m_objectsPanel;
 };
 
 #endif // PROJECTPANEL_H

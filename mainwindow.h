@@ -7,10 +7,12 @@
 #include <QToolButton>
 #include <QList>
 #include <QPair>
+#include <QResizeEvent>
 
 #include "projectpanel.h"
 #include "previewpanel.h"
 #include "src/opengl/GLWidget.h"
+#include "src/ui/togglebutton.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,16 +26,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private slots:
     void on_action_13_triggered();
-
     void on_action_14_triggered();
-
     void on_action_15_triggered();
-
     void on_action_16_triggered();
-
     void on_action_21_triggered();
+    void onModeChanged(bool is2D);
 
 private:
     Ui::MainWindow *ui;
@@ -47,6 +49,7 @@ private:
     void onPreviewClicked();
     void onCreateClicked();
     void onOpenClicked();
+    void setupModeButton();
 
     QStackedWidget *m_centralStack;
     ProjectPanel *m_projectPanel;
@@ -54,6 +57,7 @@ private:
     PreviewPanel *m_previewPanel;
     QWidget *m_menuPanel;
     QList<QPair<QToolButton*, QString>> m_toolButtons;
+    ToggleButton* m_modeButton = nullptr;
 
     bool m_hiddenMenuBar = false;
     bool m_hiddenLeftTool = false;

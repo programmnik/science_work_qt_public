@@ -215,7 +215,7 @@ void Sphere::draw(const Point& cameraPoint)
 
 // ==================== ОТРИСОВКА ТОЧЕК ====================
 
-void Sphere::drawPoints(CameraCore* camera, int screenWidth, int screenHeight, float zoom)
+void Sphere::drawPoints(CameraCore3D* camera, int screenWidth, int screenHeight, float zoom)
 {
     Q_UNUSED(camera);
     Q_UNUSED(screenWidth);
@@ -268,7 +268,7 @@ void Sphere::drawPoints(CameraCore* camera, int screenWidth, int screenHeight, f
     glPointSize(1.0f);
 }
 
-void Sphere::drawProjection(const SpherePoint& point, CameraCore* camera,
+void Sphere::drawProjection(const SpherePoint& point, CameraCore3D* camera,
                             int screenWidth, int screenHeight, float zoom)
 {
     Q_UNUSED(camera);

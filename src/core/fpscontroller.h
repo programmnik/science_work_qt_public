@@ -22,6 +22,7 @@ public:
     void setMaxFrameSkip(int maxSkip) { m_maxFrameSkip = maxSkip; }
     void setMoveSpeed(float speed) { m_moveSpeed = speed; }
     void setRotationSpeed(float speed) { m_rotationSpeed = speed; }
+    void setMode2D(bool isMode2D){ m_mode2d = isMode2D; }
 
     // Управление
     void start();
@@ -53,6 +54,8 @@ private slots:
 
 private:
     void updateFPS();
+    void process2DEvent();
+    void process3DEvent();
 
     // Таймеры
     QTimer* m_timer;
@@ -94,6 +97,8 @@ private:
 
     // Callback для обновления
     std::function<void()> m_updateCallback;
+
+    bool m_mode2d;
 };
 
 #endif // FPSCONTROLLER_H

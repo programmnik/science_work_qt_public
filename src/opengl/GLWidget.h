@@ -3,8 +3,11 @@
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
-#include "../core/cameracore.h"
-#include "../core/plane.h"
+#include "../core/camera/camera.h"
+#include "../core/camera/cameracore3d.h"
+#include "../core/camera/cameracore2d.h"
+#include "../core/plane/plane3d.h"
+#include "../core/plane/plane2d.h"
 #include "../core/point.h"
 #include "../core/sphere.h"
 #include "../core/fpscontroller.h"
@@ -12,9 +15,17 @@
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {
+    Q_OBJECT
+
 public:
     explicit GLWidget(QWidget *parent = nullptr);
     ~GLWidget();
+
+    void setMode2D(bool enabled);
+    bool isMode2D() const { return m_mode2D; }
+
+signals:
+    void modeChanged(bool is2D);
 
 protected:
     void initializeGL() override;
@@ -30,17 +41,25 @@ protected:
 private:
     void onUpdate();
 
+    void draw2DScene();
+    void draw3DScene();
+
     Point* cameraPoint;
-    CameraCore* camera;
-    Plane* plane;
+
+    CameraCore3D* camera3d;
+    CameraCore2D* camera2d;
+    Camera* m_currentCamera;
+
+    Plane3d* plane3d;
+    Plane2d* plane2d;
     Sphere* sphere;
 
     QPoint lastMousePos;
-    float zoom;
 
     FPSController* m_fpsController;
-
     Raycaster::FrustumParams getFrustumParams() const;
+
+    bool m_mode2D;
 };
 
 #endif // GLWIDGET_H

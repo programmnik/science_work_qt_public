@@ -5,7 +5,7 @@
 #include "spherepoint.h"
 #include <QVector3D>
 #include <QVector>
-#include "cameracore.h"
+#include "camera/cameracore3d.h"
 
 class Sphere
 {
@@ -48,7 +48,7 @@ public:
     bool hasPoint(const QVector3D& pos, float tolerance = 0.01f) const;
 
     // ========== ОТРИСОВКА ТОЧЕК ==========
-    void drawPoints(CameraCore* camera, int screenWidth, int screenHeight, float zoom);
+    void drawPoints(CameraCore3D* camera, int screenWidth, int screenHeight, float zoom);
     void setPointColor(const QColor& color) { m_pointColor = color; }
     void setPointSize(float size) { m_pointSize = size; }
     void setShowProjections(bool show) { m_showProjections = show; }
@@ -56,7 +56,7 @@ public:
 
 private:
     void drawWireframe();
-    void drawProjection(const SpherePoint& point, CameraCore* camera,
+    void drawProjection(const SpherePoint& point, CameraCore3D* camera,
                         int screenWidth, int screenHeight, float zoom);
 
     Point centerPoint;

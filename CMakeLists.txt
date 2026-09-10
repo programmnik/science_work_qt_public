@@ -47,16 +47,24 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_FORMS}
         resources.qrc
         src/core/point.h src/core/point.cpp
-        src/core/plane.h src/core/plane.cpp
+        src/core/plane/plane.h src/core/plane/plane.cpp
         src/core/sphere.h src/core/sphere.cpp
-        src/core/cameracore.h src/core/cameracore.cpp
+        src/core/camera/cameracore3d.h src/core/camera/cameracore3d.cpp
         src/core/constants.h
         src/opengl/GLWidget.h src/opengl/GLWidget.cpp
         src/core/fpscontroller.h src/core/fpscontroller.cpp
         src/core/spherepoint.h src/core/spherepoint.cpp
-
-
         src/core/raycaster.h src/core/raycaster.cpp
+        src/data/sceneobject.h src/data/sceneobject.cpp
+        src/data/objectmanager.h src/data/objectmanager.cpp
+        src/ui/objectspanelwidget.h src/ui/objectspanelwidget.cpp
+        src/ui/togglebutton.h src/ui/togglebutton.cpp
+        src/core/camera/camera.h src/core/camera/camera.cpp
+        src/core/camera/cameracore2d.h src/core/camera/cameracore2d.cpp
+        src/themes/dark/standarddark.h
+        src/core/complexnumber.h src/core/complexnumber.cpp
+        src/core/plane/plane3d.h src/core/plane/plane3d.cpp
+        src/core/plane/plane2d.h src/core/plane/plane2d.cpp
     )
 else()
     add_executable(science_work

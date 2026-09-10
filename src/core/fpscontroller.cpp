@@ -26,6 +26,7 @@ FPSController::FPSController(QObject *parent)
     , m_accumulatedMoveUp(0.0f)
     , m_hasInput(false)
     , m_updateCallback(nullptr)
+    , m_mode2d(false)
 {
     m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &FPSController::processFrame);
@@ -92,13 +93,19 @@ void FPSController::setKeyState(uint scanCode, bool pressed)
     case 39:  m_keys.s = pressed; break;   // S
     case 38:  m_keys.a = pressed; break;   // A
     case 40:  m_keys.d = pressed; break;   // D
-    case 24:  m_keys.q = pressed; break;   // Q
-    case 52:  m_keys.z = pressed; break;   // Z
     case 113: m_keys.left = pressed; break;   // Left
     case 114: m_keys.right = pressed; break;  // Right
     case 111: m_keys.up = pressed; break;     // Up
     case 116: m_keys.down = pressed; break;   // Down
     default: break;
+    }
+
+    if(!m_mode2d){
+        switch (scanCode) {
+            case 24:  m_keys.q = pressed; break;   // Q
+            case 52:  m_keys.z = pressed; break;   // Z
+            default: break;
+        }
     }
 }
 
@@ -114,11 +121,19 @@ void FPSController::clearAllInput()
     m_speedMultiplier = 1.0f;
 }
 
-void FPSController::processFrame()
-{
-    updateFPS();
+void FPSController::process2DEvent(){
+    if (m_keys.w) m_accumulatedMoveForward += m_moveSpeed;
+    if (m_keys.s) m_accumulatedMoveForward -= m_moveSpeed;
+    if (m_keys.a) m_accumulatedMoveRight -= m_moveSpeed;
+    if (m_keys.d) m_accumulatedMoveRight += m_moveSpeed;
+    if (m_keys.left) m_accumulatedMoveRight -= m_moveSpeed;
+    if (m_keys.right) m_accumulatedMoveRight += m_moveSpeed;
+    if (m_keys.up) m_accumulatedMoveForward += m_moveSpeed;
+    if (m_keys.down) m_accumulatedMoveForward -= m_moveSpeed;
 
-    // 1. Обрабатываем удержание клавиш
+}
+
+void FPSController::process3DEvent(){
     if (m_keys.w) m_accumulatedMoveForward += m_moveSpeed;
     if (m_keys.s) m_accumulatedMoveForward -= m_moveSpeed;
     if (m_keys.a) m_accumulatedMoveRight -= m_moveSpeed;
@@ -129,6 +144,16 @@ void FPSController::processFrame()
     if (m_keys.right) m_accumulatedRotY += m_rotationSpeed;
     if (m_keys.up) m_accumulatedRotX -= m_rotationSpeed;
     if (m_keys.down) m_accumulatedRotX += m_rotationSpeed;
+
+}
+
+void FPSController::processFrame()
+{
+    updateFPS();
+
+    // 1. Обрабатываем удержание клавиш
+    if(m_mode2d) process2DEvent();
+    else process3DEvent();
 
     if (m_keys.w || m_keys.s || m_keys.a || m_keys.d ||
         m_keys.q || m_keys.z || m_keys.left || m_keys.right ||

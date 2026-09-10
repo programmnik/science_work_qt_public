@@ -1,4 +1,4 @@
-#include "cameracore.h"
+#include "cameracore3d.h"
 #include <GL/gl.h>
 #include <cmath>
 
@@ -6,53 +6,7 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-CameraCore::CameraCore() : point(nullptr)
-{
-    camera_pos = QVector3D(0.45f, -0.45f, 1.0f);
-    orientation = QQuaternion();  // Identity
-
-    // Начальные векторы
-    camera_front = QVector3D(0.0f, 0.0f, -1.0f);
-    camera_up = QVector3D(0.0f, 1.0f, 0.0f);
-    camera_right = QVector3D(1.0f, 0.0f, 0.0f);
-}
-
-CameraCore::~CameraCore() {}
-
-void CameraCore::updateCameraVectors()
-{
-    // Вращаем начальные векторы кватернионом
-    camera_pos = QVector3D(point->getX(), point->getY(), point->getZ());
-    camera_front = orientation.rotatedVector(QVector3D(0.0f, 0.0f, -1.0f));
-    camera_up = orientation.rotatedVector(QVector3D(0.0f, 1.0f, 0.0f));
-    camera_right = orientation.rotatedVector(QVector3D(1.0f, 0.0f, 0.0f));
-}
-
-void CameraCore::setPoint(Point* newPoint)
-{
-    point = newPoint;
-
-    // ВАЖНО: Обновляем ориентацию из углов точки!
-    if (point) {
-        // Получаем углы из Point (в градусах)
-        float rotX = point->getRotX();
-        float rotY = point->getRotY();
-        float rotZ = point->getRotZ();
-
-        // Создаем кватернионы для каждого угла
-        QQuaternion qPitch = QQuaternion::fromAxisAndAngle(1.0f, 0.0f, 0.0f, rotX);
-        QQuaternion qYaw = QQuaternion::fromAxisAndAngle(0.0f, 1.0f, 0.0f, rotY);
-        QQuaternion qRoll = QQuaternion::fromAxisAndAngle(0.0f, 0.0f, 1.0f, rotZ);
-
-        // Локальное вращение: умножаем СПРАВА
-        orientation = qYaw * qPitch * qRoll;
-        orientation.normalize();
-
-        updateCameraVectors();
-    }
-}
-
-void CameraCore::move(float forward, float right, float up)
+void CameraCore3D::move(float forward, float right, float up)
 {
     if (!point) return;
 
@@ -60,9 +14,25 @@ void CameraCore::move(float forward, float right, float up)
     point->move(moveVector.x(), moveVector.y(), moveVector.z());
 }
 
-// ============ РЕЖИМЫ ВРАЩЕНИЯ ============
+bool CameraCore3D::processEvent(uint scanCode, FPSController& fpsController){
+    if(Camera::processEvent(scanCode, fpsController)) return true;
 
-void CameraCore::rotateLocal(float dx, float dy, float dz)
+    switch (scanCode) {
+        case 113: fpsController.addRotation(0, -rotSpeed, 0); break; // Left
+        case 114: fpsController.addRotation(0, rotSpeed, 0); break;  // Right
+        case 111: fpsController.addRotation(-rotSpeed, 0, 0); break; // Up
+        case 116: fpsController.addRotation(rotSpeed, 0, 0); break;  // Down
+        case 24:  fpsController.addMovement(0, 0, moveSpeed); break; // Q
+        case 52:  fpsController.addMovement(0, 0, -moveSpeed); break;// Z
+        default: return false;
+    }
+
+    return true;
+}
+
+// РЕЖИМЫ ВРАЩЕНИЯ
+
+void CameraCore3D::rotateLocal(float dx, float dy, float dz)
 {
     if (!point) return;
 
@@ -84,7 +54,7 @@ void CameraCore::rotateLocal(float dx, float dy, float dz)
     point->rotate(dx, dy, 0.0f);
 }
 
-void CameraCore::rotateFixedYaw(float dx, float dy, float dz)
+void CameraCore3D::rotateFixedYaw(float dx, float dy, float dz)
 {
     if (!point) return;
 
@@ -100,7 +70,7 @@ void CameraCore::rotateFixedYaw(float dx, float dy, float dz)
     point->rotate(dx, dy, dz);
 }
 
-void CameraCore::rotate(float dx, float dy, float dz)
+void CameraCore3D::rotate(float dx, float dy, float dz)
 {
     if (!point) return;
 
@@ -111,7 +81,7 @@ void CameraCore::rotate(float dx, float dy, float dz)
     }
 }
 
-void CameraCore::applyToOpenGL()
+void CameraCore3D::applyToOpenGL()
 {
     if (!point) return;
 

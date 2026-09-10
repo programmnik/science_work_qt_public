@@ -717,8 +717,8 @@ void PreviewPanel::setupStacks(QVBoxLayout *stacksLayout)
     QStringList videoPaths, captions, descriptions;
     videoPaths << videosDir + "preview1.mp4" << videosDir + "preview2.mp4";
     captions << "Стереографическая проекция" << "Иллюстрация бесконечности";
-    descriptions << "Демонстрация стереографической проекции сферы на плоскость. Визуализация математического преобразования в реальном времени."
-                 << "Визуализация концепции бесконечности через фрактальные структуры. Постепенное погружение в бесконечную последовательность.";
+    descriptions << "Демонстрация стереографической проекции сферы на плоскость."
+                 << "Визуализация бесконечности через параллели.";
 
     PreviewStack *mainStack = new PreviewStack("Основные превью", m_imagePaths, captions, videoPaths, descriptions);
     connect(mainStack, &PreviewStack::imageClicked, this, &PreviewPanel::onImageClicked);

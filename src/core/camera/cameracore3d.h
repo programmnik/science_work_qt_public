@@ -1,20 +1,19 @@
-#ifndef CAMERACORE_H
-#define CAMERACORE_H
+#ifndef CAMERACORE3D_H
+#define CAMERACORE3D_H
 
-#include "point.h"
-#include <QQuaternion>
-#include <QVector3D>
 
-class CameraCore
+#include "camera.h"
+
+class CameraCore3D : public Camera
 {
 public:
-    CameraCore();
-    ~CameraCore();
+    CameraCore3D(): Camera() {}
+    inline ~CameraCore3D() {}
 
-    void setPoint(Point* point);
-    void move(float forward, float right, float up);
-    void rotate(float dx, float dy, float dz);  // dx - вверх/вниз, dy - влево/вправо
-    void applyToOpenGL();
+    void applyToOpenGL() override;
+    void move(float forward, float right, float up) override;
+    void rotate(float dx, float dy, float dz) override;
+    bool processEvent(uint scanCode, FPSController& fpsController) override;
 
     enum RotationMode {
         ModeLocal = 0,      // Локальное вращение
@@ -25,31 +24,11 @@ public:
     void changeRotationMode() { m_rotationMode = m_rotationMode == ModeLocal ? ModeFixedYaw : ModeLocal; }
     RotationMode getRotationMode() const { return m_rotationMode; }
 
-    // Геттеры для векторов камеры (добавлены)
-    QVector3D getCameraPos() const { return camera_pos; }
-    QVector3D getCameraFront() const { return camera_front; }
-    QVector3D getCameraUp() const { return camera_up; }
-    QVector3D getCameraRight() const { return camera_right; }
-
-    // Геттер для позиции точки (если нужно)
-    QVector3D getPointPosition() const {
-        return point ? QVector3D(point->getX(), point->getY(), point->getZ()) : QVector3D();
-    }
-
 private:
-    Point *point;
     RotationMode m_rotationMode = ModeFixedYaw;
 
-    // Кватернион для вращения
-    QQuaternion orientation;
-    QVector3D camera_pos;
-    QVector3D camera_front;
-    QVector3D camera_up;
-    QVector3D camera_right;
-
-    void updateCameraVectors();
     void rotateLocal(float dx, float dy, float dz);
     void rotateFixedYaw(float dx, float dy, float dz);
 };
 
-#endif // CAMERACORE_H
+#endif // CAMERACORE3D_H

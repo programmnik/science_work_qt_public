@@ -39,11 +39,14 @@ MainWindow::MainWindow(QWidget *parent)
     m_centralStack->addWidget(m_menuPanel);
 
     setupLeftTool();
+    setupModeButton();
 
     setWindowTitle(ScreenConfig::WINDOW_TITLE);
     resize(ScreenConfig::DEFAULT_WIDTH, ScreenConfig::DEFAULT_HEIGHT);
 
-    centralWidget()->setFocus();
+    // centralWidget()->setFocus();
+    GLWidget* glWidget = m_projectPanel->getGLWidget();
+    glWidget->setFocus(Qt::MouseFocusReason);
 }
 
 void MainWindow::setupLeftTool(){
@@ -176,24 +179,29 @@ void MainWindow::onMenuClicked(){
     setActiveButton(qobject_cast<QToolButton*>(sender()));
     m_projectPanel->hideDocks();
     m_centralStack->setCurrentWidget(m_menuPanel);
+    if (m_modeButton) m_modeButton->hide();
 }
 
 void MainWindow::onProjectClicked(){
     setActiveButton(qobject_cast<QToolButton*>(sender()));
     m_centralStack->setCurrentWidget(m_projectPanel);
     m_projectPanel->showDocks();
+    if (m_modeButton) m_modeButton->show();
+    if (m_modeButton) m_modeButton->raise();
 }
 
 void MainWindow::onSettingsClicked(){
     setActiveButton(qobject_cast<QToolButton*>(sender()));
     m_projectPanel->hideDocks();
     m_centralStack->setCurrentWidget(m_settingsPanel);
+    if (m_modeButton) m_modeButton->hide();
 }
 
 void MainWindow::onPreviewClicked(){
     setActiveButton(qobject_cast<QToolButton*>(sender()));
     m_projectPanel->hideDocks();
     m_centralStack->setCurrentWidget(m_previewPanel);
+    if (m_modeButton) m_modeButton->hide();
 }
 
 void MainWindow::onCreateClicked(){
@@ -247,6 +255,74 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::onModeChanged(bool is2D)
+{
+    qDebug() << "Режим изменен на:" << (is2D ? "2D" : "3D");
+    // TODO: позже добавим переключение GLWidget
+}
+
+void MainWindow::setupModeButton()
+{
+    m_modeButton = new ToggleButton(centralWidget());
+    m_modeButton->setFixedSize(50, 50);
+    m_modeButton->setBorderRadius(10);
+    m_modeButton->setFontSize(12);
+
+    // Настраиваем состояния
+    ToggleButton::State state3D;
+    state3D.text = "2D";
+    state3D.color = QColor(13, 115, 119, 220);
+    state3D.hoverColor = QColor(13, 115, 119, 255);
+    state3D.pressedColor = QColor(10, 90, 95, 200);
+    state3D.borderColor = QColor(255, 255, 255, 50);
+    state3D.textColor = Qt::white;
+    state3D.userData = "3D";
+
+    ToggleButton::State state2D;
+    state2D.text = "3D";
+    state2D.color = QColor(200, 100, 50, 220);
+    state2D.hoverColor = QColor(220, 120, 60, 255);
+    state2D.pressedColor = QColor(180, 80, 40, 200);
+    state2D.borderColor = QColor(255, 200, 100, 80);
+    state2D.textColor = Qt::white;
+    state2D.userData = "2D";
+
+    m_modeButton->addState("3D", state3D);
+    m_modeButton->addState("2D", state2D);
+    m_modeButton->setState("3D");
+
+    // Позиционируем
+    int margin = 20;
+    m_modeButton->move(centralWidget()->width() - m_modeButton->width() - margin, margin);
+
+    // Подключаем сигнал
+    connect(m_modeButton, &ToggleButton::stateChanged,
+            this, [this](const QString& oldState, const QString& newState) {
+        Q_UNUSED(oldState);
+        bool is2D = (newState == "2D");
+
+        // Переключаем режим в GLWidget
+        if (m_projectPanel) {
+            GLWidget* glWidget = m_projectPanel->getGLWidget();
+            if (glWidget) {
+                glWidget->setMode2D(is2D);
+                glWidget->setFocus(Qt::MouseFocusReason);
+            }
+        }
+        qDebug() << "Режим изменен на:" << newState;
+    });
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+    if (m_modeButton && centralWidget()) {
+        int margin = 20;
+        m_modeButton->move(centralWidget()->width() - m_modeButton->width() - margin, margin);
+        m_modeButton->raise();
+    }
 }
 
 void MainWindow::on_action_13_triggered()
