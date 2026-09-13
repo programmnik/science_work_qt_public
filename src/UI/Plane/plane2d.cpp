@@ -7,18 +7,18 @@ Plane2d::Plane2d()
     setFontSize(8);
 
     // Инициализация: стартовая ширина клетки = 1.0, breakpoint по умолчанию
-    m_zoomController.init(1.0);
+    m_zoomController.init(0.4);
 }
 
 void Plane2d::visibleRange(CameraCore2D* cam2d, int screenWidth, int screenHeight,
                            float& minX, float& maxX, float& minY, float& maxY) const
 {
-    const float cellWidth = static_cast<float>(m_zoomController.cellWidth());
+    // const float cellWidth = static_cast<float>(m_zoomController.cellWidth());
     const QVector3D pos = cam2d->getCameraPos();
     const float aspect = screenWidth / static_cast<float>(screenHeight);
 
     // Полувысота видимой области = N клеток
-    const float halfHeight = cellWidth * kCellsPerHalfHeight;
+    const float halfHeight = kCellsPerHalfHeight;
     const float halfWidth  = halfHeight * aspect;
 
     minX = pos.x() - halfWidth;
@@ -40,6 +40,7 @@ QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, i
 
     // Шаг подписей = ширина клетки
     const float step = static_cast<float>(m_zoomController.cellWidth());
+    const int cellToZero = static_cast<int>(m_zoomController.cellsToZero());
 
     auto addLabel = [&](const ComplexNumber& num, const QVector3D& worldPos, const QColor& color) {
         Label label;
@@ -54,24 +55,26 @@ QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, i
     // ---- Режим: только оси ----
     if (m_labelMode == ModeAxesOnly) {
 
+        float ratio = step * cellToZero;
+
         // Ось Re (y = 0): рисуем лейблы кратные step
         if (minY <= 0 && maxY >= 0) {
-            const float startX = std::floor(minX / step) * step;
-            for (float x = startX; x <= maxX; x += step) {
-                qDebug() << x << step;
-
-                if (std::abs(x) < step * 0.5f) continue;  // пропускаем 0
-                addLabel(ComplexNumber(x, 0.0f), QVector3D(x, 0, 0),
+            int start = std::floor(minX / ratio);
+            int end = maxX / ratio;
+            for (int x = start; x <= end; x++) {
+                if (x == 0) continue;
+                addLabel(ComplexNumber(x, 0.0f), QVector3D(x * ratio, 0, 0),
                          QColor(255, 100, 100));
             }
         }
 
         // Ось Im (x = 0): рисуем лейблы кратные step
         if (minX <= 0 && maxX >= 0) {
-            const float startY = std::floor(minY / step) * step;
-            for (float y = startY; y <= maxY; y += step) {
-                if (std::abs(y) < step * 0.5f) continue;
-                addLabel(ComplexNumber(0.0f, y), QVector3D(0, y, 0),
+            int start = std::floor(minY / ratio);
+            int end = maxY / ratio;
+            for (int y = start; y <= end; y ++) {
+                if (y == 0) continue;
+                addLabel(ComplexNumber(0.0f, y), QVector3D(0, y * ratio, 0),
                          QColor(100, 255, 100));
             }
         }

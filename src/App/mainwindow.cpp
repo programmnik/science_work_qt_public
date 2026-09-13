@@ -305,7 +305,6 @@ void MainWindow::setupModeButton()
                 glWidget->setFocus(Qt::MouseFocusReason);
             }
         }
-        qDebug() << "Режим изменен на:" << newState;
     });
 }
 

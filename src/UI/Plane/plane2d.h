@@ -35,7 +35,7 @@ private:
 
     // Сколько клеток помещается в половину высоты экрана.
     // Определяет визуальную "плотность" сетки.
-    static constexpr float kCellsPerHalfHeight = 8.0f;
+    static constexpr float kCellsPerHalfHeight = 5.0f;
 };
 
 #endif // PLANE2D_H
