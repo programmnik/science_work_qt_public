@@ -257,12 +257,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::onModeChanged(bool is2D)
-{
-    qDebug() << "Режим изменен на:" << (is2D ? "2D" : "3D");
-    // TODO: позже добавим переключение GLWidget
-}
-
 void MainWindow::setupModeButton()
 {
     m_modeButton = new ToggleButton(centralWidget());

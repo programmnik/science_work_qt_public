@@ -44,7 +44,7 @@ protected:
     float stepNumber;
     float stepX;
     float stepY;
-    LabelMode m_labelMode = ModeAll;
+    LabelMode m_labelMode = ModeAxesOnly;
     int m_fontSize = 16;
 };
 

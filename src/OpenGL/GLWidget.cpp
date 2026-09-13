@@ -301,8 +301,15 @@ void GLWidget::mouseMoveEvent(QMouseEvent *event)
 
 void GLWidget::wheelEvent(QWheelEvent *event)
 {
-    float factor = 1.0f - event->angleDelta().y() / 1200.0f;
-    m_currentCamera->zoom(factor);
+    //TODO: сделать нормальную обработку
+    if(m_mode2D){
+        const int delta = event->angleDelta().y();
+        if (delta != 0) plane2d->scroll(delta > 0 ? +1 : -1);
+    }
+    else {
+        float factor = 1.0f - event->angleDelta().y() / 1200.0f;
+        m_currentCamera->zoom(factor);
+    }
     update();
 }
 

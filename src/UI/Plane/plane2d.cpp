@@ -5,92 +5,100 @@
 Plane2d::Plane2d()
 {
     setFontSize(8);
+
+    // Инициализация: стартовая ширина клетки = 1.0, breakpoint по умолчанию
+    m_zoomController.init(1.0);
 }
 
-QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, int screenHeight){
+void Plane2d::visibleRange(CameraCore2D* cam2d, int screenWidth, int screenHeight,
+                           float& minX, float& maxX, float& minY, float& maxY) const
+{
+    const float cellWidth = static_cast<float>(m_zoomController.cellWidth());
+    const QVector3D pos = cam2d->getCameraPos();
+    const float aspect = screenWidth / static_cast<float>(screenHeight);
+
+    // Полувысота видимой области = N клеток
+    const float halfHeight = cellWidth * kCellsPerHalfHeight;
+    const float halfWidth  = halfHeight * aspect;
+
+    minX = pos.x() - halfWidth;
+    maxX = pos.x() + halfWidth;
+    minY = pos.y() - halfHeight;
+    maxY = pos.y() + halfHeight;
+}
+
+QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, int screenHeight)
+{
     QVector<Label> labels;
 
     if (m_labelMode == ModeNone || !camera) return labels;
     auto* cam2d = dynamic_cast<CameraCore2D*>(camera);
     if (!cam2d) return labels;
 
-    // Получаем параметры камеры
-    float viewSize = cam2d->getViewSize() / cam2d->getZoom();
-    QVector3D pos = cam2d->getCameraPos();
+    float minX, maxX, minY, maxY;
+    visibleRange(cam2d, screenWidth, screenHeight, minX, maxX, minY, maxY);
 
-    float aspect = screenWidth / (float)screenHeight;
-
-    float halfWidth = viewSize * aspect;
-    float halfHeight = viewSize;
-
-    float minX = pos.x() - halfWidth;
-    float maxX = pos.x() + halfWidth;
-    float minY = pos.y() - halfHeight;
-    float maxY = pos.y() + halfHeight;
-
-    // Определяем шаг для подписей
-    float visibleWidth = maxX - minX;
-    float visibleHeight = maxY - minY;
-    float maxRange = std::max(visibleWidth, visibleHeight);
-
-    float step = 1.0f;
-    if (maxRange > 20.0f) step = 2.0f;
-    if (maxRange > 50.0f) step = 5.0f;
-    if (maxRange > 100.0f) step = 10.0f;
+    // Шаг подписей = ширина клетки
+    const float step = static_cast<float>(m_zoomController.cellWidth());
 
     auto addLabel = [&](const ComplexNumber& num, const QVector3D& worldPos, const QColor& color) {
         Label label;
-        label.number = num;
+        label.number   = num;
         label.worldPos = worldPos;
-        label.text = num.toString();
-        label.color = color;
+        label.text     = num.toString();
+        label.color    = color;
         label.fontSize = m_fontSize;
         labels.append(label);
     };
 
-    // РЕЖИМ: только оси
+    // ---- Режим: только оси ----
     if (m_labelMode == ModeAxesOnly) {
-        // ---- Реальная ось: (x, 0) ----
+
+        // Ось Re (y = 0): рисуем лейблы кратные step
         if (minY <= 0 && maxY >= 0) {
-            for (float x = std::floor(minX); x <= std::ceil(maxX); x += step) {
-                if (std::abs(x) < 0.01f) continue;
-                QVector3D worldPos(x, 0, 0);
-                addLabel(ComplexNumber(x, 0.0f), worldPos, QColor(255, 100, 100));
+            const float startX = std::floor(minX / step) * step;
+            for (float x = startX; x <= maxX; x += step) {
+                qDebug() << x << step;
+
+                if (std::abs(x) < step * 0.5f) continue;  // пропускаем 0
+                addLabel(ComplexNumber(x, 0.0f), QVector3D(x, 0, 0),
+                         QColor(255, 100, 100));
             }
         }
 
-        // ---- Мнимая ось: (0, y) ----
+        // Ось Im (x = 0): рисуем лейблы кратные step
         if (minX <= 0 && maxX >= 0) {
-            for (float y = std::floor(minY); y <= std::ceil(maxY); y += step) {
-                if (std::abs(y) < 0.01f) continue;
-                QVector3D worldPos(0, y, 0);
-                addLabel(ComplexNumber(0.0f, y), worldPos, QColor(100, 255, 100));
+            const float startY = std::floor(minY / step) * step;
+            for (float y = startY; y <= maxY; y += step) {
+                if (std::abs(y) < step * 0.5f) continue;
+                addLabel(ComplexNumber(0.0f, y), QVector3D(0, y, 0),
+                         QColor(100, 255, 100));
             }
         }
 
-        // ---- Ноль: (0, 0) ----
+        // Ноль
         if (minX <= 0 && maxX >= 0 && minY <= 0 && maxY >= 0) {
-            addLabel(ComplexNumber(0.0f, 0.0f), QVector3D(0, 0, 0), QColor(255, 255, 255));
+            addLabel(ComplexNumber(0.0f, 0.0f), QVector3D(0, 0, 0),
+                     QColor(255, 255, 255));
         }
     }
 
-    // РЕЖИМ: все числа
+    // ---- Режим: все числа ----
     if (m_labelMode == ModeAll) {
-
         if (minX <= 0 && maxX >= 0 && minY <= 0 && maxY >= 0) {
             addLabel(ComplexNumber(0.0f, 0.0f), QVector3D(0, 0, 0), QColor(255, 255, 255));
         }
 
-        for (float x = std::floor(minX); x <= std::ceil(maxX); x += step) {
-            for (float y = std::floor(minY); y <= std::ceil(maxY); y += step) {
+        for (float x = std::floor(minX / step) * step; x <= maxX; x += step) {
+            for (float y = std::floor(minY / step) * step; y <= maxY; y += step) {
                 ComplexNumber num(x, y);
                 if (num.isZero()) continue;
 
                 QVector3D worldPos(x, y, 0);
-
-                addLabel(num, worldPos, !num.isOnAxis() ? QColor(200, 200, 255, 180)
-                                   : std::abs(num.getRe()) < 0.001f ? QColor(100, 255, 100)
-                                   : QColor(255, 100, 100));
+                addLabel(num, worldPos,
+                         !num.isOnAxis() ? QColor(200, 200, 255, 180)
+                         : std::abs(num.getRe()) < step * 0.01f ? QColor(100, 255, 100)
+                                                                : QColor(255, 100, 100));
             }
         }
     }
@@ -102,47 +110,27 @@ void Plane2d::drawGrid(CameraCore2D* camera2d, int viewportWidth, int viewportHe
 {
     if (!camera2d) return;
 
-    // Получаем параметры камеры
-    float viewSize = camera2d->getViewSize() / camera2d->getZoom();
-    QVector3D pos = camera2d->getCameraPos();
+    float minX, maxX, minY, maxY;
+    visibleRange(camera2d, viewportWidth, viewportHeight, minX, maxX, minY, maxY);
 
-    float aspect = viewportWidth / (float)viewportHeight;
+    const float step = static_cast<float>(m_zoomController.cellWidth());
 
-    float halfWidth = viewSize * aspect;
-    float halfHeight = viewSize;
-
-    float minX = pos.x() - halfWidth;
-    float maxX = pos.x() + halfWidth;
-    float minY = pos.y() - halfHeight;
-    float maxY = pos.y() + halfHeight;
-
-    float visibleWidth = maxX - minX;
-    float visibleHeight = maxY - minY;
-    float maxRange = std::max(visibleWidth, visibleHeight);
-
-    float step = 0.5f;
-    if (maxRange > 20.0f) step = 1.0f;
-    if (maxRange > 50.0f) step = 2.0f;
-    if (maxRange > 100.0f) step = 5.0f;
-    if (maxRange > 200.0f) step = 10.0f;
-
-    float startX = std::floor(minX / step) * step;
-    float endX = std::ceil(maxX / step) * step;
-    float startY = std::floor(minY / step) * step;
-    float endY = std::ceil(maxY / step) * step;
+    // Выравниваем стартовые позиции по сетке
+    const float startX = std::floor(minX / step) * step;
+    const float endX   = std::ceil (maxX / step) * step;
+    const float startY = std::floor(minY / step) * step;
+    const float endY   = std::ceil (maxY / step) * step;
 
     // Сетка
     glColor3f(0.3f, 0.3f, 0.4f);
     glBegin(GL_LINES);
-
     for (float x = startX; x <= endX; x += step) {
-        if (std::abs(x) < 0.01f) continue;
+        if (std::abs(x) < step * 0.01f) continue;
         glVertex3f(x, minY, 0);
         glVertex3f(x, maxY, 0);
     }
-
     for (float y = startY; y <= endY; y += step) {
-        if (std::abs(y) < 0.01f) continue;
+        if (std::abs(y) < step * 0.01f) continue;
         glVertex3f(minX, y, 0);
         glVertex3f(maxX, y, 0);
     }
@@ -151,19 +139,16 @@ void Plane2d::drawGrid(CameraCore2D* camera2d, int viewportWidth, int viewportHe
     // Оси
     glLineWidth(2.0f);
     glBegin(GL_LINES);
-
     if (minY <= 0 && maxY >= 0) {
         glColor3f(1.0f, 0.2f, 0.2f);
         glVertex3f(minX, 0, 0);
         glVertex3f(maxX, 0, 0);
     }
-
     if (minX <= 0 && maxX >= 0) {
         glColor3f(0.2f, 1.0f, 0.2f);
         glVertex3f(0, minY, 0);
         glVertex3f(0, maxY, 0);
     }
-
     glEnd();
     glLineWidth(1.0f);
 }
@@ -173,7 +158,6 @@ void Plane2d::draw(Camera* camera, QPainter* painter, int screenWidth, int scree
     Q_UNUSED(painter);
 
     if (!camera) return;
-
     auto* cam2d = dynamic_cast<CameraCore2D*>(camera);
     if (!cam2d) return;
 
@@ -181,48 +165,41 @@ void Plane2d::draw(Camera* camera, QPainter* painter, int screenWidth, int scree
 
     if (!painter) return;
 
-    // Генерируем подписи
     QVector<Label> labels = generateLabels(cam2d, screenWidth, screenHeight);
 
-    // Настройка шрифта
     QFont font = painter->font();
     font.setBold(true);
     font.setPointSize(m_fontSize);
     painter->setFont(font);
 
-    // Рисуем все подписи
+    // Пересчитываем видимый диапазон для проекции
+    float minX, maxX, minY, maxY;
+    visibleRange(cam2d, screenWidth, screenHeight, minX, maxX, minY, maxY);
+
+    const float rangeX = maxX - minX;
+    const float rangeY = maxY - minY;
+
     for (const Label& label : labels) {
-        // В 2D режиме проецируем точку на экран через камеру
-        // Для 2D используем простую проекцию (без gluProject)
-        float viewSize = cam2d->getViewSize() / cam2d->getZoom();
-        QVector3D cameraPos = cam2d->getCameraPos();
-        float aspect = screenWidth / (float)screenHeight;
+        // Проекция мировой точки в экранные координаты
+        const float nx = (label.worldPos.x() - minX) / rangeX;   // 0..1
+        const float ny = (label.worldPos.y() - minY) / rangeY;   // 0..1
 
-        float halfWidth = viewSize * aspect;
-        float halfHeight = viewSize;
-
-        // Преобразуем мировые координаты в экранные
-        float screenX = (label.worldPos.x() - (cameraPos.x() - halfWidth)) / (2 * halfWidth) * screenWidth;
-        float screenY = (1.0f - (label.worldPos.y() - (cameraPos.y() - halfHeight)) / (2 * halfHeight)) * screenHeight;
+        const float screenX = nx * screenWidth;
+        const float screenY = (1.0f - ny) * screenHeight;
 
         QPointF screenPos(screenX, screenY);
 
         if (screenPos.x() < 0 || screenPos.x() > screenWidth ||
             screenPos.y() < 0 || screenPos.y() > screenHeight) continue;
 
-        // Вычисляем реальный размер текста
         QFontMetrics metrics(font);
         QRect textRect = metrics.boundingRect(label.text);
 
-        // Добавляем небольшие отступы (padding)
         int padding = 4;
-        int width = textRect.width() + padding * 2;
-        int height = textRect.height() + padding * 2;
+        int width   = textRect.width()  + padding * 2;
+        int height  = textRect.height() + padding * 2;
 
-        // Позиционируем относительно точки
-        QRectF rect(screenPos.x() - width,
-                    screenPos.y(),
-                    width, height);
+        QRectF rect(screenPos.x() - width, screenPos.y(), width, height);
 
         painter->setPen(label.color);
         painter->drawText(rect, Qt::AlignCenter, label.text);

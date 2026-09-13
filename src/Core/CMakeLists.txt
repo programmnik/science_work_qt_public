@@ -4,6 +4,7 @@ add_library(coreLibrary STATIC
     raycaster.cpp       raycaster.h
     complexnumber.cpp   complexnumber.h
     bigfloat.h          bigfloat.cpp
+    zoomcontroller.h    zoomcontroller.cpp
 )
 
 target_include_directories(coreLibrary PRIVATE
