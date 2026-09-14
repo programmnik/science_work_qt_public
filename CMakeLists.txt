@@ -12,16 +12,6 @@ add_subdirectory(src)
 
 # Установка
 include(GNUInstallDirs)
-# install(TARGETS science_work
-#     BUNDLE DESTINATION .
-#     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-#     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-# )
-
-# # Финализация для Qt6
-# if(${QT_VERSION_MAJOR} EQUAL 6)
-#     qt_finalize_executable(science_work)
-# endif()
 
 # Установка иконки
 install(FILES "images/Riemann.png"

@@ -3,6 +3,7 @@
 
 
 #include "camera.h"
+#include <QMatrix4x4>
 
 class CameraCore3D : public Camera
 {
@@ -23,6 +24,17 @@ public:
     void setRotationMode(RotationMode mode) { m_rotationMode = mode; }
     void changeRotationMode() { m_rotationMode = m_rotationMode == ModeLocal ? ModeFixedYaw : ModeLocal; }
     RotationMode getRotationMode() const { return m_rotationMode; }
+
+    QMatrix4x4 getViewMatrix() const
+    {
+        QVector3D eye   = getCameraPos();
+        QVector3D front = getCameraFront();
+        QVector3D up    = getCameraUp();
+
+        QMatrix4x4 m;
+        m.lookAt(eye, eye + front, up);
+        return m;
+    }
 
 private:
     RotationMode m_rotationMode = ModeFixedYaw;

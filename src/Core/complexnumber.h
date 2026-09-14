@@ -2,27 +2,30 @@
 #define COMPLEXNUMBER_H
 
 #include <QString>
+#include "bigfloat.h"
 
 class ComplexNumber
 {
 public:
-    ComplexNumber();
-    ComplexNumber(float re, float im);
+    ComplexNumber(): re(BigFloat(0.0f)), im(BigFloat(0.0f)){}
+    ComplexNumber(BigFloat re, BigFloat im): re(re), im(im){}
     inline ~ComplexNumber() {}
 
-    QString toString() const;
-    bool isOnAxis() const;
-    bool isZero() const;
+    bool isOnAxis() const { return re.isZero() || im.isZero(); }
+    bool isZero() const { return re.isZero() && im.isZero(); }
 
-    void setRe(float re){ this->re = re; }
-    void setIm(float im){ this->im = im; }
-    float getRe(){ return re; }
-    float getIm(){ return im; }
+    void setRe(BigFloat re){ this->re = re; }
+    void setIm(BigFloat im){ this->im = im; }
+
+    BigFloat getRe(){ return re; }
+    BigFloat getIm(){ return im; }
+
+    QString toString() const;
 
 private:
 
-    float re;
-    float im;
+    BigFloat re;
+    BigFloat im;
 };
 
 #endif // COMPLEXNUMBER_H

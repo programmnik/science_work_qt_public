@@ -24,12 +24,14 @@ public:
     // Текущее состояние
     double cellWidth() const { return m_cellWidth; }
     double breakpoint() const { return m_breakpoint; }
-    Series series() const { return m_series; }
+    int seriesStep() const;
     int scrollsInSeries() const { return m_scrolls; }
 
     // Константы текущего ряда
     int liveSteps() const { return m_liveSteps; }
     int cellsToZero() const { return m_cellsToZero; }
+
+    int64_t currentExponent() const { return m_exp; }
 
     QString toString() const;
 
@@ -47,6 +49,7 @@ private:
     double m_step;    // приращение "гипотетической точки" за скролл
     double m_stepPrime; // приращение cellWidth за скролл
     double m_del;
+    int64_t m_exp = 0;
 };
 
 #endif // ZOOMCONTROLLER_H

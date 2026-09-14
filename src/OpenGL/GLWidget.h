@@ -12,6 +12,7 @@
 #include "UI/Sphere/sphere.h"
 #include "Core/fpscontroller.h"
 #include "Core/raycaster.h"
+#include "skyrenderer.h"
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions
 {
@@ -40,6 +41,11 @@ protected:
 
 private:
     void onUpdate();
+
+    SkyRenderer*  m_skyRenderer = nullptr;
+    QElapsedTimer m_skyTimer;
+
+    // GLuint m_skyVbo = 0;
 
     void draw2DScene();
     void draw3DScene();

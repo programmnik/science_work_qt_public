@@ -62,9 +62,9 @@ void ZoomController::scroll(int direction)
 
     if (m_scrolls >= m_liveSteps) {
         switch (m_series) {
-            case Even:    m_series = Integer; break;
-            case Integer: m_series = Step5;   break;
-            case Step5:   m_series = Even;    break;
+            case Even:    m_series = Integer;         break;
+            case Integer: m_series = Step5;  m_exp--; break;
+            case Step5:   m_series = Even;            break;
         }
         applySeriesSettings();
         m_cellWidth = m_breakpoint / m_cellsToZero;
@@ -72,14 +72,18 @@ void ZoomController::scroll(int direction)
     }
     else if (m_scrolls < 0) {
         switch (m_series) {
-            case Even:    m_series = Step5;   m_scrolls = 14;  break;
-            case Integer: m_series = Even;    m_scrolls = 11;  break;
-            case Step5:   m_series = Integer; m_scrolls = 10;  break;
+            case Even:    m_series = Step5;   m_scrolls = 14;           break;
+            case Integer: m_series = Even;    m_scrolls = 11;           break;
+            case Step5:   m_series = Integer; m_scrolls = 10; m_exp++;  break;
         }
         applySeriesSettings();
 
         m_cellWidth = m_breakpoint / m_del - m_stepPrime;
     }
+}
+
+int ZoomController::seriesStep() const {
+    return m_series == Integer ? 1 : m_series == Even ? 2 : 5;
 }
 
 QString ZoomController::toString() const

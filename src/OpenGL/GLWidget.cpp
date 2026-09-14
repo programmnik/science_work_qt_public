@@ -6,6 +6,7 @@
 #include "Core/constants.h"
 #include "Data/objectmanager.h"
 #include "Data/sceneobject.h"
+#include <GL/glu.h>
 
 GLWidget::GLWidget(QWidget *parent)
     : QOpenGLWidget(parent)
@@ -13,6 +14,9 @@ GLWidget::GLWidget(QWidget *parent)
     , m_mode2D(false)
     , m_currentCamera(nullptr)
 {
+    m_skyRenderer = new SkyRenderer();
+    m_skyTimer.start();
+
     cameraPoint = new Point(CameraConfig::DEFAULT_X,
                             CameraConfig::DEFAULT_Y,
                             CameraConfig::DEFAULT_Z,
@@ -65,6 +69,12 @@ GLWidget::GLWidget(QWidget *parent)
 
 GLWidget::~GLWidget()
 {
+    if (m_skyRenderer) {
+        m_skyRenderer->destroy();
+        delete m_skyRenderer;
+        m_skyRenderer = nullptr;
+    }
+
     if (m_fpsController) {
         m_fpsController->stop();
         delete m_fpsController;
@@ -96,6 +106,8 @@ void GLWidget::initializeGL()
                  Colors::BACKGROUND_B,
                  1.0f);
     glEnable(GL_DEPTH_TEST);
+
+    m_skyRenderer->initialize();
 }
 
 void GLWidget::onUpdate()
@@ -168,6 +180,23 @@ void GLWidget::draw3DScene()
     float left = -right;
 
     glFrustum(left, right, bottom, top, nearPlane, farPlane);
+
+    // --- Матрицы для шейдера неба ---
+    // fov = qBound(10.0f, fov, 120.0f);
+
+    QMatrix4x4 projection;
+    projection.perspective(fov, aspect, 0.1f, 1000.0f);
+
+    // view-матрица с трансляцией — нужна и для сцены, и для неба
+    QMatrix4x4 view = camera3d->getViewMatrix(); // ← добавь метод в CameraCore3D
+
+    // Для неба убираем трансляцию — оставляем только поворот
+    QMatrix4x4 skyView = view;
+    skyView.setColumn(3, QVector4D(0.0f, 0.0f, 0.0f, 1.0f));
+
+    // --- Небо ---
+    float t = m_skyTimer.elapsed() / 1000.0f;
+    m_skyRenderer->render(projection, skyView, t);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();

@@ -43,7 +43,9 @@ public:
     QString toDecimal() const;
 
     // Утилиты
-    bool   isZero()   const { return m_mantissa == 0.0; }
+    bool   isZero()     const { return m_mantissa == 0.0; }
+    bool   isOne()      const { return m_mantissa ==  1.0 && m_exponent == 0; }
+    bool   isMinusOne() const { return m_mantissa == -1.0 && m_exponent == 0; }
     bool   isNegative() const { return m_mantissa < 0.0; }
     double toDouble() const;
     BigFloat abs() const;

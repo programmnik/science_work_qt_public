@@ -1,5 +1,6 @@
 add_library(openGLLibrary STATIC
     GLWidget.cpp GLWidget.h
+    skyrenderer.h skyrenderer.cpp
 )
 
 target_include_directories(openGLLibrary PRIVATE

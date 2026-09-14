@@ -158,7 +158,7 @@ QVector<Plane::Label> Plane3d::generateLabels(Camera* camera, int screenWidth, i
         if(minY <= 0 && maxY >= 0 && minX <= 0 && maxX >= 0){
             QVector3D originPos(0, 0, 0);
             if (isVisible(originPos)) {
-                addLabel(ComplexNumber(0.0f, 0.0f), originPos, QColor(255, 255, 255));
+                addLabel(ComplexNumber(), originPos, QColor(255, 255, 255));
             }
         }
     };
@@ -173,7 +173,7 @@ QVector<Plane::Label> Plane3d::generateLabels(Camera* camera, int screenWidth, i
             for (float x = std::floor(minX); x <= std::ceil(maxX); x += stepNumber) {
                 if (std::abs(x) < 0.01f) continue;
                 QVector3D pos(x, 0, 0);
-                if (isVisible(pos)) addLabel(ComplexNumber(x, 0.0f), pos, QColor(255, 100, 100));
+                if (isVisible(pos)) addLabel(ComplexNumber(BigFloat(x), BigFloat()), pos, QColor(255, 100, 100));
             }
         }
 
@@ -182,7 +182,7 @@ QVector<Plane::Label> Plane3d::generateLabels(Camera* camera, int screenWidth, i
             for (float y = std::floor(minY); y <= std::ceil(maxY); y += stepNumber) {
                 if (std::abs(y) < 0.01f) continue;
                 QVector3D pos(0, y, 0);
-                if (isVisible(pos)) addLabel(ComplexNumber(0.0f, y), pos, QColor(100, 255, 100));
+                if (isVisible(pos)) addLabel(ComplexNumber(BigFloat(), BigFloat(y)), pos, QColor(100, 255, 100));
             }
         }
     }
@@ -194,7 +194,7 @@ QVector<Plane::Label> Plane3d::generateLabels(Camera* camera, int screenWidth, i
 
         for (float x = std::floor(minX); x <= std::ceil(maxX); x += stepNumber) {
             for (float y = std::floor(minY); y <= std::ceil(maxY); y += stepNumber) {
-                ComplexNumber num(x, y);
+                ComplexNumber num{BigFloat(x), BigFloat(y)};
 
                 if (num.isZero()) continue;
 
@@ -207,7 +207,7 @@ QVector<Plane::Label> Plane3d::generateLabels(Camera* camera, int screenWidth, i
                     screenPos.y() < 0 || screenPos.y() > screenHeight) continue;
 
                 addLabel(num, pos, !num.isOnAxis() ? QColor(200, 200, 255, 180)
-                                   : std::abs(num.getRe()) < 0.001f ? QColor(100, 255, 100)
+                                   : num.getRe().isZero() ? QColor(100, 255, 100)
                                    : QColor(255, 100, 100));
             }
         }

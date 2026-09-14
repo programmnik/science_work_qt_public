@@ -41,6 +41,8 @@ QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, i
     // Шаг подписей = ширина клетки
     const float step = static_cast<float>(m_zoomController.cellWidth());
     const int cellToZero = static_cast<int>(m_zoomController.cellsToZero());
+    const int seriesRatio = m_zoomController.seriesStep();
+    const int64_t exponent = m_zoomController.currentExponent();
 
     auto addLabel = [&](const ComplexNumber& num, const QVector3D& worldPos, const QColor& color) {
         Label label;
@@ -63,7 +65,7 @@ QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, i
             int end = maxX / ratio;
             for (int x = start; x <= end; x++) {
                 if (x == 0) continue;
-                addLabel(ComplexNumber(x, 0.0f), QVector3D(x * ratio, 0, 0),
+                addLabel(ComplexNumber(BigFloat(x * seriesRatio, exponent), BigFloat()), QVector3D(x * ratio, 0, 0),
                          QColor(255, 100, 100));
             }
         }
@@ -74,14 +76,14 @@ QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, i
             int end = maxY / ratio;
             for (int y = start; y <= end; y ++) {
                 if (y == 0) continue;
-                addLabel(ComplexNumber(0.0f, y), QVector3D(0, y * ratio, 0),
+                addLabel(ComplexNumber(BigFloat(), BigFloat(y * seriesRatio, exponent)), QVector3D(0, y * ratio, 0),
                          QColor(100, 255, 100));
             }
         }
 
         // Ноль
         if (minX <= 0 && maxX >= 0 && minY <= 0 && maxY >= 0) {
-            addLabel(ComplexNumber(0.0f, 0.0f), QVector3D(0, 0, 0),
+            addLabel(ComplexNumber(), QVector3D(0, 0, 0),
                      QColor(255, 255, 255));
         }
     }
@@ -89,19 +91,26 @@ QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, i
     // ---- Режим: все числа ----
     if (m_labelMode == ModeAll) {
         if (minX <= 0 && maxX >= 0 && minY <= 0 && maxY >= 0) {
-            addLabel(ComplexNumber(0.0f, 0.0f), QVector3D(0, 0, 0), QColor(255, 255, 255));
+            addLabel(ComplexNumber(), QVector3D(0, 0, 0), QColor(255, 255, 255));
         }
 
-        for (float x = std::floor(minX / step) * step; x <= maxX; x += step) {
-            for (float y = std::floor(minY / step) * step; y <= maxY; y += step) {
-                ComplexNumber num(x, y);
+        float ratio = step * cellToZero;
+
+        int startX = std::floor(minX / ratio);
+        int endX   = maxX / ratio;
+        int startY = std::floor(minY / ratio);
+        int endY   = maxY / ratio;
+
+        for (int x = startX; x <= endX; x ++) {
+            for (int y = startY; y <= endY; y ++) {
+                ComplexNumber num{BigFloat(x * seriesRatio, exponent), BigFloat(y * seriesRatio, exponent)};
                 if (num.isZero()) continue;
 
-                QVector3D worldPos(x, y, 0);
+                QVector3D worldPos(x * ratio, y * ratio, 0);
                 addLabel(num, worldPos,
                          !num.isOnAxis() ? QColor(200, 200, 255, 180)
-                         : std::abs(num.getRe()) < step * 0.01f ? QColor(100, 255, 100)
-                                                                : QColor(255, 100, 100));
+                         : num.getRe().isZero() ? QColor(100, 255, 100)
+                         : QColor(255, 100, 100));
             }
         }
     }
@@ -112,6 +121,8 @@ QVector<Plane::Label> Plane2d::generateLabels(Camera* camera, int screenWidth, i
 void Plane2d::drawGrid(CameraCore2D* camera2d, int viewportWidth, int viewportHeight)
 {
     if (!camera2d) return;
+
+    const int cellToZero = static_cast<int>(m_zoomController.cellsToZero());
 
     float minX, maxX, minY, maxY;
     visibleRange(camera2d, viewportWidth, viewportHeight, minX, maxX, minY, maxY);
@@ -124,20 +135,49 @@ void Plane2d::drawGrid(CameraCore2D* camera2d, int viewportWidth, int viewportHe
     const float startY = std::floor(minY / step) * step;
     const float endY   = std::ceil (maxY / step) * step;
 
-    // Сетка
+    // Индекс линии = координата / step. startX/step — целое (после floor).
+    const long i0x = static_cast<long>(std::llround(startX / step));
+    const long i1x = static_cast<long>(std::llround(endX   / step));
+    const long i0y = static_cast<long>(std::llround(startY / step));
+    const long i1y = static_cast<long>(std::llround(endY   / step));
+
+    auto drawGridLines = [&](bool vertical) {
+        const long i0 = vertical ? i0x : i0y;
+        const long i1 = vertical ? i1x : i1y;
+        for (long i = i0; i <= i1; ++i) {
+            // пропускаем оси (i == 0)
+            if (i == 0) continue;
+
+            const float coord = static_cast<float>(i) * step;
+            const bool major  = (i % cellToZero == 0);
+
+            if (major) {
+                glLineWidth(2.0f);
+                glColor3f(0.45f, 0.45f, 0.7f);   // ярче/толще
+            } else {
+                glLineWidth(1.0f);
+                glColor3f(0.3f, 0.3f, 0.4f);   // обычная
+            }
+
+            if (vertical) {
+                glVertex3f(coord, minY, 0);
+                glVertex3f(coord, maxY, 0);
+            } else {
+                glVertex3f(minX, coord, 0);
+                glVertex3f(maxX, coord, 0);
+            }
+        }
+    };
+
+    // Оси
     glColor3f(0.3f, 0.3f, 0.4f);
+    glLineWidth(1.0f);
     glBegin(GL_LINES);
-    for (float x = startX; x <= endX; x += step) {
-        if (std::abs(x) < step * 0.01f) continue;
-        glVertex3f(x, minY, 0);
-        glVertex3f(x, maxY, 0);
-    }
-    for (float y = startY; y <= endY; y += step) {
-        if (std::abs(y) < step * 0.01f) continue;
-        glVertex3f(minX, y, 0);
-        glVertex3f(maxX, y, 0);
-    }
+    drawGridLines(true);
+    drawGridLines(false);
     glEnd();
+
+    glLineWidth(1.0f);
 
     // Оси
     glLineWidth(2.0f);
