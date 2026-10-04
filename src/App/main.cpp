@@ -2,18 +2,23 @@
 #include <QApplication>
 #include <QTimer>
 #include "Themes/dark/standarddark.h"
+#include <QImageReader>
 
 int main(int argc, char *argv[])
 {
+    Q_INIT_RESOURCE(resources);
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon(":/images/Riemann.png"));
+
+    QIcon icon(":/images/Riemann-multi.ico");
+
+    app.setWindowIcon(icon);
     app.setStyleSheet(StandardDark::getGlobalStyle());
 
     MainWindow window;
-    window.setWindowIcon(QIcon(":/images/Riemann.png"));
+    window.setWindowIcon(icon);
     window.show();
 
-    QTimer::singleShot(10, &window, &QWidget::showMaximized);
+    QTimer::singleShot(0, &window, &QWidget::showMaximized);
 
     return app.exec();
 }

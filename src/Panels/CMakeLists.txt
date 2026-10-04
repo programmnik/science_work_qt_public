@@ -2,6 +2,9 @@ add_library(panelLibrary STATIC
     ObjectPanel/objectspanelwidget.cpp  ObjectPanel/objectspanelwidget.h
     ProjectPanel/projectpanel.cpp       ProjectPanel/projectpanel.h
     PreviewPanel/previewpanel.cpp       PreviewPanel/previewpanel.h
+    SettingsPanel/settingspanel.h       SettingsPanel/settingspanel.cpp
+    MenuPanel/menupanel.h MenuPanel/menupanel.cpp
+    ProjectPanel/mathpanel.h ProjectPanel/mathpanel.cpp
 )
 
 target_include_directories(panelLibrary PUBLIC

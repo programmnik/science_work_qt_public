@@ -15,28 +15,26 @@ MainWindow::MainWindow(QWidget *parent)
     m_centralStack = new QStackedWidget(this);
 
     m_projectPanel = new ProjectPanel(this, m_centralStack);
+    m_projectPanel->setMinimumSize(0, 0);
+    m_projectPanel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     m_centralStack->addWidget(m_projectPanel);
 
     m_previewPanel = new PreviewPanel(m_centralStack);
+    m_previewPanel->setMinimumSize(0, 0);
+    m_previewPanel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     m_centralStack->addWidget(m_previewPanel);
 
-    setCentralWidget(m_centralStack);
-
-    // Страница настроек (временно пустая)
-    m_settingsPanel = new QWidget();
-    m_settingsPanel->setStyleSheet("background-color: #1e2a2a;");
-    QLabel *settingsLabel = new QLabel("Настройки", m_settingsPanel);
-    settingsLabel->setAlignment(Qt::AlignCenter);
-    settingsLabel->setStyleSheet("color: white; font-size: 20px;");
+    m_settingsPanel = new SettingsPanel(this);
+    m_settingsPanel->setMinimumSize(0, 0);
+    m_settingsPanel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     m_centralStack->addWidget(m_settingsPanel);
 
-    // Страница меню (временно пустая)
-    m_menuPanel = new QWidget();
-    m_menuPanel->setStyleSheet("background-color: #2a2a1e;");
-    QLabel *menuLabel = new QLabel("Меню", m_menuPanel);
-    menuLabel->setAlignment(Qt::AlignCenter);
-    menuLabel->setStyleSheet("color: white; font-size: 20px;");
+    m_menuPanel = new MenuPanel(this);
+    m_menuPanel->setMinimumSize(0, 0);
+    m_menuPanel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     m_centralStack->addWidget(m_menuPanel);
+
+    setCentralWidget(m_centralStack);
 
     setupLeftTool();
     setupModeButton();

@@ -229,22 +229,19 @@ void ProjectPanel::setupFormulas(){
 }
 
 void ProjectPanel::setupMathFunctions(){
-    QWidget *mathWidget = new QWidget();
-    QVBoxLayout *mathLayout = new QVBoxLayout(mathWidget);
+    m_mathPanel = new MathPanel(this);
 
-    QPushButton *sinBtn = new QPushButton("sin(x)");
-    QPushButton *cosBtn = new QPushButton("cos(x)");
-    QPushButton *tanBtn = new QPushButton("tan(x)");
-    QPushButton *expBtn = new QPushButton("e^x");
+    // Подключаемся к целевому полю — тому, которое сейчас активно
+    // Например, ко всем QLineEdit формул:
+    connect(m_mathPanel, &MathPanel::functionInserted, this, [](const QString &text) {
+        qDebug() << "Вставлено:" << text;
+    });
 
-    mathLayout->addWidget(sinBtn);
-    mathLayout->addWidget(cosBtn);
-    mathLayout->addWidget(tanBtn);
-    mathLayout->addWidget(expBtn);
-    mathLayout->addStretch();
+    m_mathDock->setWidget(m_mathPanel);
 
-    m_mathDock->setWidget(mathWidget);
-    // addDockWidget(Qt::BottomDockWidgetArea, m_mathDock);
+    // Настраиваем высоту дока, чтобы панель не занимала весь экран
+    m_mathDock->setMinimumHeight(180);
+    m_mathDock->setMaximumHeight(360);
 }
 
 void ProjectPanel::showDocks(){

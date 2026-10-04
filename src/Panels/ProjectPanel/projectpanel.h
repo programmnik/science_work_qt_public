@@ -6,6 +6,7 @@
 #include "OpenGL/GLWidget.h"
 #include "QMainWindow"
 #include "../ObjectPanel/objectspanelwidget.h"
+#include "mathpanel.h"
 
 class ProjectPanel : public QWidget
 {
@@ -28,6 +29,7 @@ private:
     QDockWidget *m_mathDock;
     QDockWidget *m_objectsDock;
     ObjectsPanelWidget *m_objectsPanel;
+    MathPanel *m_mathPanel = nullptr;
 };
 
 #endif // PROJECTPANEL_H

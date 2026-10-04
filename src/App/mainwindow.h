@@ -11,6 +11,8 @@
 
 #include "Panels/ProjectPanel/projectpanel.h"
 #include "Panels/PreviewPanel/previewpanel.h"
+#include "Panels/SettingsPanel/settingspanel.h"
+#include "Panels/MenuPanel/menupanel.h"
 #include "OpenGL/GLWidget.h"
 #include "UI/ToggleButton/togglebutton.h"
 
@@ -52,9 +54,9 @@ private:
 
     QStackedWidget *m_centralStack;
     ProjectPanel *m_projectPanel;
-    QWidget *m_settingsPanel;
+    SettingsPanel *m_settingsPanel;
     PreviewPanel *m_previewPanel;
-    QWidget *m_menuPanel;
+    MenuPanel *m_menuPanel;
     QList<QPair<QToolButton*, QString>> m_toolButtons;
     ToggleButton* m_modeButton = nullptr;
 
