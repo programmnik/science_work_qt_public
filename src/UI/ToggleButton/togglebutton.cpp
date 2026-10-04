@@ -15,7 +15,7 @@ ToggleButton::~ToggleButton() {}
 void ToggleButton::setupUI()
 {
     setCursor(Qt::PointingHandCursor);
-    setCheckable(true);
+    setFocusPolicy(Qt::NoFocus);
 
     m_animation = new QPropertyAnimation(this, "opacity");
     m_animation->setDuration(200);

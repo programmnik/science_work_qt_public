@@ -28,9 +28,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected:
-    void resizeEvent(QResizeEvent *event) override;
-
 private slots:
     void on_action_13_triggered();
     void on_action_14_triggered();

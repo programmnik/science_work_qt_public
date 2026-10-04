@@ -34,7 +34,19 @@ MainWindow::MainWindow(QWidget *parent)
     m_menuPanel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     m_centralStack->addWidget(m_menuPanel);
 
-    setCentralWidget(m_centralStack);
+    QWidget *overlay = new QWidget(this);
+    overlay->setAttribute(Qt::WA_TranslucentBackground, true);
+    overlay->setAttribute(Qt::WA_NoSystemBackground, true);
+    overlay->setAutoFillBackground(false);
+    overlay->setStyleSheet("background: transparent;");
+
+    QGridLayout *overlayLay = new QGridLayout(overlay);
+    overlayLay->setContentsMargins(0, 0, 0, 0);
+    overlayLay->setSpacing(0);
+
+    overlayLay->addWidget(m_centralStack, 0, 0);
+
+    setCentralWidget(overlay);
 
     setupLeftTool();
     setupModeButton();
@@ -257,7 +269,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::setupModeButton()
 {
-    m_modeButton = new ToggleButton(centralWidget());
+    QWidget *overlay = centralWidget();
+    QGridLayout *overlayLay = qobject_cast<QGridLayout*>(overlay->layout());
+    Q_ASSERT(overlayLay);
+
+    m_modeButton = new ToggleButton(overlay);
     m_modeButton->setFixedSize(50, 50);
     m_modeButton->setBorderRadius(10);
     m_modeButton->setFontSize(12);
@@ -286,8 +302,20 @@ void MainWindow::setupModeButton()
     m_modeButton->setState("3D");
 
     // Позиционируем
-    int margin = 20;
-    m_modeButton->move(centralWidget()->width() - m_modeButton->width() - margin, margin);
+
+    // Оборачиваем в "хост" с отступами 20px справа и сверху
+    QWidget *buttonHost = new QWidget(overlay);
+    buttonHost->setAttribute(Qt::WA_NoSystemBackground, true);
+    buttonHost->setAutoFillBackground(false);
+    buttonHost->setStyleSheet("background: transparent;");
+
+    QVBoxLayout *bh = new QVBoxLayout(buttonHost);
+    bh->setContentsMargins(0, 20, 20, 0);   // top=20, right=20
+    bh->setSpacing(0);
+    bh->addWidget(m_modeButton);
+    bh->addStretch(1);
+
+    overlayLay->addWidget(buttonHost, 0, 0, Qt::AlignTop | Qt::AlignRight);
 
     // Подключаем сигнал
     connect(m_modeButton, &ToggleButton::stateChanged,
@@ -304,16 +332,6 @@ void MainWindow::setupModeButton()
             }
         }
     });
-}
-
-void MainWindow::resizeEvent(QResizeEvent *event)
-{
-    QMainWindow::resizeEvent(event);
-    if (m_modeButton && centralWidget()) {
-        int margin = 20;
-        m_modeButton->move(centralWidget()->width() - m_modeButton->width() - margin, margin);
-        m_modeButton->raise();
-    }
 }
 
 void MainWindow::on_action_13_triggered()
