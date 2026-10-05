@@ -3,9 +3,9 @@ find_package(OpenGL REQUIRED)
 
 # Поиск Qt с компонентами для OpenGL и Multimedia
 find_package(QT NAMES Qt6 Qt5 REQUIRED
-    COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets)
+    COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets Svg)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-    COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets)
+    COMPONENTS Core Widgets OpenGL Multimedia MultimediaWidgets Svg)
 
 # Для Qt6 нужен дополнительный модуль OpenGLWidgets
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -38,6 +38,7 @@ target_link_libraries(science_work PRIVATE
     Qt${QT_VERSION_MAJOR}::OpenGL
     Qt${QT_VERSION_MAJOR}::Multimedia
     Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+    Qt${QT_VERSION_MAJOR}::Svg
     ${OPENGL_LIBRARIES}
 )
 

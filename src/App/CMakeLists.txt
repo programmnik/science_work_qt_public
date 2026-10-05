@@ -5,6 +5,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         mainwindow.h
         mainwindow.ui
         ../../resources.qrc
+        customtitlebar.h customtitlebar.cpp
+        custommenubar.h custommenubar.cpp
     )
 else()
     add_executable(science_work

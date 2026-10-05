@@ -12,6 +12,47 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setMenuBar(nullptr);                             // системный менюбар убираем
+    setWindowFlag(Qt::FramelessWindowHint, true);
+
+    // Создаём TopBar (заголовок + менюбар)
+    m_topBar = new TopBar(this);
+
+    // Хост-ToolBar — единственный способ попасть в самую верхнюю зону
+    QToolBar *host = new QToolBar(this);
+    host->setObjectName("topBarHost");
+    host->setOrientation(Qt::Horizontal);
+    host->setFocusPolicy(Qt::NoFocus);
+    host->setMovable(false);
+    host->setFloatable(false);
+    host->setAllowedAreas(Qt::TopToolBarArea);
+    host->setFixedHeight(m_topBar->sizeHint().height());
+    host->setStyleSheet(
+        "#topBarHost { border: 0; padding: 0; margin: 0; spacing: 0; background: transparent; }"
+        "#topBarHost::handle { background: transparent; }"
+        );
+    host->addWidget(m_topBar);
+    addToolBar(Qt::TopToolBarArea, host);
+
+    // Заголовок и его сигналы
+    CustomTitleBar *tb = m_topBar->titleBar();
+    tb->setDocumentTitle("Riemann_Orbital_Relay_01.smx [Пространство C]");
+    tb->setAppTitle("СТЕРЕОМЕТРИКС CAD/CAE", "v1.0.0");
+    connect(tb, &CustomTitleBar::minimizeRequested, this, &MainWindow::showMinimized);
+    connect(tb, &CustomTitleBar::maximizeRestoreRequested, this, [this]{
+        isMaximized() ? showNormal() : showMaximized();
+        m_topBar->titleBar()->updateMaximizeIcon(isMaximized());
+    });
+    connect(tb, &CustomTitleBar::closeRequested, this, &MainWindow::close);
+    connect(tb, &CustomTitleBar::doubleClicked, this, [this]{
+        isMaximized() ? showNormal() : showMaximized();
+        m_topBar->titleBar()->updateMaximizeIcon(isMaximized());
+    });
+
+    // Меню
+    buildMenus();
+
+    // Стек центральных панелей
     m_centralStack = new QStackedWidget(this);
 
     m_projectPanel = new ProjectPanel(this, m_centralStack);
@@ -34,29 +75,77 @@ MainWindow::MainWindow(QWidget *parent)
     m_menuPanel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     m_centralStack->addWidget(m_menuPanel);
 
+    // 5) overlay: ЗАГОЛОВОК сверху + стек снизу
     QWidget *overlay = new QWidget(this);
-    overlay->setAttribute(Qt::WA_TranslucentBackground, true);
-    overlay->setAttribute(Qt::WA_NoSystemBackground, true);
-    overlay->setAutoFillBackground(false);
-    overlay->setStyleSheet("background: transparent;");
+    overlay->setObjectName("mainOverlay");
+    overlay->setAttribute(Qt::WA_StyledBackground, true);
+    overlay->setStyleSheet("#mainOverlay { background-color: #1A1A1C; }");
 
-    QGridLayout *overlayLay = new QGridLayout(overlay);
+    QVBoxLayout *overlayLay = new QVBoxLayout(overlay);
     overlayLay->setContentsMargins(0, 0, 0, 0);
     overlayLay->setSpacing(0);
-
-    overlayLay->addWidget(m_centralStack, 0, 0);
+    overlayLay->addWidget(m_centralStack, 1);
 
     setCentralWidget(overlay);
 
+    // 6) Левый тулбар, кнопка режима, заголовок окна
     setupLeftTool();
     setupModeButton();
 
     setWindowTitle(ScreenConfig::WINDOW_TITLE);
     resize(ScreenConfig::DEFAULT_WIDTH, ScreenConfig::DEFAULT_HEIGHT);
 
-    // centralWidget()->setFocus();
     GLWidget* glWidget = m_projectPanel->getGLWidget();
-    glWidget->setFocus(Qt::MouseFocusReason);
+    if (glWidget) glWidget->setFocus(Qt::MouseFocusReason);
+}
+
+void MainWindow::onMenuClosed()
+{
+    if (!m_projectPanel) return;
+    GLWidget *gl = m_projectPanel->getGLWidget();
+    if (gl) gl->setFocus(Qt::MouseFocusReason);
+}
+
+void MainWindow::buildMenus()
+{
+    // --- Файл ---
+    QMenu *fileMenu = new QMenu(this);
+    fileMenu->addAction("Новый",   QKeySequence::New,  this, []{});
+    fileMenu->addAction("Открыть", QKeySequence::Open, this, []{});
+    fileMenu->addSeparator();
+    fileMenu->addAction("Выход", this, &QWidget::close);
+
+    // --- Правка ---
+    QMenu *editMenu = new QMenu(this);
+    editMenu->addAction("Отменить",  QKeySequence::Undo, this, []{});
+    editMenu->addAction("Повторить", QKeySequence::Redo, this, []{});
+
+    // --- Вид ---
+    QMenu *viewMenu = new QMenu(this);
+    viewMenu->addAction("Полный экран", QKeySequence(Qt::Key_F11),
+                        this, &MainWindow::on_action_13_triggered);
+    viewMenu->addAction("Скрыть панели", QKeySequence(Qt::Key_F3),
+                        this, &MainWindow::on_action_14_triggered);
+
+    // --- Справка ---
+    QMenu *helpMenu = new QMenu(this);
+    helpMenu->addAction("О программе", this, []{});
+
+    // Добавляем в менюбар TopBar
+    m_topBar->menuBar()->addItem("Файл",    fileMenu, "menu_file");
+    m_topBar->menuBar()->addItem("Правка",  editMenu, "menu_edit");
+    m_topBar->menuBar()->addItem("Вид",     viewMenu, "menu_view");
+    m_topBar->menuBar()->addItem("Справка", helpMenu, "menu_help");
+
+    // ★ Возврат фокуса в GLWidget после закрытия любого меню
+    connect(m_topBar->menuBar(), &CustomMenuBar::menuClosed,
+            this, &MainWindow::onMenuClosed);
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+    if (m_repositionModeButton) m_repositionModeButton();
 }
 
 void MainWindow::setupLeftTool(){
@@ -245,8 +334,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
             m_hiddenLeftTool = !m_hiddenLeftTool;
         }
 
-        if (menuBar()) {
-            menuBar()->setVisible(!m_hiddenMenuBar);
+        if (m_topBar) {
+            m_topBar->setVisible(!m_hiddenMenuBar);
         }
 
         QList<QToolBar*> toolBars = findChildren<QToolBar*>();
@@ -269,16 +358,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::setupModeButton()
 {
-    QWidget *overlay = centralWidget();
-    QGridLayout *overlayLay = qobject_cast<QGridLayout*>(overlay->layout());
-    Q_ASSERT(overlayLay);
+    // Хост = центральный стек (кнопка висит поверх панелей)
+    QWidget *host = this;
+    Q_ASSERT(host);
 
-    m_modeButton = new ToggleButton(overlay);
-    m_modeButton->setFixedSize(50, 50);
+    m_modeButton = new ToggleButton(host);
+    m_modeButton->setFixedSize(40, 40);
     m_modeButton->setBorderRadius(10);
-    m_modeButton->setFontSize(12);
+    m_modeButton->setFontSize(10);
 
-    // Настраиваем состояния
     ToggleButton::State state3D;
     state3D.text = "2D";
     state3D.color = QColor(13, 115, 119, 220);
@@ -301,37 +389,37 @@ void MainWindow::setupModeButton()
     m_modeButton->addState("2D", state2D);
     m_modeButton->setState("3D");
 
-    // Позиционируем
+    // Вручную позиционируем поверх стека при resize
+    m_modeButton->setParent(host);
+    m_modeButton->raise();
 
-    // Оборачиваем в "хост" с отступами 20px справа и сверху
-    QWidget *buttonHost = new QWidget(overlay);
-    buttonHost->setAttribute(Qt::WA_NoSystemBackground, true);
-    buttonHost->setAutoFillBackground(false);
-    buttonHost->setStyleSheet("background: transparent;");
+    auto reposition = [this, host]{
+        if (!m_modeButton) return;
+        const int marginTop = 70;
+        const int marginRight = 12;
+        m_modeButton->move(host->width() - m_modeButton->width() - marginRight,
+                           marginTop);
+    };
 
-    QVBoxLayout *bh = new QVBoxLayout(buttonHost);
-    bh->setContentsMargins(0, 20, 20, 0);   // top=20, right=20
-    bh->setSpacing(0);
-    bh->addWidget(m_modeButton);
-    bh->addStretch(1);
+    // Установить фильтр событий, чтобы ловить resize хоста
+    host->installEventFilter(this);
+    // Запомним лямбду — либо просто вызовем reposition вручную и в resizeEvent
+    m_repositionModeButton = reposition;
 
-    overlayLay->addWidget(buttonHost, 0, 0, Qt::AlignTop | Qt::AlignRight);
+    reposition();
 
-    // Подключаем сигнал
     connect(m_modeButton, &ToggleButton::stateChanged,
             this, [this](const QString& oldState, const QString& newState) {
-        Q_UNUSED(oldState);
-        bool is2D = (newState == "2D");
-
-        // Переключаем режим в GLWidget
-        if (m_projectPanel) {
-            GLWidget* glWidget = m_projectPanel->getGLWidget();
-            if (glWidget) {
-                glWidget->setMode2D(is2D);
-                glWidget->setFocus(Qt::MouseFocusReason);
-            }
-        }
-    });
+                Q_UNUSED(oldState);
+                bool is2D = (newState == "2D");
+                if (m_projectPanel) {
+                    GLWidget* glWidget = m_projectPanel->getGLWidget();
+                    if (glWidget) {
+                        glWidget->setMode2D(is2D);
+                        glWidget->setFocus(Qt::MouseFocusReason);
+                    }
+                }
+            });
 }
 
 void MainWindow::on_action_13_triggered()

@@ -9,12 +9,15 @@
 #include <QPair>
 #include <QResizeEvent>
 
+#include "customtitlebar.h"
+#include "custommenubar.h"
 #include "Panels/ProjectPanel/projectpanel.h"
 #include "Panels/PreviewPanel/previewpanel.h"
 #include "Panels/SettingsPanel/settingspanel.h"
 #include "Panels/MenuPanel/menupanel.h"
 #include "OpenGL/GLWidget.h"
 #include "UI/ToggleButton/togglebutton.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,7 +31,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private slots:
+    void buildMenus();
+    void onMenuClosed();
     void on_action_13_triggered();
     void on_action_14_triggered();
     void on_action_15_triggered();
@@ -59,6 +67,10 @@ private:
 
     bool m_hiddenMenuBar = false;
     bool m_hiddenLeftTool = false;
+
+    std::function<void()> m_repositionModeButton;
+    CustomTitleBar *m_titleBar = nullptr;
+    TopBar *m_topBar = nullptr;
 };
 
 #endif // MAINWINDOW_H
