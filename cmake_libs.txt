@@ -1,0 +1,11 @@
+src/OpenGL/CMakeLists.txt:1:add_library(openGLLibrary STATIC
+src/UI/Sphere/CMakeLists.txt:1:add_library(sphereLibrary STATIC
+src/UI/Point/CMakeLists.txt:1:add_library(pointLibrary STATIC
+src/UI/CMakeLists.txt:1:add_library(uiLibrary INTERFACE)         # ← INTERFACE, не STATIC!
+src/UI/Camera/CMakeLists.txt:1:add_library(cameraLibrary STATIC
+src/UI/ToggleButton/CMakeLists.txt:1:add_library(toggleButtonLibrary STATIC
+src/UI/Plane/CMakeLists.txt:1:add_library(planeLibrary STATIC
+src/Data/CMakeLists.txt:1:add_library(dataLibrary STATIC
+src/Panels/CMakeLists.txt:1:add_library(panelLibrary STATIC
+src/Core/CMakeLists.txt:1:add_library(coreLibrary STATIC
+src/Themes/CMakeLists.txt:1:add_library(themeLibrary STATIC

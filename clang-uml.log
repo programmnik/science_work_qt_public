@@ -1,0 +1,106 @@
+[info] [tid 45611] [cli_handler.cc:380] Loaded clang-uml config from .clang-uml
+[info] [tid 45611] [cli_handler.cc:410] Loading compilation database from /home/user/science_work/build directory
+[info] [tid 45626] [generators.h:424] Generating diagram app_classes
+[info] [tid 45626] [clang_tool.cc:184] Processing diagram 'app_classes' translation unit: /home/user/science_work/src/App/main.cpp
+[info] [tid 45627] [generators.h:424] Generating diagram core_classes
+[info] [tid 45623] [generators.h:424] Generating diagram data_classes
+[info] [tid 45627] [clang_tool.cc:184] Processing diagram 'core_classes' translation unit: /home/user/science_work/src/Core/fpscontroller.cpp
+[info] [tid 45623] [clang_tool.cc:184] Processing diagram 'data_classes' translation unit: /home/user/science_work/src/Data/objectmanager.cpp
+[info] [tid 45628] [generators.h:424] Generating diagram include_graph
+[info] [tid 45624] [generators.h:424] Generating diagram layers_package
+[info] [tid 45625] [generators.h:424] Generating diagram opengl_classes
+[info] [tid 45625] [clang_tool.cc:184] Processing diagram 'opengl_classes' translation unit: /home/user/science_work/src/OpenGL/GLWidget.cpp
+[info] [tid 45630] [generators.h:424] Generating diagram ui_classes
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Sphere/sphere.cpp
+[info] [tid 45629] [generators.h:424] Generating diagram panels_classes
+[info] [tid 45629] [clang_tool.cc:184] Processing diagram 'panels_classes' translation unit: /home/user/science_work/src/Panels/MenuPanel/menupanel.cpp
+[warning] [tid 45628] [diagram_filter.cc:1214] Paths filter pattern '.*autogen.*' did not match any files relative to '/home/user/science_work'
+[warning] [tid 45624] [diagram_filter.cc:1214] Paths filter pattern '.*autogen.*' did not match any files relative to '/home/user/science_work'
+[warning] [tid 45628] [diagram_filter.cc:1214] Paths filter pattern '.*/build/.*' did not match any files relative to '/home/user/science_work'
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/OpenGL/GLWidget.cpp
+[warning] [tid 45624] [diagram_filter.cc:1214] Paths filter pattern '.*/build/.*' did not match any files relative to '/home/user/science_work'
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/OpenGL/GLWidget.cpp
+[info] [tid 45623] [clang_tool.cc:184] Processing diagram 'data_classes' translation unit: /home/user/science_work/src/Data/sceneobject.cpp
+[info] [tid 45627] [clang_tool.cc:184] Processing diagram 'core_classes' translation unit: /home/user/science_work/src/Core/raycaster.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Sphere/spherepoint.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/OpenGL/skyrenderer.cpp
+[info] [tid 45625] [clang_tool.cc:184] Processing diagram 'opengl_classes' translation unit: /home/user/science_work/src/OpenGL/skyrenderer.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/OpenGL/skyrenderer.cpp
+[info] [tid 45629] [clang_tool.cc:184] Processing diagram 'panels_classes' translation unit: /home/user/science_work/src/Panels/SettingsPanel/settingspanel.cpp
+[info] [tid 45623] [generators.cc:121] Written data_classes diagram to /home/user/science_work/docs/diagrams/data_classes.puml
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Point/point.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Camera/camera.cpp
+[info] [tid 45626] [clang_tool.cc:184] Processing diagram 'app_classes' translation unit: /home/user/science_work/src/App/customtitlebar.cpp
+[info] [tid 45627] [clang_tool.cc:184] Processing diagram 'core_classes' translation unit: /home/user/science_work/src/Core/zoomcontroller.cpp
+[info] [tid 45629] [clang_tool.cc:184] Processing diagram 'panels_classes' translation unit: /home/user/science_work/src/Panels/PreviewPanel/previewpanel.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Sphere/sphere.cpp
+[info] [tid 45625] [generators.cc:121] Written opengl_classes diagram to /home/user/science_work/docs/diagrams/opengl_classes.puml
+[info] [tid 45627] [clang_tool.cc:184] Processing diagram 'core_classes' translation unit: /home/user/science_work/src/Core/bigfloat.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Camera/cameracore2d.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Sphere/sphere.cpp
+[info] [tid 45626] [clang_tool.cc:184] Processing diagram 'app_classes' translation unit: /home/user/science_work/src/App/custommenubar.cpp
+[info] [tid 45627] [clang_tool.cc:184] Processing diagram 'core_classes' translation unit: /home/user/science_work/src/Core/complexnumber.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Camera/cameracore3d.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Sphere/spherepoint.cpp
+[info] [tid 45626] [clang_tool.cc:184] Processing diagram 'app_classes' translation unit: /home/user/science_work/src/App/mainwindow.cpp
+[info] [tid 45629] [clang_tool.cc:184] Processing diagram 'panels_classes' translation unit: /home/user/science_work/src/Panels/ObjectPanel/objectspanelwidget.cpp
+[info] [tid 45627] [generators.cc:121] Written core_classes diagram to /home/user/science_work/docs/diagrams/core_classes.puml
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Sphere/spherepoint.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/ToggleButton/togglebutton.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Point/point.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Camera/camera.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Point/point.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Camera/camera.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Camera/cameracore2d.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Plane/plane2d.cpp
+[info] [tid 45629] [clang_tool.cc:184] Processing diagram 'panels_classes' translation unit: /home/user/science_work/src/Panels/ProjectPanel/mathpanel.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Camera/cameracore2d.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Camera/cameracore3d.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Plane/plane3d.cpp
+[info] [tid 45629] [clang_tool.cc:184] Processing diagram 'panels_classes' translation unit: /home/user/science_work/src/Panels/ProjectPanel/projectpanel.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/ToggleButton/togglebutton.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Camera/cameracore3d.cpp
+[info] [tid 45630] [clang_tool.cc:184] Processing diagram 'ui_classes' translation unit: /home/user/science_work/src/UI/Plane/plane.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/ToggleButton/togglebutton.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Plane/plane2d.cpp
+[info] [tid 45629] [generators.cc:121] Written panels_classes diagram to /home/user/science_work/docs/diagrams/panels_classes.puml
+[info] [tid 45630] [generators.cc:121] Written ui_classes diagram to /home/user/science_work/docs/diagrams/ui_classes.puml
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Plane/plane3d.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Plane/plane2d.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/UI/Plane/plane.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Plane/plane3d.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Data/objectmanager.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/UI/Plane/plane.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Data/sceneobject.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Data/objectmanager.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Panels/MenuPanel/menupanel.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Data/sceneobject.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Panels/SettingsPanel/settingspanel.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Panels/MenuPanel/menupanel.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Panels/PreviewPanel/previewpanel.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Panels/SettingsPanel/settingspanel.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Panels/ObjectPanel/objectspanelwidget.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Panels/PreviewPanel/previewpanel.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Panels/ProjectPanel/mathpanel.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Panels/ObjectPanel/objectspanelwidget.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Panels/ProjectPanel/projectpanel.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Panels/ProjectPanel/mathpanel.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Core/fpscontroller.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Panels/ProjectPanel/projectpanel.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Core/raycaster.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Core/zoomcontroller.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Core/fpscontroller.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Core/bigfloat.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Core/raycaster.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/Core/complexnumber.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/App/main.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Core/zoomcontroller.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Core/bigfloat.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/Core/complexnumber.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/App/customtitlebar.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/App/main.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/App/custommenubar.cpp
+[info] [tid 45624] [clang_tool.cc:184] Processing diagram 'layers_package' translation unit: /home/user/science_work/src/App/mainwindow.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/App/customtitlebar.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/App/custommenubar.cpp
+[info] [tid 45628] [clang_tool.cc:184] Processing diagram 'include_graph' translation unit: /home/user/science_work/src/App/mainwindow.cpp

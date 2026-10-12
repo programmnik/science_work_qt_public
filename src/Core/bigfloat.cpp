@@ -1,6 +1,11 @@
 #include "bigfloat.h"
 #include <cmath>
 #include <algorithm>
+#include <limits>
+
+// ============================================================================
+// Создание
+// ============================================================================
 
 BigFloat::BigFloat(double value)
     : m_mantissa(value)
@@ -9,17 +14,45 @@ BigFloat::BigFloat(double value)
     normalize();
 }
 
+BigFloat BigFloat::infinity(bool negative)
+{
+    BigFloat r;
+    r.m_mantissa = negative
+                       ? -std::numeric_limits<double>::infinity()
+                       :  std::numeric_limits<double>::infinity();
+    r.m_exponent = 0;
+    return r;
+}
+
+BigFloat BigFloat::nan()
+{
+    BigFloat r;
+    r.m_mantissa = std::numeric_limits<double>::quiet_NaN();
+    r.m_exponent = 0;
+    return r;
+}
+
+// ============================================================================
 // Нормализация
+// ============================================================================
+
 void BigFloat::normalize()
 {
-    if (m_mantissa == 0.0 || std::isnan(m_mantissa)) {
+    // NaN → 0 (сохраняем совместимость со старой логикой)
+    if (std::isnan(m_mantissa)) {
         m_mantissa = 0.0;
         m_exponent = 0;
         return;
     }
 
+    // ±Infinity — оставляем как есть, экспонента = 0
     if (std::isinf(m_mantissa)) {
-        // Бесконечность — оставляем как есть, экспонента = 0
+        m_exponent = 0;
+        return;
+    }
+
+    // Ноль
+    if (m_mantissa == 0.0) {
         m_exponent = 0;
         return;
     }
@@ -33,10 +66,20 @@ void BigFloat::normalize()
         m_exponent += e10;
 
         // Компенсация погрешностей log10/pow
-        while (std::abs(m_mantissa) >= 10.0) { m_mantissa /= 10.0; m_exponent += 1; }
-        while (std::abs(m_mantissa) < 1.0 && m_mantissa != 0.0) { m_mantissa *= 10.0; m_exponent -= 1; }
+        while (std::abs(m_mantissa) >= 10.0) {
+            m_mantissa /= 10.0;
+            m_exponent += 1;
+        }
+        while (std::abs(m_mantissa) < 1.0 && m_mantissa != 0.0) {
+            m_mantissa *= 10.0;
+            m_exponent -= 1;
+        }
     }
 }
+
+// ============================================================================
+// Арифметика
+// ============================================================================
 
 BigFloat BigFloat::operator+(const BigFloat& other) const
 {
@@ -52,17 +95,17 @@ BigFloat BigFloat::operator+(const BigFloat& other) const
     // Работаем в системе большего экспонента, чтобы не терять точность
     int64_t baseExp = std::max(m_exponent, other.m_exponent);
 
-    double m1 = m_mantissa        * std::pow(10.0, static_cast<double>(m_exponent        - baseExp));
-    double m2 = other.m_mantissa  * std::pow(10.0, static_cast<double>(other.m_exponent  - baseExp));
+    double m1 = m_mantissa       * std::pow(10.0, static_cast<double>(m_exponent       - baseExp));
+    double m2 = other.m_mantissa * std::pow(10.0, static_cast<double>(other.m_exponent - baseExp));
 
     double sum = m1 + m2;
     if (sum == 0.0) return BigFloat();
 
-    // Нормализуем вручную, т.к. конструктор требует |m|>=1 для корректности
     return BigFloat(sum, baseExp);
 }
 
-BigFloat BigFloat::operator-() const {
+BigFloat BigFloat::operator-() const
+{
     BigFloat result(*this);
     result.negate();
     return result;
@@ -71,8 +114,9 @@ BigFloat BigFloat::operator-() const {
 BigFloat BigFloat::operator*(const BigFloat& other) const
 {
     if (isZero() || other.isZero()) return BigFloat();
+    if (isNaN() || other.isNaN())   return nan();
 
-    double m = m_mantissa * other.m_mantissa;
+    double  m = m_mantissa * other.m_mantissa;
     int64_t e = m_exponent + other.m_exponent;
     return BigFloat(m, e);
 }
@@ -80,16 +124,19 @@ BigFloat BigFloat::operator*(const BigFloat& other) const
 BigFloat BigFloat::operator/(const BigFloat& other) const
 {
     if (other.isZero()) {
-        // Деление на ноль — возвращаем inf-представление
-        return BigFloat(std::numeric_limits<double>::infinity() *
-                            (m_mantissa < 0 ? -1.0 : 1.0), 0);
+        if (isZero() || isNaN()) return nan();
+        return infinity(/*negative=*/isNegative() != other.isNegative());
     }
     if (isZero()) return BigFloat();
 
-    double m = m_mantissa / other.m_mantissa;
+    double  m = m_mantissa / other.m_mantissa;
     int64_t e = m_exponent - other.m_exponent;
     return BigFloat(m, e);
 }
+
+// ============================================================================
+// Сравнение
+// ============================================================================
 
 bool BigFloat::operator<(const BigFloat& other) const
 {
@@ -112,17 +159,45 @@ bool BigFloat::operator<(const BigFloat& other) const
 bool BigFloat::operator==(const BigFloat& other) const
 {
     if (isZero() && other.isZero()) return true;
+    if (isNaN() || other.isNaN())   return false;
     return m_exponent == other.m_exponent
            && m_mantissa == other.m_mantissa;
 }
 
+// ============================================================================
+// Состояние
+// ============================================================================
+
+bool BigFloat::isFinite() const
+{
+    return std::isfinite(m_mantissa);
+}
+
+bool BigFloat::isNaN() const
+{
+    return std::isnan(m_mantissa);
+}
+
+// ============================================================================
+// Преобразования
+// ============================================================================
+
 double BigFloat::toDouble() const
 {
     if (isZero()) return 0.0;
+    if (isNaN())  return std::numeric_limits<double>::quiet_NaN();
+
+    if (std::isinf(m_mantissa)) {
+        return m_mantissa;  // уже ±inf
+    }
 
     // Если экспонента выходит за пределы double — насыщаем
-    if (m_exponent >  kMaxExponent) return  std::numeric_limits<double>::infinity() * (m_mantissa < 0 ? -1.0 : 1.0);
-    if (m_exponent <  kMinExponent) return  0.0;
+    if (m_exponent >  kMaxExponent) {
+        return std::numeric_limits<double>::infinity() * (m_mantissa < 0 ? -1.0 : 1.0);
+    }
+    if (m_exponent <  kMinExponent) {
+        return 0.0;
+    }
 
     return m_mantissa * std::pow(10.0, static_cast<double>(m_exponent));
 }
@@ -134,12 +209,19 @@ BigFloat BigFloat::abs() const
     return r;
 }
 
+// ============================================================================
+// Форматирование
+// ============================================================================
+
 QString BigFloat::toScientific() const
 {
     if (isZero()) return QStringLiteral("0");
+    if (isNaN())  return QStringLiteral("NaN");
+    if (std::isinf(m_mantissa)) {
+        return m_mantissa < 0 ? QStringLiteral("-inf") : QStringLiteral("inf");
+    }
 
     // Формат: 1.2345e-10
-    // Убираем лишние нули в конце мантиссы
     QString mStr = QString::number(m_mantissa, 'g', kSignificantDigits);
 
     // QString::number с 'g' может сам выдать "1.23e-10" — тогда норм
@@ -154,6 +236,10 @@ QString BigFloat::toScientific() const
 QString BigFloat::toDecimal() const
 {
     if (isZero()) return QStringLiteral("0");
+    if (isNaN())  return QStringLiteral("NaN");
+    if (std::isinf(m_mantissa)) {
+        return m_mantissa < 0 ? QStringLiteral("-inf") : QStringLiteral("inf");
+    }
 
     // Если число умещается в разумный диапазон — печатаем позиционно
     // Иначе переходим в научный формат
@@ -171,7 +257,7 @@ QString BigFloat::toDecimal() const
     // Убираем хвостовые нули
     if (s.contains('.')) {
         while (s.endsWith('0')) s.chop(1);
-        if (s.endsWith('.')) s.chop(1);
+        if (s.endsWith('.'))    s.chop(1);
     }
     return s;
 }
@@ -179,6 +265,10 @@ QString BigFloat::toDecimal() const
 QString BigFloat::toString(int maxWidth) const
 {
     if (isZero()) return QStringLiteral("0");
+    if (isNaN())  return QStringLiteral("NaN");
+    if (std::isinf(m_mantissa)) {
+        return m_mantissa < 0 ? QStringLiteral("-inf") : QStringLiteral("inf");
+    }
 
     QString decimal    = toDecimal();
     QString scientific = toScientific();
@@ -189,8 +279,12 @@ QString BigFloat::toString(int maxWidth) const
         return decimal.length() <= scientific.length() ? decimal : scientific;
     }
 
+    // Защита от вырожденных значений ширины
+    if (maxWidth == 0) return QString();
+    if (maxWidth == 1) return QStringLiteral("…");
+
     // Пытаемся влезть в ширину
-    if (decimal.length() <= maxWidth)    return decimal;
+    if (decimal.length()    <= maxWidth) return decimal;
     if (scientific.length() <= maxWidth) return scientific;
 
     // Не влезло — урезаем научный формат

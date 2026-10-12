@@ -39,9 +39,6 @@ private slots:
     void onMenuClosed();
     void on_action_13_triggered();
     void on_action_14_triggered();
-    void on_action_15_triggered();
-    void on_action_16_triggered();
-    void on_action_21_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -69,7 +66,6 @@ private:
     bool m_hiddenLeftTool = false;
 
     std::function<void()> m_repositionModeButton;
-    CustomTitleBar *m_titleBar = nullptr;
     TopBar *m_topBar = nullptr;
 };
 

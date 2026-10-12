@@ -1,0 +1,1317 @@
+@startuml
+title Panels — классы
+package [std] as C_0009971158671206323968 {
+class "shared_ptr<SceneObject>" as C_0005732907301119421130
+class C_0005732907301119421130 {
+__
+}
+class "pair<QString,QString>" as C_0002545201444471589314
+class C_0002545201444471589314 {
+__
+}
+class "function<void()>" as C_0013286274850898176297
+class C_0013286274850898176297 {
+__
+}
+}
+class "ProjectListItem" as C_0013329515722926671955
+class C_0013329515722926671955 {
++ProjectListItem() : void
+..
+#enterEvent() : void
++isStarred() const : bool
+#leaveEvent() : void
++metaObject() const : const QMetaObject *
+#mouseDoubleClickEvent() : void
++openRequested() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++starToggled() : void
+{static} +tr() : QString
+__
+-m_hovered : bool
+-m_starButton : QPushButton *
+-m_starred : bool
+-m_thumbnail : QFrame *
+{static} +staticMetaObject : const QMetaObject
+}
+class "ProjectListItem::QPrivateSignal" as C_0012586327794016647580
+class C_0012586327794016647580 {
+__
+}
+class "QList<QString>" as C_0008375322064658753815
+class C_0008375322064658753815 {
+__
+}
+class "QList<QRect>" as C_0010454816333333901394
+class C_0010454816333333901394 {
+__
+}
+class "SegmentedTab" as C_0006249199790228496024
+class C_0006249199790228496024 {
++SegmentedTab() : void
+..
++currentChanged() : void
++currentIndex() const : int
+#leaveEvent() : void
++metaObject() const : const QMetaObject *
+#mouseMoveEvent() : void
+#mousePressEvent() : void
+#paintEvent() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+-recalcRects() : void
++setCurrentIndex() : void
+{static} +tr() : QString
+__
+-m_currentIndex : int
+-m_hoveredIndex : int
+-m_itemRects : QList<QRect>
+-m_items : QStringList
+{static} +staticMetaObject : const QMetaObject
+}
+class "SegmentedTab::QPrivateSignal" as C_0008159507113385295926
+class C_0008159507113385295926 {
+__
+}
+class "MenuPanel" as C_0003728837003746863717
+class C_0003728837003746863717 {
++MenuPanel() : void
++~MenuPanel() : void
+..
++aboutRequested() : void
++accountRequested() : void
+-buildProjectList() : QWidget *
+-createAccountPage() : QWidget *
+-createFooter() : QWidget *
+-createHeader() : QWidget *
+-createLearnPage() : QWidget *
++createProjectRequested() : void
+-createProjectsPage() : QWidget *
+-createSidebar() : QWidget *
++documentationRequested() : void
++exportProjectRequested() : void
++helpRequested() : void
++importProjectRequested() : void
++metaObject() const : const QMetaObject *
+-onAccountClicked() : void
+-onActionClicked() : void
+-onMoreClicked() : void
+-onProjectFilterChanged() : void
++onlineResourcesRequested() : void
++openProjectRequested() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++recentProjectRequested() : void
++saveProjectRequested() : void
+-selectGroup() : void
+-setupUI() : void
+{static} +tr() : QString
+__
+-m_accountList : QListWidget *
+-m_actionList : QListWidget *
+-m_contentStack : QStackedWidget *
+-m_createBtn : QPushButton *
+-m_exportBtn : QPushButton *
+-m_importBtn : QPushButton *
+-m_moreList : QListWidget *
+-m_openBtn : QPushButton *
+-m_pageSubtitle : QLabel *
+-m_pageTitle : QLabel *
+-m_projectTabs : SegmentedTab *
+-m_projectsStack : QStackedWidget *
+-m_saveBtn : QPushButton *
+-m_updatingSelection : bool
+{static} +staticMetaObject : const QMetaObject
+}
+class "MenuPanel::QPrivateSignal" as C_0011856702530192630822
+class C_0011856702530192630822 {
+__
+}
+class "SettingsPanel" as C_0009982498057872412898
+class C_0009982498057872412898 {
++SettingsPanel() : void
++~SettingsPanel() : void
+..
+-createAboutPage() : QWidget *
+-createGraphicsPage() : QWidget *
+-createInterfacePage() : QWidget *
+-createPerformancePage() : QWidget *
++metaObject() const : const QMetaObject *
+-onApplyClicked() : void
+-onCategoryChanged() : void
+-onResetClicked() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++settingsChanged() : void
+-setupUI() : void
+{static} +tr() : QString
+__
+-m_antialiasingCheck : QCheckBox *
+-m_categoryList : QListWidget *
+-m_contentStack : QStackedWidget *
+-m_fovSlider : QSlider *
+-m_fovValue : QLabel *
+-m_fpsLimitSpin : QSpinBox *
+-m_multithreadingCheck : QCheckBox *
+-m_pageSubtitle : QLabel *
+-m_pageTitle : QLabel *
+-m_qualityCombo : QComboBox *
+-m_renderDistanceSlider : QSlider *
+-m_renderDistanceValue : QLabel *
+-m_showFpsCheck : QCheckBox *
+-m_showHintsCheck : QCheckBox *
+-m_themeCombo : QComboBox *
+-m_uiScaleSlider : QSlider *
+-m_uiScaleValue : QLabel *
+-m_vsyncCheck : QCheckBox *
+{static} +staticMetaObject : const QMetaObject
+}
+class "SettingsPanel::QPrivateSignal" as C_0010505341584755838765
+class C_0010505341584755838765 {
+__
+}
+class "ModernButton" as C_0013278247584489176511
+class C_0013278247584489176511 {
++ModernButton() : void
+..
+#enterEvent() : void
+#leaveEvent() : void
++metaObject() const : const QMetaObject *
++opacity() const : int
+#paintEvent() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++setOpacity() : void
+{static} +tr() : QString
+__
+-m_animation : QPropertyAnimation *
+-m_opacity : int
+{static} +staticMetaObject : const QMetaObject
+}
+class "ModernButton::QPrivateSignal" as C_0017720913144273303747
+class C_0017720913144273303747 {
+__
+}
+class "BackgroundWidget" as C_0006970462808010016912
+class C_0006970462808010016912 {
++BackgroundWidget() : void
+..
+#paintEvent() : void
+__
+}
+class "VideoControls" as C_0002387808336780003017
+class C_0002387808336780003017 {
++VideoControls() : void
+..
+#enterEvent() : void
+-formatTime() : QString
++fullscreenClicked() : void
++hideControls() : void
+#leaveEvent() : void
++metaObject() const : const QMetaObject *
+#mouseMoveEvent() : void
+-onAutoHideTimeout() : void
+-onFullscreenClicked() : void
+-onPlayPauseClicked() : void
+-onSliderMoved() : void
+-onSliderPressed() : void
+-onSliderReleased() : void
++playPauseClicked() : void
++positionChanged() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+#resizeEvent() : void
++setDuration() : void
++setFullscreen() : void
++setLoading() : void
++setPlaying() : void
++setPosition() : void
++setVolume() : void
+-setupUI() : void
++showControls() : void
+-startAutoHideTimer() : void
+-stopAutoHideTimer() : void
++stopClicked() : void
+{static} +tr() : QString
+-updatePlayPauseButton() : void
++volumeChanged() : void
+__
+-m_autoHideTimer : QTimer *
+-m_controlsContainer : QWidget *
+-m_controlsVisible : bool
+-m_duration : qint64
+-m_fullscreenButton : QPushButton *
+-m_isDragging : bool
+-m_isFullscreen : bool
+-m_isLoading : bool
+-m_isPlaying : bool
+-m_loadingLabel : QLabel *
+-m_playPauseButton : QPushButton *
+-m_positionSlider : QSlider *
+-m_stopButton : QPushButton *
+-m_timeLabel : QLabel *
+-m_volume : int
+-m_volumeLabel : QLabel *
+-m_volumeSlider : QSlider *
+{static} +staticMetaObject : const QMetaObject
+}
+class "VideoControls::QPrivateSignal" as C_0010957071163752870522
+class C_0010957071163752870522 {
+__
+}
+class "QList<QLabel *>" as C_0002251002379847157518
+class C_0002251002379847157518 {
+__
+}
+class "PreviewStack" as C_0011296569200173999243
+class C_0011296569200173999243 {
++PreviewStack() : void
+..
+-eventFilter() : bool
+-getCachePath() : QString
++imageClicked() : void
+-loadRoundedImage() : QPixmap
++metaObject() const : const QMetaObject *
+-onImageClicked() : void
+-onNextClicked() : void
+-onPrevClicked() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+-setupNavigationDots() : void
+{static} +tr() : QString
+-updateImage() : void
+__
+-m_cacheDir : QString
+-m_captionDescription : QLabel *
+-m_captionTitle : QLabel *
+-m_captions : QStringList
+-m_currentIndex : int
+-m_descriptions : QStringList
+-m_dots : QList<QLabel *>
+-m_dotsLayout : QHBoxLayout *
+-m_imageLabel : QLabel *
+-m_imagePaths : QStringList
+-m_nextButton : QPushButton *
+-m_prevButton : QPushButton *
+-m_title : QString
+-m_titleLabel : QLabel *
+-m_videoPaths : QStringList
+{static} +staticMetaObject : const QMetaObject
+}
+class "PreviewStack::QPrivateSignal" as C_0007384380869913147491
+class C_0007384380869913147491 {
+__
+}
+class "PreviewPanel" as C_0003176738232768271570
+class C_0003176738232768271570 {
++PreviewPanel() : void
++~PreviewPanel() : void
+..
+#keyPressEvent() : void
++metaObject() const : const QMetaObject *
+-onBackClicked() : void
+-onDurationChanged() : void
+-onFullscreenClicked() : void
+-onImageClicked() : void
+-onMediaStatusChanged() : void
+-onPlayPauseClicked() : void
+-onPlaybackStateChanged() : void
+-onPositionChanged() : void
+-onStopClicked() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+#resizeEvent() : void
+-setupPlayer() : void
+-setupStacks() : void
+-setupUI() : void
+#showEvent() : void
+-showPlayer() : void
+-showStacks() : void
+-toggleFullscreen() : void
+{static} +tr() : QString
+__
+-m_audioOutput : QAudioOutput *
+-m_backButton : ModernButton *
+-m_backgroundWidget : BackgroundWidget *
+-m_imagePaths : QStringList
+-m_isFullscreen : bool
+-m_isVideoReady : bool
+-m_loadTimer : QTimer *
+-m_mainStack : QStackedWidget *
+-m_mediaPlayer : QMediaPlayer *
+-m_playerPreview : QLabel *
+-m_playerTitle : QLabel *
+-m_playerView : QWidget *
+-m_stacksView : QWidget *
+-m_videoContainer : QWidget *
+-m_videoControls : VideoControls *
+-m_videoStack : QStackedWidget *
+-m_videoWidget : QVideoWidget *
+{static} +staticMetaObject : const QMetaObject
+}
+class "PreviewPanel::QPrivateSignal" as C_0004242402469526028214
+class C_0004242402469526028214 {
+__
+}
+class "SceneObject" as C_0014050675522701963753
+class C_0014050675522701963753 {
++SceneObject() : void
++~SceneObject() = default : void
+..
++getColor() const : QColor
++getDescription() const : QString
++getName() const : QString
++getType() const : ObjectType
++getTypeName() const : QString
++isSelected() const : bool
++isVisible() const : bool
++setColor() : void
++setName() : void
++setSelected() : void
++setVisible() : void
+__
+#m_color : QColor
+#m_name : QString
+#m_selected : bool
+#m_type : ObjectType
+#m_visible : bool
+}
+enum "SceneObject::ObjectType" as C_0011741360254285230333
+enum C_0011741360254285230333 {
+TypeSphere
+TypePlane
+TypeProjection
+TypePoint
+TypeCustom
+}
+class "QList<std::shared_ptr<SceneObject>>" as C_0008319822758945307697
+class C_0008319822758945307697 {
+__
+}
+class "QMap<SceneObject::ObjectType,QVector<std::shared_ptr<SceneObject>>>" as C_0005729225217083498668
+class C_0005729225217083498668 {
+__
+}
+class "ObjectManager" as C_0015872366982039610086
+class C_0015872366982039610086 {
+-ObjectManager() = default : void
+-ObjectManager() = deleted : void
+-~ObjectManager() = default : void
+..
+-operator=() = deleted : ObjectManager &
+..
++addObject() : void
++allObjectsCleared() : void
++clearAll() : void
++getAllObjects() const : QVector<std::shared_ptr<SceneObject>>
++getGroupedObjects() const : QMap<SceneObject::ObjectType,QVector<std::shared_ptr<SceneObject>>>
++getObjectAt() const : std::shared_ptr<SceneObject>
++getObjectCount() const : int
++getObjectsByType() const : QVector<std::shared_ptr<SceneObject>>
+{static} +instance() : ObjectManager &
++metaObject() const : const QMetaObject *
++objectAdded() : void
++objectRemoved() : void
++objectUpdated() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++removeObject() : void
++removeObjectAt() : void
+{static} +tr() : QString
+__
+-m_objects : QVector<std::shared_ptr<SceneObject>>
+{static} +staticMetaObject : const QMetaObject
+}
+class "ObjectManager::QPrivateSignal" as C_0003475600056018053258
+class C_0003475600056018053258 {
+__
+}
+class "QMap<SceneObject::ObjectType,QString>" as C_0015131392207672007013
+class C_0015131392207672007013 {
+__
+}
+class "ObjectsPanelWidget" as C_0016458823071748483607
+class C_0016458823071748483607 {
++ObjectsPanelWidget() : void
++~ObjectsPanelWidget() : void
+..
+-connectSignals() : void
+-getButtonStyle() const : QString
+-getTypeIcon() : QString
++metaObject() const : const QMetaObject *
+-onAllObjectsCleared() : void
+-onObjectAdded() : void
+-onObjectRemoved() : void
+-onRemoveSelectedClicked() : void
+-onToggleVisibilityClicked() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++refreshList() : void
+-setupUI() : void
+{static} +tr() : QString
+-updateObjectCount() : void
+__
+-m_countLabel : QLabel *
+-m_objectList : QListWidget *
+-m_refreshBtn : QPushButton *
+-m_removeBtn : QPushButton *
+-m_typeNames : QMap<SceneObject::ObjectType,QString>
+-m_visibilityBtn : QPushButton *
+{static} +staticMetaObject : const QMetaObject
+}
+class "ObjectsPanelWidget::QPrivateSignal" as C_0001172416740094045852
+class C_0001172416740094045852 {
+__
+}
+class "SegmentTab" as C_0005162023799276564119
+class C_0005162023799276564119 {
++SegmentTab() : void
+..
++currentChanged() : void
++currentIndex() const : int
+#leaveEvent() : void
++metaObject() const : const QMetaObject *
++minimumSizeHint() const : QSize
+#mouseMoveEvent() : void
+#mousePressEvent() : void
++orientation() const : Orientation
+#paintEvent() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+-recalcRects() : void
+#resizeEvent() : void
++setCurrentIndex() : void
++setFontSize() : void
++setItemHeight() : void
++setItemWidth() : void
++setOrientation() : void
++sizeHint() const : QSize
+{static} +tr() : QString
+__
+-m_currentIndex : int
+-m_fontPt : int
+-m_hoveredIndex : int
+-m_itemHeight : int
+-m_itemRects : QList<QRect>
+-m_itemWidth : int
+-m_items : QStringList
+-m_orient : Orientation
+{static} +staticMetaObject : const QMetaObject
+}
+class "SegmentTab::QPrivateSignal" as C_0005781302933710264491
+class C_0005781302933710264491 {
+__
+}
+enum "SegmentTab::Orientation" as C_0017357864839177995468
+enum C_0017357864839177995468 {
+Horizontal
+Vertical
+}
+class "MathButton" as C_0015303779690959424637
+class C_0015303779690959424637 {
++MathButton() : void
+..
++cursorOffset() const : int
++insertText() const : QString
++metaObject() const : const QMetaObject *
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++setAccent() : void
+{static} +tr() : QString
+__
+-m_accent : bool
+-m_cursorOffset : int
+-m_insertText : QString
+{static} +staticMetaObject : const QMetaObject
+}
+class "MathButton::QPrivateSignal" as C_0017759496752845339438
+class C_0017759496752845339438 {
+__
+}
+class "MathSection" as C_0000456491103092706759
+class C_0000456491103092706759 {
++MathSection() : void
+..
++metaObject() const : const QMetaObject *
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+#resizeEvent() : void
++setContent() : void
+{static} +tr() : QString
+__
+-m_content : QWidget *
+-m_layout : QVBoxLayout *
+{static} +staticMetaObject : const QMetaObject
+}
+class "MathSection::QPrivateSignal" as C_0004932836547852500195
+class C_0004932836547852500195 {
+__
+}
+class "QList<MathPanel::FuncGroup>" as C_0002009150439719239282
+class C_0002009150439719239282 {
+__
+}
+class "QList<QPair<QString,QString>>" as C_0010810181838344526365
+class C_0010810181838344526365 {
+__
+}
+class "QList<int>" as C_0013668956055875038006
+class C_0013668956055875038006 {
+__
+}
+class "QPointer<QWidget>" as C_0012760165041057543719
+class C_0012760165041057543719 {
+__
+}
+class "MathPanel" as C_0007268251853054355468
+class C_0007268251853054355468 {
++MathPanel() : void
++~MathPanel() : void
+..
+-applyLayoutMode() : void
+-buildFunctionsPage() : QWidget *
+-buildKeyboardRow() : QWidget *
+-createCalculatorSection() : QWidget *
+-createFunctionsSection() : QWidget *
+-createKeyboardSection() : QWidget *
+-createMainTabs() : QWidget *
+#eventFilter() : bool
++functionInserted() : void
+-insertToTarget() : void
+-keyboardLetterAt() const : QString
++metaObject() const : const QMetaObject *
+-onCategoryChanged() : void
+-onMainSectionChanged() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+-rebuildFunctionsSection() : void
+-rebuildKeyboardContent() : void
+-rebuildMainLayout() : void
+#resizeEvent() : void
+-restoreTargetFocus() : void
++setTargetLineEdit() : void
+-setupUI() : void
+-toggleKeyboardLang() : void
+-toggleKeyboardShift() : void
+{static} +tr() : QString
+__
+-m_categoryNames : QList<QString>
+-m_categoryStack : QStackedWidget *
+-m_categoryTabs : SegmentTab *
+-m_contentRow : QHBoxLayout *
+-m_fadeAnim : QPropertyAnimation *
+-m_functionsRows : int
+-m_hasCategoryBar : bool
+-m_keyboardContent : QWidget *
+-m_keyboardLang : KeyboardLang
+-m_keyboardShift : bool
+-m_lastFocusedWidget : QPointer<QWidget>
+-m_layoutTrash : QWidget *
+-m_mainStack : QStackedWidget *
+-m_mainTabs : SegmentTab *
+-m_mainTabsBar : QWidget *
+-m_opacityEffect : QGraphicsOpacityEffect *
+-m_rootLayout : QVBoxLayout *
+-m_targetEdit : QLineEdit *
+-m_wideMode : bool
+{static} +staticMetaObject : const QMetaObject
+}
+class "MathPanel::QPrivateSignal" as C_0003903308503563514492
+class C_0003903308503563514492 {
+__
+}
+class "MathPanel::FuncGroup" as C_0004000815623939193716
+class C_0004000815623939193716 {
+__
++items : QList<QPair<QString,QString>>
++title : QString
+}
+enum "MathPanel::KeyboardLang" as C_0006080896966619006626
+enum C_0006080896966619006626 {
+Latin
+Greek
+}
+class "Point" as C_0017330203401231275776
+class C_0017330203401231275776 {
++Point() : void
+..
++getRotX() const : float
++getRotY() const : float
++getRotZ() const : float
++getX() const : float
++getY() const : float
++getZ() const : float
++move() : void
++rotate() : void
++setPosition() : void
+__
+-rotX : float
+-rotY : float
+-rotZ : float
+-x : float
+-y : float
+-z : float
+}
+class "FPSController" as C_0006571650246262171851
+class C_0006571650246262171851 {
++FPSController() : void
++~FPSController() : void
+..
++addMovement() : void
++addRotation() : void
++clearAllInput() : void
++getAccumulatedMoveForward() const : float
++getAccumulatedMoveRight() const : float
++getAccumulatedMoveUp() const : float
++getAccumulatedRotX() const : float
++getAccumulatedRotY() const : float
++getAccumulatedRotZ() const : float
++getCurrentFPS() const : float
++getSkippedFrames() const : int
++getSpeedMultiplier() const : float
++isActive() const : bool
++metaObject() const : const QMetaObject *
+-process2DEvent() : void
+-process3DEvent() : void
+-processFrame() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++setKeyState() : void
++setMaxFrameSkip() : void
++setMaxSpeedMultiplier() : void
++setMode2D() : void
++setMoveSpeed() : void
++setRotationSpeed() : void
++setSpeedMultiplierStep() : void
++setTargetFPS() : void
++setUpdateCallback() : void
++shouldRender() const : bool
++start() : void
++stop() : void
+{static} +tr() : QString
+-updateFPS() : void
+__
+-m_accumulatedMoveForward : float
+-m_accumulatedMoveRight : float
+-m_accumulatedMoveUp : float
+-m_accumulatedRotX : float
+-m_accumulatedRotY : float
+-m_accumulatedRotZ : float
+-m_currentFPS : float
+-m_fpsTimer : QElapsedTimer
+-m_frameCount : int
+-m_frameSkipCounter : int
+-m_frameTimer : QElapsedTimer
+-m_hasInput : bool
+-m_keys : struct KeyState
+-m_maxFrameSkip : int
+-m_maxSpeedMultiplier : float
+-m_mode2d : bool
+-m_moveSpeed : float
+-m_rotationSpeed : float
+-m_shouldRender : bool
+-m_skippedFrames : int
+-m_speedMultiplier : float
+-m_speedMultiplierStep : float
+-m_targetFPS : int
+-m_targetFrameTimeMs : float
+-m_timer : QTimer *
+-m_updateCallback : std::function<void ()>
+{static} +staticMetaObject : const QMetaObject
+}
+class "FPSController::QPrivateSignal" as C_0013950626137842055771
+class C_0013950626137842055771 {
+__
+}
+class "FPSController::KeyState" as C_0018189526366987138526
+class C_0018189526366987138526 {
+__
++a : bool
++d : bool
++down : bool
++left : bool
++q : bool
++right : bool
++s : bool
++up : bool
++w : bool
++z : bool
+}
+abstract "Camera" as C_0005049148943034209802
+abstract C_0005049148943034209802 {
++Camera() : void
++~Camera() = default : void
+..
+{abstract} +applyToOpenGL() = 0 : void
++getCameraFront() const : QVector3D
++getCameraPos() const : QVector3D
++getCameraRight() const : QVector3D
++getCameraUp() const : QVector3D
++getPoint() : Point *
++getPointPosition() const : QVector3D
++getZoom() : float
+{abstract} +move() = 0 : void
++processEvent() : bool
++rotate() : void
++setMoveSpeed() : void
++setPoint() : void
++setRotSpeed() : void
++setZoom() : void
++setZoomRange() : void
+#updateCameraVectors() : void
++zoom() : void
+__
+#camera_front : QVector3D
+#camera_pos : QVector3D
+#camera_right : QVector3D
+#camera_up : QVector3D
+#m_zoom : float
+#max_zoom : float
+#min_zoom : float
+#moveSpeed : float
+#orientation : QQuaternion
+#point : Point *
+#rotSpeed : float
+}
+class "CameraCore3D" as C_0000825649127462713404
+class C_0000825649127462713404 {
++CameraCore3D() : void
++~CameraCore3D() : void
+..
++applyToOpenGL() : void
++changeRotationMode() : void
++getRotationMode() const : RotationMode
++getViewMatrix() const : QMatrix4x4
++move() : void
++processEvent() : bool
++rotate() : void
+-rotateFixedYaw() : void
+-rotateLocal() : void
++setRotationMode() : void
+__
+-m_rotationMode : RotationMode
+}
+enum "CameraCore3D::RotationMode" as C_0007459030612362595238
+enum C_0007459030612362595238 {
+ModeLocal
+ModeFixedYaw
+}
+class "CameraCore2D" as C_0010805369713445327760
+class C_0010805369713445327760 {
++CameraCore2D() : void
++~CameraCore2D() : void
+..
++applyToOpenGL() : void
++getViewSize() const : float
++move() : void
++processEvent() : bool
++setViewSize() : void
+-updateProjection() : void
++zoom() : void
+__
+-m_bottom : float
+-m_left : float
+-m_right : float
+-m_top : float
+-m_viewSize : float
+}
+class "BigFloat" as C_0005484540137171209731
+class C_0005484540137171209731 {
++BigFloat() : void
++BigFloat() : void
++BigFloat() : void
+..
++operator!=() const : bool
++operator*() const : BigFloat
++operator*=() : BigFloat &
++operator+() const : BigFloat
++operator+=() : BigFloat &
++operator-() const : BigFloat
++operator-() const : BigFloat
++operator-=() : BigFloat &
++operator/() const : BigFloat
++operator/=() : BigFloat &
++operator<() const : bool
++operator<=() const : bool
++operator==() const : bool
++operator>() const : bool
++operator>=() const : bool
+..
++abs() const : BigFloat
++exponent() const : int64_t
++isMinusOne() const : bool
++isNegative() const : bool
++isOne() const : bool
++isZero() const : bool
++mantissa() const : double
+-negate() : void
+-normalize() : void
++toDecimal() const : QString
++toDouble() const : double
++toScientific() const : QString
++toString() const : QString
+__
+{static} +kMaxExponent : const int64_t
+{static} +kMinExponent : const int64_t
+{static} +kSignificantDigits : const int
+-m_exponent : int64_t
+-m_mantissa : double
+}
+class "ComplexNumber" as C_0003048463033820961136
+class C_0003048463033820961136 {
++ComplexNumber() : void
++ComplexNumber() : void
++~ComplexNumber() : void
+..
++getIm() : BigFloat
++getRe() : BigFloat
++isOnAxis() const : bool
++isZero() const : bool
++setIm() : void
++setRe() : void
++toString() const : QString
+__
+-im : BigFloat
+-re : BigFloat
+}
+class "QList<Plane::Label>" as C_0004694870490898438982
+class C_0004694870490898438982 {
+__
+}
+abstract "Plane" as C_0005699394517886070194
+abstract C_0005699394517886070194 {
++Plane() : void
++~Plane() = default : void
+..
+{abstract} +draw() = 0 : void
+{abstract} #generateLabels() = 0 : QVector<Label>
++getLabelMode() const : LabelMode
++setFontSize() : void
++setLabelMode() : void
++setStepNumber() : void
+__
+#m_fontSize : int
+#m_labelMode : LabelMode
+#stepNumber : float
+#stepX : float
+#stepY : float
+}
+class "Plane::Label" as C_0003421267203874676761
+class C_0003421267203874676761 {
+__
++color : QColor
++fontSize : int
++number : ComplexNumber
++text : QString
++worldPos : QVector3D
+}
+enum "Plane::LabelMode" as C_0008624465409758062583
+enum C_0008624465409758062583 {
+ModeNone
+ModeAxesOnly
+ModeAll
+}
+class "Plane3d" as C_0014451447565608691855
+class C_0014451447565608691855 {
++Plane3d() : void
+..
+-calculateVisibleRange() : void
++draw() : void
+-drawAxes() : void
+-drawGrid() : void
+-generateLabels() : QVector<Label>
+-isPointInFrontOfCamera() : bool
+-projectToScreen() : QPointF
++setViewDistance() : void
++setViewNumberDistance() : void
+__
+-viewDistance : float
+-viewNumberDistance : float
+}
+class "ZoomController" as C_0017672126103613346366
+class C_0017672126103613346366 {
++ZoomController() : void
+..
+-applySeriesSettings() : void
++breakpoint() const : double
++cellWidth() const : double
++cellsToZero() const : int
++currentExponent() const : int64_t
++init() : void
++liveSteps() const : int
++scroll() : void
++scrollsInSeries() const : int
++seriesStep() const : int
++toString() const : QString
+__
+-m_breakpoint : double
+-m_cellWidth : double
+-m_cellsToZero : int
+-m_del : double
+-m_exp : int64_t
+-m_liveSteps : int
+-m_scrolls : int
+-m_series : Series
+-m_step : double
+-m_stepPrime : double
+}
+enum "ZoomController::Series" as C_0007752870766980486996
+enum C_0007752870766980486996 {
+Even
+Integer
+Step5
+}
+class "Plane2d" as C_0016661247517148704626
+class C_0016661247517148704626 {
++Plane2d() : void
+..
++draw() : void
+-drawGrid() : void
+-generateLabels() : QVector<Label>
++getLabelOffsetPercent() const : float
++scroll() : void
++setLabelOffsetPercent() : void
+-visibleRange() const : void
++zoomController() : ZoomController &
++zoomController() const : const ZoomController &
+__
+{static} -kCellsPerHalfHeight : const float
+-m_labelOffsetPercent : float
+-m_zoomController : ZoomController
+}
+class "SpherePoint" as C_0010584909767858052261
+class C_0010584909767858052261 {
++SpherePoint() : void
++SpherePoint() : void
++SpherePoint() : void
+..
++getColor() const : QColor
++getLabel() const : QString
++getOrthogonalProjection() const : QVector2D
++getPlaneProjection() const : QVector3D
++getSpherePosition() const : QVector3D
++isValid() const : bool
++setColor() : void
++setLabel() : void
++setSpherePosition() : void
+__
+-m_color : QColor
+-m_hasPlaneProjection : bool
+-m_label : QString
+-m_spherePos : QVector3D
+}
+class "QList<SpherePoint>" as C_0018046489350758939844
+class C_0018046489350758939844 {
+__
+}
+class "Sphere" as C_0006060250463249898743
+class C_0006060250463249898743 {
++Sphere() : void
+..
++addPoint() : void
++addPoint() : void
++clearPoints() : void
++draw() : void
++drawPoints() : void
+-drawProjection() : void
+-drawWireframe() : void
++getCenter() const : QVector3D
++getCenterPoint() : Point &
++getCenterPoint() const : const Point &
++getNorthPole() const : QVector3D
++getPoint() const : const SpherePoint *
++getPointCount() const : int
++getPoints() const : const QVector<SpherePoint> &
++getRadius() const : float
++hasPoint() const : bool
++intersectsRay() const : bool
++removeLastPoint() : void
++removePoint() : void
++setColor() : void
++setPointColor() : void
++setPointSize() : void
++setPosition() : void
++setProjectionColor() : void
++setRadius() : void
++setShowProjections() : void
+__
+-centerPoint : Point
+-colorB : float
+-colorG : float
+-colorR : float
+-m_pointColor : QColor
+-m_pointSize : float
+-m_points : QVector<SpherePoint>
+-m_projectionColor : QColor
+-m_showProjections : bool
+-radius : float
+-rings : int
+-sectors : int
+}
+class "Raycaster" as C_0016788790500541532188
+class C_0016788790500541532188 {
+{static} +intersectsSphere() : bool
+{static} +screenToRay() : Ray
+__
+}
+class "Raycaster::FrustumParams" as C_0008800207803377257796
+class C_0008800207803377257796 {
+__
++aspect : float
++bottom : float
++farPlane : float
++fov : float
++left : float
++nearPlane : float
++right : float
++top : float
+}
+class "Raycaster::Ray" as C_0001933326540061159085
+class C_0001933326540061159085 {
+__
++direction : QVector3D
++origin : QVector3D
+}
+class "SkyParams" as C_0016547587481005217125
+class C_0016547587481005217125 {
+__
++bottomColor : QVector3D
++horizonColor : QVector3D
++horizonY : float
++milkyWay : float
++milkyWayColor : QVector3D
++starBrightness : float
++starColor : QVector3D
++starDensity : float
++topColor : QVector3D
+}
+class "SkyRenderer" as C_0011179855804404407751
+class C_0011179855804404407751 {
++SkyRenderer() : void
++~SkyRenderer() : void
+..
+-buildGeometry() : void
+-buildShaders() : void
++destroy() : void
++initialize() : void
++params() : SkyParams &
++params() const : const SkyParams &
++render() : void
+__
+-m_initialized : bool
+-m_params : SkyParams
+-m_program : QOpenGLShaderProgram *
+-m_vao : QOpenGLVertexArrayObject *
+-m_vbo : QOpenGLBuffer *
+}
+class "GLWidget" as C_0001296021563006734556
+class C_0001296021563006734556 {
++GLWidget() : void
++~GLWidget() : void
+..
+-draw2DScene() : void
+-draw3DScene() : void
+-getFrustumParams() const : Raycaster::FrustumParams
+#initializeGL() : void
++isMode2D() const : bool
+#keyPressEvent() : void
+#keyReleaseEvent() : void
++metaObject() const : const QMetaObject *
++modeChanged() : void
+#mouseMoveEvent() : void
+#mousePressEvent() : void
+-onUpdate() : void
+#paintGL() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+#resizeGL() : void
++setMode2D() : void
+{static} +tr() : QString
+#wheelEvent() : void
+__
+-camera2d : CameraCore2D *
+-camera3d : CameraCore3D *
+-cameraPoint : Point *
+-lastMousePos : QPoint
+-m_currentCamera : Camera *
+-m_fpsController : FPSController *
+-m_mode2D : bool
+-m_skyRenderer : SkyRenderer *
+-m_skyTimer : QElapsedTimer
+-plane2d : Plane2d *
+-plane3d : Plane3d *
+-sphere : Sphere *
+{static} +staticMetaObject : const QMetaObject
+}
+class "GLWidget::QPrivateSignal" as C_0013828876094448722698
+class C_0013828876094448722698 {
+__
+}
+class "ProjectPanel" as C_0005888153343859849545
+class C_0005888153343859849545 {
++ProjectPanel() : void
++~ProjectPanel() : void
+..
++getGLWidget() const : GLWidget *
++hideDocks() : void
++metaObject() const : const QMetaObject *
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+-setupDocks() : void
+-setupFormulas() : void
+-setupMathFunctions() : void
++showDocks() : void
+{static} +tr() : QString
+__
+-m_formulaDock : QDockWidget *
+-m_glWidget : GLWidget *
+-m_mainWindow : QMainWindow *
+-m_mathDock : QDockWidget *
+-m_mathPanel : MathPanel *
+-m_objectsDock : QDockWidget *
+-m_objectsPanel : ObjectsPanelWidget *
+{static} +staticMetaObject : const QMetaObject
+}
+class "ProjectPanel::QPrivateSignal" as C_0017149900863023795238
+class C_0017149900863023795238 {
+__
+}
+C_0005732907301119421130 ..> C_0014050675522701963753
+C_0012586327794016647580 --+ C_0013329515722926671955
+C_0006249199790228496024 o-- C_0008375322064658753815 : -m_items
+C_0006249199790228496024 o-- C_0010454816333333901394 : -m_itemRects
+C_0008159507113385295926 --+ C_0006249199790228496024
+C_0003728837003746863717 --> C_0006249199790228496024 : -m_projectTabs
+C_0011856702530192630822 --+ C_0003728837003746863717
+C_0010505341584755838765 --+ C_0009982498057872412898
+C_0017720913144273303747 --+ C_0013278247584489176511
+C_0010957071163752870522 --+ C_0002387808336780003017
+C_0011296569200173999243 o-- C_0008375322064658753815 : -m_imagePaths
+C_0011296569200173999243 o-- C_0008375322064658753815 : -m_captions
+C_0011296569200173999243 o-- C_0008375322064658753815 : -m_videoPaths
+C_0011296569200173999243 o-- C_0008375322064658753815 : -m_descriptions
+C_0011296569200173999243 o-- C_0002251002379847157518 : -m_dots
+C_0007384380869913147491 --+ C_0011296569200173999243
+C_0003176738232768271570 --> C_0013278247584489176511 : -m_backButton
+C_0003176738232768271570 --> C_0006970462808010016912 : -m_backgroundWidget
+C_0003176738232768271570 --> C_0002387808336780003017 : -m_videoControls
+C_0003176738232768271570 o-- C_0008375322064658753815 : -m_imagePaths
+C_0004242402469526028214 --+ C_0003176738232768271570
+C_0014050675522701963753 o-- C_0011741360254285230333 : #m_type
+C_0011741360254285230333 --+ C_0014050675522701963753
+C_0008319822758945307697 ..> C_0014050675522701963753
+C_0005729225217083498668 ..> C_0005732907301119421130
+C_0005729225217083498668 ..> C_0008319822758945307697
+C_0015872366982039610086 ..> C_0005732907301119421130
+C_0015872366982039610086 ..> C_0014050675522701963753
+C_0015872366982039610086 ..> C_0011741360254285230333
+C_0015872366982039610086 ..> C_0005729225217083498668
+C_0015872366982039610086 o-- C_0008319822758945307697 : -m_objects
+C_0003475600056018053258 --+ C_0015872366982039610086
+C_0016458823071748483607 ..> C_0005732907301119421130
+C_0016458823071748483607 ..> C_0014050675522701963753
+C_0016458823071748483607 ..> C_0011741360254285230333
+C_0016458823071748483607 o-- C_0015131392207672007013 : -m_typeNames
+C_0001172416740094045852 --+ C_0016458823071748483607
+C_0005162023799276564119 o-- C_0008375322064658753815 : -m_items
+C_0005162023799276564119 o-- C_0017357864839177995468 : -m_orient
+C_0005162023799276564119 o-- C_0010454816333333901394 : -m_itemRects
+C_0005781302933710264491 --+ C_0005162023799276564119
+C_0017357864839177995468 --+ C_0005162023799276564119
+C_0017759496752845339438 --+ C_0015303779690959424637
+C_0004932836547852500195 --+ C_0000456491103092706759
+C_0010810181838344526365 ..> C_0002545201444471589314
+C_0007268251853054355468 ..> C_0002009150439719239282
+C_0007268251853054355468 ..> C_0004000815623939193716
+C_0007268251853054355468 ..> C_0010810181838344526365
+C_0007268251853054355468 ..> C_0013668956055875038006
+C_0007268251853054355468 o-- C_0006080896966619006626 : -m_keyboardLang
+C_0007268251853054355468 --> C_0005162023799276564119 : -m_mainTabs
+C_0007268251853054355468 --> C_0005162023799276564119 : -m_categoryTabs
+C_0007268251853054355468 o-- C_0008375322064658753815 : -m_categoryNames
+C_0007268251853054355468 o-- C_0012760165041057543719 : -m_lastFocusedWidget
+C_0003903308503563514492 --+ C_0007268251853054355468
+C_0004000815623939193716 --+ C_0007268251853054355468
+C_0004000815623939193716 o-- C_0010810181838344526365 : +items
+C_0006080896966619006626 --+ C_0007268251853054355468
+C_0006571650246262171851 o-- C_0018189526366987138526 : -m_keys
+C_0006571650246262171851 o-- C_0013286274850898176297 : -m_updateCallback
+C_0013950626137842055771 --+ C_0006571650246262171851
+C_0018189526366987138526 --+ C_0006571650246262171851
+C_0005049148943034209802 ..> C_0006571650246262171851
+C_0005049148943034209802 --> C_0017330203401231275776 : #point
+C_0000825649127462713404 ..> C_0006571650246262171851
+C_0000825649127462713404 o-- C_0007459030612362595238 : -m_rotationMode
+C_0005049148943034209802 <|-- C_0000825649127462713404
+C_0007459030612362595238 --+ C_0000825649127462713404
+C_0010805369713445327760 ..> C_0006571650246262171851
+C_0005049148943034209802 <|-- C_0010805369713445327760
+C_0003048463033820961136 o-- C_0005484540137171209731 : -re
+C_0003048463033820961136 o-- C_0005484540137171209731 : -im
+C_0005699394517886070194 ..> C_0005049148943034209802
+C_0005699394517886070194 ..> C_0004694870490898438982
+C_0005699394517886070194 ..> C_0003421267203874676761
+C_0005699394517886070194 o-- C_0008624465409758062583 : #m_labelMode
+C_0003421267203874676761 --+ C_0005699394517886070194
+C_0003421267203874676761 o-- C_0003048463033820961136 : +number
+C_0008624465409758062583 --+ C_0005699394517886070194
+C_0014451447565608691855 ..> C_0005049148943034209802
+C_0014451447565608691855 ..> C_0004694870490898438982
+C_0014451447565608691855 ..> C_0003421267203874676761
+C_0014451447565608691855 ..> C_0017330203401231275776
+C_0005699394517886070194 <|-- C_0014451447565608691855
+C_0017672126103613346366 o-- C_0007752870766980486996 : -m_series
+C_0007752870766980486996 --+ C_0017672126103613346366
+C_0016661247517148704626 ..> C_0005049148943034209802
+C_0016661247517148704626 ..> C_0004694870490898438982
+C_0016661247517148704626 ..> C_0003421267203874676761
+C_0016661247517148704626 ..> C_0010805369713445327760
+C_0016661247517148704626 o-- C_0017672126103613346366 : -m_zoomController
+C_0005699394517886070194 <|-- C_0016661247517148704626
+C_0018046489350758939844 ..> C_0010584909767858052261
+C_0006060250463249898743 ..> C_0010584909767858052261
+C_0006060250463249898743 ..> C_0000825649127462713404
+C_0006060250463249898743 o-- C_0017330203401231275776 : -centerPoint
+C_0006060250463249898743 o-- C_0018046489350758939844 : -m_points
+C_0016788790500541532188 ..> C_0008800207803377257796
+C_0016788790500541532188 ..> C_0001933326540061159085
+C_0008800207803377257796 --+ C_0016788790500541532188
+C_0001933326540061159085 --+ C_0016788790500541532188
+C_0011179855804404407751 o-- C_0016547587481005217125 : -m_params
+C_0001296021563006734556 ..> C_0008800207803377257796
+C_0001296021563006734556 --> C_0011179855804404407751 : -m_skyRenderer
+C_0001296021563006734556 --> C_0017330203401231275776 : -cameraPoint
+C_0001296021563006734556 --> C_0000825649127462713404 : -camera3d
+C_0001296021563006734556 --> C_0010805369713445327760 : -camera2d
+C_0001296021563006734556 --> C_0005049148943034209802 : -m_currentCamera
+C_0001296021563006734556 --> C_0014451447565608691855 : -plane3d
+C_0001296021563006734556 --> C_0016661247517148704626 : -plane2d
+C_0001296021563006734556 --> C_0006060250463249898743 : -sphere
+C_0001296021563006734556 --> C_0006571650246262171851 : -m_fpsController
+C_0013828876094448722698 --+ C_0001296021563006734556
+C_0005888153343859849545 --> C_0001296021563006734556 : -m_glWidget
+C_0005888153343859849545 --> C_0016458823071748483607 : -m_objectsPanel
+C_0005888153343859849545 --> C_0007268251853054355468 : -m_mathPanel
+C_0017149900863023795238 --+ C_0005888153343859849545
+
+'Generated with clang-uml, version 0.6.3
+'LLVM version Ubuntu clang version 18.1.3 (1ubuntu1)
+@enduml

@@ -1,0 +1,17 @@
+src/CMakeLists.txt:24:target_link_libraries(science_work PRIVATE
+src/CMakeLists.txt:46:    target_link_libraries(science_work PRIVATE Qt${QT_VERSION_MAJOR}::OpenGLWidgets)
+src/CMakeLists.txt:50:    target_link_libraries(science_work PRIVATE opengl32)
+src/CMakeLists.txt:52:        target_link_libraries(science_work PRIVATE glu32)
+src/CMakeLists.txt:57:    target_link_libraries(science_work PRIVATE GLU)
+src/CMakeLists.txt:63:    target_link_libraries(science_work PRIVATE ${OPENGL_LIBRARY} ${GLUT_LIBRARY})
+src/CMakeLists.txt:84:target_link_libraries(science_work PRIVATE panelLibrary)
+src/OpenGL/CMakeLists.txt:13:target_link_libraries(openGLLibrary PRIVATE
+src/UI/Sphere/CMakeLists.txt:11:target_link_libraries(sphereLibrary PRIVATE
+src/UI/CMakeLists.txt:2:target_link_libraries(uiLibrary INTERFACE
+src/UI/Camera/CMakeLists.txt:11:target_link_libraries(cameraLibrary PRIVATE
+src/UI/ToggleButton/CMakeLists.txt:10:target_link_libraries(toggleButtonLibrary PRIVATE
+src/UI/Plane/CMakeLists.txt:12:target_link_libraries(planeLibrary PRIVATE
+src/Data/CMakeLists.txt:10:target_link_libraries(dataLibrary PRIVATE
+src/Panels/CMakeLists.txt:14:target_link_libraries(panelLibrary PRIVATE
+src/Core/CMakeLists.txt:14:target_link_libraries(coreLibrary PRIVATE
+src/App/CMakeLists.txt:25:target_link_libraries(science_work PRIVATE

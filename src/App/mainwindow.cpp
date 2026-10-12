@@ -4,7 +4,6 @@
 #include <QToolBar>
 #include <QFile>
 #include <QLabel>
-#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -455,38 +454,3 @@ void MainWindow::on_action_14_triggered()
         }
     }
 }
-
-
-void MainWindow::on_action_15_triggered()
-{
-    m_hiddenMenuBar = !m_hiddenMenuBar;
-
-    if (menuBar()) {
-        menuBar()->setVisible(!m_hiddenMenuBar);
-    }
-}
-
-
-void MainWindow::on_action_16_triggered()
-{
-    m_hiddenLeftTool = !m_hiddenLeftTool;
-
-    QList<QToolBar*> toolBars = findChildren<QToolBar*>();
-    for (QToolBar *toolBar : toolBars) {
-        if (toolBar->allowedAreas() == Qt::LeftToolBarArea) {
-            toolBar->setVisible(!m_hiddenLeftTool);
-        }
-    }
-}
-
-
-void MainWindow::on_action_21_triggered()
-{
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "Выход", "Вы действительно хотите выйти?"
-                                  , QMessageBox::Yes | QMessageBox::No);
-    if(reply == QMessageBox::Yes){
-        QCoreApplication::quit();
-    }
-}
-

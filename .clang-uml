@@ -1,0 +1,61 @@
+compilation_database_dir: build
+output_directory: docs/diagrams
+generate_method_arguments: none
+generate_packages: true
+
+diagrams:
+  layers_package:
+    type: package
+    title: "Riemann — зависимости между слоями"
+    glob:
+      - /home/user/science_work/src/**/*.cpp
+    exclude:
+      paths:
+        - .*autogen.*
+        - .*/build/.*
+
+  include_graph:
+    type: include
+    title: "Riemann — include-граф"
+    glob:
+      - /home/user/science_work/src/**/*.cpp
+    exclude:
+      paths:
+        - .*autogen.*
+        - .*/build/.*
+
+  core_classes:
+    type: class
+    title: "Core — классы"
+    glob:
+      - /home/user/science_work/src/Core/*.cpp
+
+  data_classes:
+    type: class
+    title: "Data — классы"
+    glob:
+      - /home/user/science_work/src/Data/*.cpp
+
+  opengl_classes:
+    type: class
+    title: "OpenGL — классы"
+    glob:
+      - /home/user/science_work/src/OpenGL/*.cpp
+
+  ui_classes:
+    type: class
+    title: "UI — классы"
+    glob:
+      - /home/user/science_work/src/UI/**/*.cpp
+
+  panels_classes:
+    type: class
+    title: "Panels — классы"
+    glob:
+      - /home/user/science_work/src/Panels/**/*.cpp
+
+  app_classes:
+    type: class
+    title: "App — классы"
+    glob:
+      - /home/user/science_work/src/App/*.cpp

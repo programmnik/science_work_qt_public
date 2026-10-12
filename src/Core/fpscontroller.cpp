@@ -1,6 +1,7 @@
 #include "fpscontroller.h"
 #include <QKeyEvent>
 #include <algorithm>
+#include <cmath>
 
 FPSController::FPSController(QObject *parent)
     : QObject(parent)
@@ -14,6 +15,7 @@ FPSController::FPSController(QObject *parent)
     , m_rotationSpeed(1.0f)
     , m_frameCount(0)
     , m_skippedFrames(0)
+    , m_fpsFrameCount(0)
     , m_currentFPS(0.0f)
     , m_speedMultiplier(1.0f)
     , m_shouldRender(false)
@@ -38,10 +40,16 @@ FPSController::~FPSController()
     // m_timer удалится автоматически (parent = this)
 }
 
+// ============================================================================
+// Настройка
+// ============================================================================
+
 void FPSController::setTargetFPS(int fps)
 {
+    if (fps <= 0) return;   // защита от деления на ноль
+
     m_targetFPS = fps;
-    m_targetFrameTimeMs = 1000.0f / fps;
+    m_targetFrameTimeMs = 1000.0f / static_cast<float>(fps);
 
     if (isActive()) {
         stop();
@@ -54,12 +62,19 @@ void FPSController::setUpdateCallback(std::function<void()> callback)
     m_updateCallback = callback;
 }
 
+// ============================================================================
+// Управление
+// ============================================================================
+
 void FPSController::start()
 {
     if (m_timer && !m_timer->isActive()) {
         m_frameTimer.start();
         m_fpsTimer.start();
-        m_timer->start(std::max(1, static_cast<int>(m_targetFrameTimeMs)));
+        m_fpsFrameCount = 0;
+        // Округление до ближайшего целого вместо отбрасывания
+        const int intervalMs = std::max(1, static_cast<int>(std::round(m_targetFrameTimeMs)));
+        m_timer->start(intervalMs);
     }
 }
 
@@ -70,11 +85,16 @@ void FPSController::stop()
     }
 }
 
+// ============================================================================
+// Ввод
+// ============================================================================
+
 void FPSController::addRotation(float dx, float dy, float dz)
 {
     m_accumulatedRotX += dx;
     m_accumulatedRotY += dy;
-    // m_accumulatedRotZ += dz;
+    // dz зарезервирован под 3D-поворот вокруг оси Z; пока не используется
+    Q_UNUSED(dz);
     m_hasInput = true;
 }
 
@@ -100,11 +120,11 @@ void FPSController::setKeyState(uint scanCode, bool pressed)
     default: break;
     }
 
-    if(!m_mode2d){
+    if (!m_mode2d) {
         switch (scanCode) {
-            case 24:  m_keys.q = pressed; break;   // Q
-            case 52:  m_keys.z = pressed; break;   // Z
-            default: break;
+        case 24: m_keys.q = pressed; break;   // Q
+        case 52: m_keys.z = pressed; break;   // Z
+        default: break;
         }
     }
 }
@@ -121,39 +141,47 @@ void FPSController::clearAllInput()
     m_speedMultiplier = 1.0f;
 }
 
-void FPSController::process2DEvent(){
-    if (m_keys.w) m_accumulatedMoveForward += m_moveSpeed;
-    if (m_keys.s) m_accumulatedMoveForward -= m_moveSpeed;
-    if (m_keys.a) m_accumulatedMoveRight -= m_moveSpeed;
-    if (m_keys.d) m_accumulatedMoveRight += m_moveSpeed;
-    if (m_keys.left) m_accumulatedMoveRight -= m_moveSpeed;
-    if (m_keys.right) m_accumulatedMoveRight += m_moveSpeed;
-    if (m_keys.up) m_accumulatedMoveForward += m_moveSpeed;
-    if (m_keys.down) m_accumulatedMoveForward -= m_moveSpeed;
+// ============================================================================
+// Обработка событий режимов
+// ============================================================================
 
+void FPSController::process2DEvent()
+{
+    if (m_keys.w)     m_accumulatedMoveForward += m_moveSpeed;
+    if (m_keys.s)     m_accumulatedMoveForward -= m_moveSpeed;
+    if (m_keys.a)     m_accumulatedMoveRight   -= m_moveSpeed;
+    if (m_keys.d)     m_accumulatedMoveRight   += m_moveSpeed;
+    if (m_keys.left)  m_accumulatedMoveRight   -= m_moveSpeed;
+    if (m_keys.right) m_accumulatedMoveRight   += m_moveSpeed;
+    if (m_keys.up)    m_accumulatedMoveForward += m_moveSpeed;
+    if (m_keys.down)  m_accumulatedMoveForward -= m_moveSpeed;
 }
 
-void FPSController::process3DEvent(){
+void FPSController::process3DEvent()
+{
     if (m_keys.w) m_accumulatedMoveForward += m_moveSpeed;
     if (m_keys.s) m_accumulatedMoveForward -= m_moveSpeed;
-    if (m_keys.a) m_accumulatedMoveRight -= m_moveSpeed;
-    if (m_keys.d) m_accumulatedMoveRight += m_moveSpeed;
-    if (m_keys.q) m_accumulatedMoveUp += m_moveSpeed;
-    if (m_keys.z) m_accumulatedMoveUp -= m_moveSpeed;
-    if (m_keys.left) m_accumulatedRotY -= m_rotationSpeed;
+    if (m_keys.a) m_accumulatedMoveRight   -= m_moveSpeed;
+    if (m_keys.d) m_accumulatedMoveRight   += m_moveSpeed;
+    if (m_keys.q) m_accumulatedMoveUp      += m_moveSpeed;
+    if (m_keys.z) m_accumulatedMoveUp      -= m_moveSpeed;
+    if (m_keys.left)  m_accumulatedRotY -= m_rotationSpeed;
     if (m_keys.right) m_accumulatedRotY += m_rotationSpeed;
-    if (m_keys.up) m_accumulatedRotX -= m_rotationSpeed;
-    if (m_keys.down) m_accumulatedRotX += m_rotationSpeed;
-
+    if (m_keys.up)    m_accumulatedRotX -= m_rotationSpeed;
+    if (m_keys.down)  m_accumulatedRotX += m_rotationSpeed;
 }
+
+// ============================================================================
+// Обработка кадра
+// ============================================================================
 
 void FPSController::processFrame()
 {
     updateFPS();
 
     // 1. Обрабатываем удержание клавиш
-    if(m_mode2d) process2DEvent();
-    else process3DEvent();
+    if (m_mode2d) process2DEvent();
+    else          process3DEvent();
 
     if (m_keys.w || m_keys.s || m_keys.a || m_keys.d ||
         m_keys.q || m_keys.z || m_keys.left || m_keys.right ||
@@ -163,7 +191,7 @@ void FPSController::processFrame()
 
     // 2. Проверяем, нужно ли пропустить кадр
     m_shouldRender = true;
-    float elapsed = m_frameTimer.elapsed();
+    float elapsed = static_cast<float>(m_frameTimer.elapsed());
 
     if (elapsed < m_targetFrameTimeMs / 2.0f && m_frameCount > 0) {
         m_frameSkipCounter++;
@@ -181,10 +209,9 @@ void FPSController::processFrame()
     }
     m_frameSkipCounter = 0;
 
-    // 3. Если есть накопленный ввод - применяем его
+    // 3. Сбрасываем флаг накопленного ввода
+    //    (данные остаются доступны через getAccumulated* до следующего кадра)
     if (m_hasInput) {
-        // Данные уже накоплены, сбрасываем флаг
-        // Внешний код получит данные через getAccumulated* методы
         m_hasInput = false;
     }
 
@@ -197,20 +224,22 @@ void FPSController::processFrame()
     m_frameTimer.restart();
 }
 
+// ============================================================================
+// FPS-метр
+// ============================================================================
+
 void FPSController::updateFPS()
 {
     m_frameCount++;
 
-    static int fpsFrameCount = 0;
-
-    if (fpsFrameCount == 0) {
+    if (m_fpsFrameCount == 0) {
         m_fpsTimer.start();
     }
 
-    fpsFrameCount++;
+    m_fpsFrameCount++;
 
     if (m_fpsTimer.elapsed() >= 1000) {
-        m_currentFPS = fpsFrameCount * 1000.0f / m_fpsTimer.elapsed();
-        fpsFrameCount = 0;
+        m_currentFPS = m_fpsFrameCount * 1000.0f / static_cast<float>(m_fpsTimer.elapsed());
+        m_fpsFrameCount = 0;
     }
 }

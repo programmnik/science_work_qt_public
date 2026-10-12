@@ -1,0 +1,675 @@
+@startuml
+title OpenGL — классы
+package [std] as C_0009971158671206323968 {
+class "function<void()>" as C_0013286274850898176297
+class C_0013286274850898176297 {
+__
+}
+class "shared_ptr<SceneObject>" as C_0005732907301119421130
+class C_0005732907301119421130 {
+__
+}
+}
+class "Point" as C_0017330203401231275776
+class C_0017330203401231275776 {
++Point() : void
+..
++getRotX() const : float
++getRotY() const : float
++getRotZ() const : float
++getX() const : float
++getY() const : float
++getZ() const : float
++move() : void
++rotate() : void
++setPosition() : void
+__
+-rotX : float
+-rotY : float
+-rotZ : float
+-x : float
+-y : float
+-z : float
+}
+class "FPSController" as C_0006571650246262171851
+class C_0006571650246262171851 {
++FPSController() : void
++~FPSController() : void
+..
++addMovement() : void
++addRotation() : void
++clearAllInput() : void
++getAccumulatedMoveForward() const : float
++getAccumulatedMoveRight() const : float
++getAccumulatedMoveUp() const : float
++getAccumulatedRotX() const : float
++getAccumulatedRotY() const : float
++getAccumulatedRotZ() const : float
++getCurrentFPS() const : float
++getSkippedFrames() const : int
++getSpeedMultiplier() const : float
++isActive() const : bool
++metaObject() const : const QMetaObject *
+-process2DEvent() : void
+-process3DEvent() : void
+-processFrame() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++setKeyState() : void
++setMaxFrameSkip() : void
++setMaxSpeedMultiplier() : void
++setMode2D() : void
++setMoveSpeed() : void
++setRotationSpeed() : void
++setSpeedMultiplierStep() : void
++setTargetFPS() : void
++setUpdateCallback() : void
++shouldRender() const : bool
++start() : void
++stop() : void
+{static} +tr() : QString
+-updateFPS() : void
+__
+-m_accumulatedMoveForward : float
+-m_accumulatedMoveRight : float
+-m_accumulatedMoveUp : float
+-m_accumulatedRotX : float
+-m_accumulatedRotY : float
+-m_accumulatedRotZ : float
+-m_currentFPS : float
+-m_fpsTimer : QElapsedTimer
+-m_frameCount : int
+-m_frameSkipCounter : int
+-m_frameTimer : QElapsedTimer
+-m_hasInput : bool
+-m_keys : struct KeyState
+-m_maxFrameSkip : int
+-m_maxSpeedMultiplier : float
+-m_mode2d : bool
+-m_moveSpeed : float
+-m_rotationSpeed : float
+-m_shouldRender : bool
+-m_skippedFrames : int
+-m_speedMultiplier : float
+-m_speedMultiplierStep : float
+-m_targetFPS : int
+-m_targetFrameTimeMs : float
+-m_timer : QTimer *
+-m_updateCallback : std::function<void ()>
+{static} +staticMetaObject : const QMetaObject
+}
+class "FPSController::QPrivateSignal" as C_0013950626137842055771
+class C_0013950626137842055771 {
+__
+}
+class "FPSController::KeyState" as C_0018189526366987138526
+class C_0018189526366987138526 {
+__
++a : bool
++d : bool
++down : bool
++left : bool
++q : bool
++right : bool
++s : bool
++up : bool
++w : bool
++z : bool
+}
+abstract "Camera" as C_0005049148943034209802
+abstract C_0005049148943034209802 {
++Camera() : void
++~Camera() = default : void
+..
+{abstract} +applyToOpenGL() = 0 : void
++getCameraFront() const : QVector3D
++getCameraPos() const : QVector3D
++getCameraRight() const : QVector3D
++getCameraUp() const : QVector3D
++getPoint() : Point *
++getPointPosition() const : QVector3D
++getZoom() : float
+{abstract} +move() = 0 : void
++processEvent() : bool
++rotate() : void
++setMoveSpeed() : void
++setPoint() : void
++setRotSpeed() : void
++setZoom() : void
++setZoomRange() : void
+#updateCameraVectors() : void
++zoom() : void
+__
+#camera_front : QVector3D
+#camera_pos : QVector3D
+#camera_right : QVector3D
+#camera_up : QVector3D
+#m_zoom : float
+#max_zoom : float
+#min_zoom : float
+#moveSpeed : float
+#orientation : QQuaternion
+#point : Point *
+#rotSpeed : float
+}
+class "CameraCore3D" as C_0000825649127462713404
+class C_0000825649127462713404 {
++CameraCore3D() : void
++~CameraCore3D() : void
+..
++applyToOpenGL() : void
++changeRotationMode() : void
++getRotationMode() const : RotationMode
++getViewMatrix() const : QMatrix4x4
++move() : void
++processEvent() : bool
++rotate() : void
+-rotateFixedYaw() : void
+-rotateLocal() : void
++setRotationMode() : void
+__
+-m_rotationMode : RotationMode
+}
+enum "CameraCore3D::RotationMode" as C_0007459030612362595238
+enum C_0007459030612362595238 {
+ModeLocal
+ModeFixedYaw
+}
+class "CameraCore2D" as C_0010805369713445327760
+class C_0010805369713445327760 {
++CameraCore2D() : void
++~CameraCore2D() : void
+..
++applyToOpenGL() : void
++getViewSize() const : float
++move() : void
++processEvent() : bool
++setViewSize() : void
+-updateProjection() : void
++zoom() : void
+__
+-m_bottom : float
+-m_left : float
+-m_right : float
+-m_top : float
+-m_viewSize : float
+}
+class "BigFloat" as C_0005484540137171209731
+class C_0005484540137171209731 {
++BigFloat() : void
++BigFloat() : void
++BigFloat() : void
+..
++operator!=() const : bool
++operator*() const : BigFloat
++operator*=() : BigFloat &
++operator+() const : BigFloat
++operator+=() : BigFloat &
++operator-() const : BigFloat
++operator-() const : BigFloat
++operator-=() : BigFloat &
++operator/() const : BigFloat
++operator/=() : BigFloat &
++operator<() const : bool
++operator<=() const : bool
++operator==() const : bool
++operator>() const : bool
++operator>=() const : bool
+..
++abs() const : BigFloat
++exponent() const : int64_t
++isMinusOne() const : bool
++isNegative() const : bool
++isOne() const : bool
++isZero() const : bool
++mantissa() const : double
+-negate() : void
+-normalize() : void
++toDecimal() const : QString
++toDouble() const : double
++toScientific() const : QString
++toString() const : QString
+__
+{static} +kMaxExponent : const int64_t
+{static} +kMinExponent : const int64_t
+{static} +kSignificantDigits : const int
+-m_exponent : int64_t
+-m_mantissa : double
+}
+class "ComplexNumber" as C_0003048463033820961136
+class C_0003048463033820961136 {
++ComplexNumber() : void
++ComplexNumber() : void
++~ComplexNumber() : void
+..
++getIm() : BigFloat
++getRe() : BigFloat
++isOnAxis() const : bool
++isZero() const : bool
++setIm() : void
++setRe() : void
++toString() const : QString
+__
+-im : BigFloat
+-re : BigFloat
+}
+class "QList<Plane::Label>" as C_0004694870490898438982
+class C_0004694870490898438982 {
+__
+}
+abstract "Plane" as C_0005699394517886070194
+abstract C_0005699394517886070194 {
++Plane() : void
++~Plane() = default : void
+..
+{abstract} +draw() = 0 : void
+{abstract} #generateLabels() = 0 : QVector<Label>
++getLabelMode() const : LabelMode
++setFontSize() : void
++setLabelMode() : void
++setStepNumber() : void
+__
+#m_fontSize : int
+#m_labelMode : LabelMode
+#stepNumber : float
+#stepX : float
+#stepY : float
+}
+class "Plane::Label" as C_0003421267203874676761
+class C_0003421267203874676761 {
+__
++color : QColor
++fontSize : int
++number : ComplexNumber
++text : QString
++worldPos : QVector3D
+}
+enum "Plane::LabelMode" as C_0008624465409758062583
+enum C_0008624465409758062583 {
+ModeNone
+ModeAxesOnly
+ModeAll
+}
+class "Plane3d" as C_0014451447565608691855
+class C_0014451447565608691855 {
++Plane3d() : void
+..
+-calculateVisibleRange() : void
++draw() : void
+-drawAxes() : void
+-drawGrid() : void
+-generateLabels() : QVector<Label>
+-isPointInFrontOfCamera() : bool
+-projectToScreen() : QPointF
++setViewDistance() : void
++setViewNumberDistance() : void
+__
+-viewDistance : float
+-viewNumberDistance : float
+}
+class "ZoomController" as C_0017672126103613346366
+class C_0017672126103613346366 {
++ZoomController() : void
+..
+-applySeriesSettings() : void
++breakpoint() const : double
++cellWidth() const : double
++cellsToZero() const : int
++currentExponent() const : int64_t
++init() : void
++liveSteps() const : int
++scroll() : void
++scrollsInSeries() const : int
++seriesStep() const : int
++toString() const : QString
+__
+-m_breakpoint : double
+-m_cellWidth : double
+-m_cellsToZero : int
+-m_del : double
+-m_exp : int64_t
+-m_liveSteps : int
+-m_scrolls : int
+-m_series : Series
+-m_step : double
+-m_stepPrime : double
+}
+enum "ZoomController::Series" as C_0007752870766980486996
+enum C_0007752870766980486996 {
+Even
+Integer
+Step5
+}
+class "Plane2d" as C_0016661247517148704626
+class C_0016661247517148704626 {
++Plane2d() : void
+..
++draw() : void
+-drawGrid() : void
+-generateLabels() : QVector<Label>
++getLabelOffsetPercent() const : float
++scroll() : void
++setLabelOffsetPercent() : void
+-visibleRange() const : void
++zoomController() : ZoomController &
++zoomController() const : const ZoomController &
+__
+{static} -kCellsPerHalfHeight : const float
+-m_labelOffsetPercent : float
+-m_zoomController : ZoomController
+}
+class "SpherePoint" as C_0010584909767858052261
+class C_0010584909767858052261 {
++SpherePoint() : void
++SpherePoint() : void
++SpherePoint() : void
+..
++getColor() const : QColor
++getLabel() const : QString
++getOrthogonalProjection() const : QVector2D
++getPlaneProjection() const : QVector3D
++getSpherePosition() const : QVector3D
++isValid() const : bool
++setColor() : void
++setLabel() : void
++setSpherePosition() : void
+__
+-m_color : QColor
+-m_hasPlaneProjection : bool
+-m_label : QString
+-m_spherePos : QVector3D
+}
+class "QList<SpherePoint>" as C_0018046489350758939844
+class C_0018046489350758939844 {
+__
+}
+class "Sphere" as C_0006060250463249898743
+class C_0006060250463249898743 {
++Sphere() : void
+..
++addPoint() : void
++addPoint() : void
++clearPoints() : void
++draw() : void
++drawPoints() : void
+-drawProjection() : void
+-drawWireframe() : void
++getCenter() const : QVector3D
++getCenterPoint() : Point &
++getCenterPoint() const : const Point &
++getNorthPole() const : QVector3D
++getPoint() const : const SpherePoint *
++getPointCount() const : int
++getPoints() const : const QVector<SpherePoint> &
++getRadius() const : float
++hasPoint() const : bool
++intersectsRay() const : bool
++removeLastPoint() : void
++removePoint() : void
++setColor() : void
++setPointColor() : void
++setPointSize() : void
++setPosition() : void
++setProjectionColor() : void
++setRadius() : void
++setShowProjections() : void
+__
+-centerPoint : Point
+-colorB : float
+-colorG : float
+-colorR : float
+-m_pointColor : QColor
+-m_pointSize : float
+-m_points : QVector<SpherePoint>
+-m_projectionColor : QColor
+-m_showProjections : bool
+-radius : float
+-rings : int
+-sectors : int
+}
+class "Raycaster" as C_0016788790500541532188
+class C_0016788790500541532188 {
+{static} +intersectsSphere() : bool
+{static} +screenToRay() : Ray
+__
+}
+class "Raycaster::FrustumParams" as C_0008800207803377257796
+class C_0008800207803377257796 {
+__
++aspect : float
++bottom : float
++farPlane : float
++fov : float
++left : float
++nearPlane : float
++right : float
++top : float
+}
+class "Raycaster::Ray" as C_0001933326540061159085
+class C_0001933326540061159085 {
+__
++direction : QVector3D
++origin : QVector3D
+}
+class "SkyParams" as C_0016547587481005217125
+class C_0016547587481005217125 {
+__
++bottomColor : QVector3D
++horizonColor : QVector3D
++horizonY : float
++milkyWay : float
++milkyWayColor : QVector3D
++starBrightness : float
++starColor : QVector3D
++starDensity : float
++topColor : QVector3D
+}
+class "SkyRenderer" as C_0011179855804404407751
+class C_0011179855804404407751 {
++SkyRenderer() : void
++~SkyRenderer() : void
+..
+-buildGeometry() : void
+-buildShaders() : void
++destroy() : void
++initialize() : void
++params() : SkyParams &
++params() const : const SkyParams &
++render() : void
+__
+-m_initialized : bool
+-m_params : SkyParams
+-m_program : QOpenGLShaderProgram *
+-m_vao : QOpenGLVertexArrayObject *
+-m_vbo : QOpenGLBuffer *
+}
+class "GLWidget" as C_0001296021563006734556
+class C_0001296021563006734556 {
++GLWidget() : void
++~GLWidget() : void
+..
+-draw2DScene() : void
+-draw3DScene() : void
+-getFrustumParams() const : Raycaster::FrustumParams
+#initializeGL() : void
++isMode2D() const : bool
+#keyPressEvent() : void
+#keyReleaseEvent() : void
++metaObject() const : const QMetaObject *
++modeChanged() : void
+#mouseMoveEvent() : void
+#mousePressEvent() : void
+-onUpdate() : void
+#paintGL() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
+#resizeGL() : void
++setMode2D() : void
+{static} +tr() : QString
+#wheelEvent() : void
+__
+-camera2d : CameraCore2D *
+-camera3d : CameraCore3D *
+-cameraPoint : Point *
+-lastMousePos : QPoint
+-m_currentCamera : Camera *
+-m_fpsController : FPSController *
+-m_mode2D : bool
+-m_skyRenderer : SkyRenderer *
+-m_skyTimer : QElapsedTimer
+-plane2d : Plane2d *
+-plane3d : Plane3d *
+-sphere : Sphere *
+{static} +staticMetaObject : const QMetaObject
+}
+class "GLWidget::QPrivateSignal" as C_0013828876094448722698
+class C_0013828876094448722698 {
+__
+}
+class "SceneObject" as C_0014050675522701963753
+class C_0014050675522701963753 {
++SceneObject() : void
++~SceneObject() = default : void
+..
++getColor() const : QColor
++getDescription() const : QString
++getName() const : QString
++getType() const : ObjectType
++getTypeName() const : QString
++isSelected() const : bool
++isVisible() const : bool
++setColor() : void
++setName() : void
++setSelected() : void
++setVisible() : void
+__
+#m_color : QColor
+#m_name : QString
+#m_selected : bool
+#m_type : ObjectType
+#m_visible : bool
+}
+enum "SceneObject::ObjectType" as C_0011741360254285230333
+enum C_0011741360254285230333 {
+TypeSphere
+TypePlane
+TypeProjection
+TypePoint
+TypeCustom
+}
+class "QList<std::shared_ptr<SceneObject>>" as C_0008319822758945307697
+class C_0008319822758945307697 {
+__
+}
+class "QMap<SceneObject::ObjectType,QVector<std::shared_ptr<SceneObject>>>" as C_0005729225217083498668
+class C_0005729225217083498668 {
+__
+}
+class "ObjectManager" as C_0015872366982039610086
+class C_0015872366982039610086 {
+-ObjectManager() = default : void
+-ObjectManager() = deleted : void
+-~ObjectManager() = default : void
+..
+-operator=() = deleted : ObjectManager &
+..
++addObject() : void
++allObjectsCleared() : void
++clearAll() : void
++getAllObjects() const : QVector<std::shared_ptr<SceneObject>>
++getGroupedObjects() const : QMap<SceneObject::ObjectType,QVector<std::shared_ptr<SceneObject>>>
++getObjectAt() const : std::shared_ptr<SceneObject>
++getObjectCount() const : int
++getObjectsByType() const : QVector<std::shared_ptr<SceneObject>>
+{static} +instance() : ObjectManager &
++metaObject() const : const QMetaObject *
++objectAdded() : void
++objectRemoved() : void
++objectUpdated() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++removeObject() : void
++removeObjectAt() : void
+{static} +tr() : QString
+__
+-m_objects : QVector<std::shared_ptr<SceneObject>>
+{static} +staticMetaObject : const QMetaObject
+}
+class "ObjectManager::QPrivateSignal" as C_0003475600056018053258
+class C_0003475600056018053258 {
+__
+}
+C_0005732907301119421130 ..> C_0014050675522701963753
+C_0006571650246262171851 o-- C_0018189526366987138526 : -m_keys
+C_0006571650246262171851 o-- C_0013286274850898176297 : -m_updateCallback
+C_0013950626137842055771 --+ C_0006571650246262171851
+C_0018189526366987138526 --+ C_0006571650246262171851
+C_0005049148943034209802 ..> C_0006571650246262171851
+C_0005049148943034209802 --> C_0017330203401231275776 : #point
+C_0000825649127462713404 ..> C_0006571650246262171851
+C_0000825649127462713404 o-- C_0007459030612362595238 : -m_rotationMode
+C_0005049148943034209802 <|-- C_0000825649127462713404
+C_0007459030612362595238 --+ C_0000825649127462713404
+C_0010805369713445327760 ..> C_0006571650246262171851
+C_0005049148943034209802 <|-- C_0010805369713445327760
+C_0003048463033820961136 o-- C_0005484540137171209731 : -re
+C_0003048463033820961136 o-- C_0005484540137171209731 : -im
+C_0005699394517886070194 ..> C_0005049148943034209802
+C_0005699394517886070194 ..> C_0004694870490898438982
+C_0005699394517886070194 ..> C_0003421267203874676761
+C_0005699394517886070194 o-- C_0008624465409758062583 : #m_labelMode
+C_0003421267203874676761 --+ C_0005699394517886070194
+C_0003421267203874676761 o-- C_0003048463033820961136 : +number
+C_0008624465409758062583 --+ C_0005699394517886070194
+C_0014451447565608691855 ..> C_0005049148943034209802
+C_0014451447565608691855 ..> C_0004694870490898438982
+C_0014451447565608691855 ..> C_0003421267203874676761
+C_0014451447565608691855 ..> C_0017330203401231275776
+C_0005699394517886070194 <|-- C_0014451447565608691855
+C_0017672126103613346366 o-- C_0007752870766980486996 : -m_series
+C_0007752870766980486996 --+ C_0017672126103613346366
+C_0016661247517148704626 ..> C_0005049148943034209802
+C_0016661247517148704626 ..> C_0004694870490898438982
+C_0016661247517148704626 ..> C_0003421267203874676761
+C_0016661247517148704626 ..> C_0010805369713445327760
+C_0016661247517148704626 o-- C_0017672126103613346366 : -m_zoomController
+C_0005699394517886070194 <|-- C_0016661247517148704626
+C_0018046489350758939844 ..> C_0010584909767858052261
+C_0006060250463249898743 ..> C_0010584909767858052261
+C_0006060250463249898743 ..> C_0000825649127462713404
+C_0006060250463249898743 o-- C_0017330203401231275776 : -centerPoint
+C_0006060250463249898743 o-- C_0018046489350758939844 : -m_points
+C_0016788790500541532188 ..> C_0008800207803377257796
+C_0016788790500541532188 ..> C_0001933326540061159085
+C_0008800207803377257796 --+ C_0016788790500541532188
+C_0001933326540061159085 --+ C_0016788790500541532188
+C_0011179855804404407751 o-- C_0016547587481005217125 : -m_params
+C_0001296021563006734556 ..> C_0008800207803377257796
+C_0001296021563006734556 --> C_0011179855804404407751 : -m_skyRenderer
+C_0001296021563006734556 --> C_0017330203401231275776 : -cameraPoint
+C_0001296021563006734556 --> C_0000825649127462713404 : -camera3d
+C_0001296021563006734556 --> C_0010805369713445327760 : -camera2d
+C_0001296021563006734556 --> C_0005049148943034209802 : -m_currentCamera
+C_0001296021563006734556 --> C_0014451447565608691855 : -plane3d
+C_0001296021563006734556 --> C_0016661247517148704626 : -plane2d
+C_0001296021563006734556 --> C_0006060250463249898743 : -sphere
+C_0001296021563006734556 --> C_0006571650246262171851 : -m_fpsController
+C_0013828876094448722698 --+ C_0001296021563006734556
+C_0014050675522701963753 o-- C_0011741360254285230333 : #m_type
+C_0011741360254285230333 --+ C_0014050675522701963753
+C_0008319822758945307697 ..> C_0014050675522701963753
+C_0005729225217083498668 ..> C_0005732907301119421130
+C_0005729225217083498668 ..> C_0008319822758945307697
+C_0015872366982039610086 ..> C_0005732907301119421130
+C_0015872366982039610086 ..> C_0014050675522701963753
+C_0015872366982039610086 ..> C_0011741360254285230333
+C_0015872366982039610086 ..> C_0005729225217083498668
+C_0015872366982039610086 o-- C_0008319822758945307697 : -m_objects
+C_0003475600056018053258 --+ C_0015872366982039610086
+
+'Generated with clang-uml, version 0.6.3
+'LLVM version Ubuntu clang version 18.1.3 (1ubuntu1)
+@enduml

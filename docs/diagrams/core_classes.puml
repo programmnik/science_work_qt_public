@@ -1,0 +1,226 @@
+@startuml
+title Core — классы
+package [std] as C_0009971158671206323968 {
+class "function<void()>" as C_0013286274850898176297
+class C_0013286274850898176297 {
+__
+}
+}
+class "FPSController" as C_0006571650246262171851
+class C_0006571650246262171851 {
++FPSController() : void
++~FPSController() : void
+..
++addMovement() : void
++addRotation() : void
++clearAllInput() : void
++getAccumulatedMoveForward() const : float
++getAccumulatedMoveRight() const : float
++getAccumulatedMoveUp() const : float
++getAccumulatedRotX() const : float
++getAccumulatedRotY() const : float
++getAccumulatedRotZ() const : float
++getCurrentFPS() const : float
++getSkippedFrames() const : int
++getSpeedMultiplier() const : float
++isActive() const : bool
++metaObject() const : const QMetaObject *
+-process2DEvent() : void
+-process3DEvent() : void
+-processFrame() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++setKeyState() : void
++setMaxFrameSkip() : void
++setMaxSpeedMultiplier() : void
++setMode2D() : void
++setMoveSpeed() : void
++setRotationSpeed() : void
++setSpeedMultiplierStep() : void
++setTargetFPS() : void
++setUpdateCallback() : void
++shouldRender() const : bool
++start() : void
++stop() : void
+{static} +tr() : QString
+-updateFPS() : void
+__
+-m_accumulatedMoveForward : float
+-m_accumulatedMoveRight : float
+-m_accumulatedMoveUp : float
+-m_accumulatedRotX : float
+-m_accumulatedRotY : float
+-m_accumulatedRotZ : float
+-m_currentFPS : float
+-m_fpsTimer : QElapsedTimer
+-m_frameCount : int
+-m_frameSkipCounter : int
+-m_frameTimer : QElapsedTimer
+-m_hasInput : bool
+-m_keys : struct KeyState
+-m_maxFrameSkip : int
+-m_maxSpeedMultiplier : float
+-m_mode2d : bool
+-m_moveSpeed : float
+-m_rotationSpeed : float
+-m_shouldRender : bool
+-m_skippedFrames : int
+-m_speedMultiplier : float
+-m_speedMultiplierStep : float
+-m_targetFPS : int
+-m_targetFrameTimeMs : float
+-m_timer : QTimer *
+-m_updateCallback : std::function<void ()>
+{static} +staticMetaObject : const QMetaObject
+}
+class "FPSController::QPrivateSignal" as C_0013950626137842055771
+class C_0013950626137842055771 {
+__
+}
+class "FPSController::KeyState" as C_0018189526366987138526
+class C_0018189526366987138526 {
+__
++a : bool
++d : bool
++down : bool
++left : bool
++q : bool
++right : bool
++s : bool
++up : bool
++w : bool
++z : bool
+}
+class "Raycaster" as C_0016788790500541532188
+class C_0016788790500541532188 {
+{static} +intersectsSphere() : bool
+{static} +screenToRay() : Ray
+__
+}
+class "Raycaster::FrustumParams" as C_0008800207803377257796
+class C_0008800207803377257796 {
+__
++aspect : float
++bottom : float
++farPlane : float
++fov : float
++left : float
++nearPlane : float
++right : float
++top : float
+}
+class "Raycaster::Ray" as C_0001933326540061159085
+class C_0001933326540061159085 {
+__
++direction : QVector3D
++origin : QVector3D
+}
+class "ZoomController" as C_0017672126103613346366
+class C_0017672126103613346366 {
++ZoomController() : void
+..
+-applySeriesSettings() : void
++breakpoint() const : double
++cellWidth() const : double
++cellsToZero() const : int
++currentExponent() const : int64_t
++init() : void
++liveSteps() const : int
++scroll() : void
++scrollsInSeries() const : int
++seriesStep() const : int
++toString() const : QString
+__
+-m_breakpoint : double
+-m_cellWidth : double
+-m_cellsToZero : int
+-m_del : double
+-m_exp : int64_t
+-m_liveSteps : int
+-m_scrolls : int
+-m_series : Series
+-m_step : double
+-m_stepPrime : double
+}
+enum "ZoomController::Series" as C_0007752870766980486996
+enum C_0007752870766980486996 {
+Even
+Integer
+Step5
+}
+class "BigFloat" as C_0005484540137171209731
+class C_0005484540137171209731 {
++BigFloat() : void
++BigFloat() : void
++BigFloat() : void
+..
++operator!=() const : bool
++operator*() const : BigFloat
++operator*=() : BigFloat &
++operator+() const : BigFloat
++operator+=() : BigFloat &
++operator-() const : BigFloat
++operator-() const : BigFloat
++operator-=() : BigFloat &
++operator/() const : BigFloat
++operator/=() : BigFloat &
++operator<() const : bool
++operator<=() const : bool
++operator==() const : bool
++operator>() const : bool
++operator>=() const : bool
+..
++abs() const : BigFloat
++exponent() const : int64_t
++isMinusOne() const : bool
++isNegative() const : bool
++isOne() const : bool
++isZero() const : bool
++mantissa() const : double
+-negate() : void
+-normalize() : void
++toDecimal() const : QString
++toDouble() const : double
++toScientific() const : QString
++toString() const : QString
+__
+{static} +kMaxExponent : const int64_t
+{static} +kMinExponent : const int64_t
+{static} +kSignificantDigits : const int
+-m_exponent : int64_t
+-m_mantissa : double
+}
+class "ComplexNumber" as C_0003048463033820961136
+class C_0003048463033820961136 {
++ComplexNumber() : void
++ComplexNumber() : void
++~ComplexNumber() : void
+..
++getIm() : BigFloat
++getRe() : BigFloat
++isOnAxis() const : bool
++isZero() const : bool
++setIm() : void
++setRe() : void
++toString() const : QString
+__
+-im : BigFloat
+-re : BigFloat
+}
+C_0006571650246262171851 o-- C_0018189526366987138526 : -m_keys
+C_0006571650246262171851 o-- C_0013286274850898176297 : -m_updateCallback
+C_0013950626137842055771 --+ C_0006571650246262171851
+C_0018189526366987138526 --+ C_0006571650246262171851
+C_0016788790500541532188 ..> C_0008800207803377257796
+C_0016788790500541532188 ..> C_0001933326540061159085
+C_0008800207803377257796 --+ C_0016788790500541532188
+C_0001933326540061159085 --+ C_0016788790500541532188
+C_0017672126103613346366 o-- C_0007752870766980486996 : -m_series
+C_0007752870766980486996 --+ C_0017672126103613346366
+C_0003048463033820961136 o-- C_0005484540137171209731 : -re
+C_0003048463033820961136 o-- C_0005484540137171209731 : -im
+
+'Generated with clang-uml, version 0.6.3
+'LLVM version Ubuntu clang version 18.1.3 (1ubuntu1)
+@enduml

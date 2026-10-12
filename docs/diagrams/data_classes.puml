@@ -1,0 +1,98 @@
+@startuml
+title Data — классы
+package [std] as C_0009971158671206323968 {
+class "shared_ptr<SceneObject>" as C_0005732907301119421130
+class C_0005732907301119421130 {
+__
+}
+}
+class "SceneObject" as C_0014050675522701963753
+class C_0014050675522701963753 {
++SceneObject() : void
++~SceneObject() = default : void
+..
++getColor() const : QColor
++getDescription() const : QString
++getName() const : QString
++getType() const : ObjectType
++getTypeName() const : QString
++isSelected() const : bool
++isVisible() const : bool
++setColor() : void
++setName() : void
++setSelected() : void
++setVisible() : void
+__
+#m_color : QColor
+#m_name : QString
+#m_selected : bool
+#m_type : ObjectType
+#m_visible : bool
+}
+enum "SceneObject::ObjectType" as C_0011741360254285230333
+enum C_0011741360254285230333 {
+TypeSphere
+TypePlane
+TypeProjection
+TypePoint
+TypeCustom
+}
+class "QList<std::shared_ptr<SceneObject>>" as C_0008319822758945307697
+class C_0008319822758945307697 {
+__
+}
+class "QMap<SceneObject::ObjectType,QVector<std::shared_ptr<SceneObject>>>" as C_0005729225217083498668
+class C_0005729225217083498668 {
+__
+}
+class "ObjectManager" as C_0015872366982039610086
+class C_0015872366982039610086 {
+-ObjectManager() = default : void
+-ObjectManager() = deleted : void
+-~ObjectManager() = default : void
+..
+-operator=() = deleted : ObjectManager &
+..
++addObject() : void
++allObjectsCleared() : void
++clearAll() : void
++getAllObjects() const : QVector<std::shared_ptr<SceneObject>>
++getGroupedObjects() const : QMap<SceneObject::ObjectType,QVector<std::shared_ptr<SceneObject>>>
++getObjectAt() const : std::shared_ptr<SceneObject>
++getObjectCount() const : int
++getObjectsByType() const : QVector<std::shared_ptr<SceneObject>>
+{static} +instance() : ObjectManager &
++metaObject() const : const QMetaObject *
++objectAdded() : void
++objectRemoved() : void
++objectUpdated() : void
++qt_metacall() : int
++qt_metacast() : void *
+{static} -qt_static_metacall() : void
++removeObject() : void
++removeObjectAt() : void
+{static} +tr() : QString
+__
+-m_objects : QVector<std::shared_ptr<SceneObject>>
+{static} +staticMetaObject : const QMetaObject
+}
+class "ObjectManager::QPrivateSignal" as C_0003475600056018053258
+class C_0003475600056018053258 {
+__
+}
+C_0005732907301119421130 ..> C_0014050675522701963753
+C_0014050675522701963753 o-- C_0011741360254285230333 : #m_type
+C_0011741360254285230333 --+ C_0014050675522701963753
+C_0008319822758945307697 ..> C_0014050675522701963753
+C_0005729225217083498668 ..> C_0005732907301119421130
+C_0005729225217083498668 ..> C_0008319822758945307697
+C_0015872366982039610086 ..> C_0005732907301119421130
+C_0015872366982039610086 ..> C_0014050675522701963753
+C_0015872366982039610086 ..> C_0011741360254285230333
+C_0015872366982039610086 ..> C_0005729225217083498668
+C_0015872366982039610086 o-- C_0008319822758945307697 : -m_objects
+C_0003475600056018053258 --+ C_0015872366982039610086
+
+'Generated with clang-uml, version 0.6.3
+'LLVM version Ubuntu clang version 18.1.3 (1ubuntu1)
+@enduml
