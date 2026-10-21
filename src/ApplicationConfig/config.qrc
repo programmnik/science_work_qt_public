@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>config/app.cfg</file>
+        <file>config/core.cfg</file>
+        <file>config/data.cfg</file>
+        <file>config/manifest.json</file>
+        <file>config/opengl.cfg</file>
+        <file>config/panels.cfg</file>
+        <file>config/ui.cfg</file>
+    </qresource>
+</RCC>

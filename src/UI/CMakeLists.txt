@@ -1,4 +1,4 @@
-add_library(uiLibrary INTERFACE)         # ← INTERFACE, не STATIC!
+add_library(uiLibrary INTERFACE)
 target_link_libraries(uiLibrary INTERFACE
     cameraLibrary
     planeLibrary

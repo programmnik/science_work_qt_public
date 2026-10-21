@@ -3,4 +3,7 @@
         <file>sky.vert</file>
         <file>sky.frag</file>
     </qresource>
+    <qresource prefix="/">
+        <file>sky.frag</file>
+    </qresource>
 </RCC>

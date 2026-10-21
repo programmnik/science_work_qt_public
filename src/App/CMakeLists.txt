@@ -4,9 +4,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        ../../resources.qrc
+        resources.qrc
         customtitlebar.h customtitlebar.cpp
         custommenubar.h custommenubar.cpp
+        application.h application.cpp
+        window/window.h window/window.cpp
     )
 else()
     add_executable(science_work
@@ -14,7 +16,7 @@ else()
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        ../../resources.qrc
+        resources.qrc
     )
 endif()
 
@@ -24,4 +26,5 @@ target_include_directories(science_work PRIVATE
 
 target_link_libraries(science_work PRIVATE
     panelLibrary
+    configLibrary
 )

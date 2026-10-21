@@ -19,6 +19,9 @@ add_subdirectory(OpenGL)
 add_subdirectory(Themes)
 add_subdirectory(UI)
 add_subdirectory(Panels)
+add_subdirectory(ApplicationConfig)
+add_subdirectory(LocaleStore)
+add_subdirectory(DirectoryStore)
 
 # Линковка библиотек
 target_link_libraries(science_work PRIVATE

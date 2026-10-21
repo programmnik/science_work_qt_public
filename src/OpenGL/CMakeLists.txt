@@ -1,9 +1,9 @@
 add_library(openGLLibrary STATIC
     GLWidget.cpp GLWidget.h
     skyrenderer.h skyrenderer.cpp
-    ${CMAKE_SOURCE_DIR}/shaders/shaders.qrc
-    ${CMAKE_SOURCE_DIR}/shaders/sky.vert
-    ${CMAKE_SOURCE_DIR}/shaders/sky.frag
+    shaders/shaders.qrc
+    shaders/sky.vert
+    shaders/sky.frag
 )
 
 target_include_directories(openGLLibrary PRIVATE

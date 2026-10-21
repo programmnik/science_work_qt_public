@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "name": "Shared",
+      "path": "shared.cfg",
+      "description": "General UI settings (theme, language)"
+    },
+    {
+      "name": "App",
+      "path": "app.cfg",
+      "description": "General application settings"
+    },
+    {
+      "name": "Core",
+      "path": "core.cfg",
+      "description": "Mathematics and Utilities"
+    },
+    {
+      "name": "Data",
+      "path": "data.cfg",
+      "description": "The data model"
+    },
+    {
+      "name": "OpenGL",
+      "path": "opengl.cfg",
+      "description": "The render"
+    },
+    {
+      "name": "UI",
+      "path": "ui.cfg",
+      "description": "UI primitives"
+    },
+    {
+      "name": "Panels",
+      "path": "panels.cfg",
+      "description": "Panels"
+    }
+  ]
+}
